@@ -31,16 +31,40 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 interface LoCoMoConversation {
   sample_id: string;
-  conversation: Array<{
-    session_id: string;
-    dialogue: Array<{ speaker: string; text: string; dia_id: string }>;
-  }>;
+  conversation: Record<string, unknown> & {
+    speaker_a: string;
+    speaker_b: string;
+    // Sessions are stored as session_1, session_2, etc.
+    // Each session is Array<{ speaker: string; text: string; dia_id: string }>
+    // Date/time stored as session_1_date_time, etc.
+  };
   qa: Array<{
     question: string;
     answer: string;
     evidence: string[];
     category: number;
   }>;
+}
+
+/** Extract sessions from LoCoMo conversation dict format */
+function extractSessions(conversation: Record<string, unknown>): Array<{
+  sessionId: string;
+  dateTime: string;
+  turns: Array<{ speaker: string; text: string; dia_id: string }>;
+}> {
+  const sessionKeys = Object.keys(conversation)
+    .filter(k => k.startsWith("session_") && !k.endsWith("_date_time"))
+    .sort((a, b) => {
+      const numA = parseInt(a.replace("session_", ""));
+      const numB = parseInt(b.replace("session_", ""));
+      return numA - numB;
+    });
+
+  return sessionKeys.map(key => ({
+    sessionId: key,
+    dateTime: String(conversation[`${key}_date_time`] || ""),
+    turns: conversation[key] as Array<{ speaker: string; text: string; dia_id: string }>,
+  }));
 }
 
 interface QAResult {
@@ -63,8 +87,9 @@ const skipCat5 = args.includes("--skip-cat5");
 /**
  * Normalize text for F1 scoring (LoCoMo standard).
  */
-function normalize(text: string): string[] {
-  return text
+function normalize(text: string | undefined | null): string[] {
+  if (!text) return [];
+  return String(text)
     .toLowerCase()
     .replace(/[^\w\s]/g, " ")
     .replace(/\b(a|an|the)\b/g, " ")
@@ -121,24 +146,25 @@ async function main() {
 
   for (let ci = 0; ci < conversations.length; ci++) {
     const conv = conversations[ci];
-    console.log(`\n--- Conversation ${ci + 1}/${conversations.length}: ${conv.sample_id} (${conv.conversation.length} sessions, ${conv.qa.length} questions) ---`);
+    const sessions = extractSessions(conv.conversation);
+    console.log(`\n--- Conversation ${ci + 1}/${conversations.length}: ${conv.sample_id} (${sessions.length} sessions, ${conv.qa.length} questions) ---`);
 
     // Clear and ingest this conversation
     await clearBenchmarkData(agentId);
 
-    for (let si = 0; si < conv.conversation.length; si++) {
-      const session = conv.conversation[si];
-      const sessionText = session.dialogue
+    for (let si = 0; si < sessions.length; si++) {
+      const session = sessions[si];
+      const sessionText = session.turns
         .map((turn) => `[${turn.speaker}] ${turn.text}`)
         .join("\n");
 
-      await ingestSession(agentId, session.session_id, sessionText, "locomo");
+      await ingestSession(agentId, session.sessionId, sessionText, "locomo");
 
       if ((si + 1) % 10 === 0) {
-        console.log(`  Ingested ${si + 1}/${conv.conversation.length} sessions`);
+        console.log(`  Ingested ${si + 1}/${sessions.length} sessions`);
       }
     }
-    console.log(`  Ingested all ${conv.conversation.length} sessions`);
+    console.log(`  Ingested all ${sessions.length} sessions`);
 
     // Process QA pairs
     let qaList = conv.qa;
@@ -231,7 +257,7 @@ async function main() {
       const status = f1 >= 0.5 ? "PASS" : "FAIL";
       if (totalQuestions % 10 === 0 || f1 < 0.5) {
         console.log(
-          `  [${totalQuestions}] Cat${qa.category} ${status} F1=${f1.toFixed(3)} | Q: "${qa.question.slice(0, 60)}..." | Gold: "${qa.answer.slice(0, 40)}"`
+          `  [${totalQuestions}] Cat${qa.category} ${status} F1=${f1.toFixed(3)} | Q: "${String(qa.question).slice(0, 60)}..." | Gold: "${String(qa.answer).slice(0, 40)}"`
         );
       }
     }
