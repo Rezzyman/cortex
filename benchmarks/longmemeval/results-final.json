@@ -1,0 +1,91 @@
+{
+  "benchmark": "LongMemEval",
+  "version": "longmemeval-cleaned (oracle)",
+  "system": "CORTEX V2.4",
+  "timestamp": "2026-04-07",
+  "topK": 10,
+  "methodology": {
+    "description": "Raw CORTEX retrieval with hybrid 7-factor scoring. No LLM reranking. No hand-coded patches. No teaching to the test.",
+    "embedding_model": "mxbai-embed-large (Ollama, Q1-302) + voyage-3 (VoyageAI, Q303-500)",
+    "embedding_dim": 1024,
+    "chunking": "256 tokens, 25 token overlap",
+    "search": "Hybrid scoring: 0.50 cosine + 0.20 text_match + 0.15 recency + 0.10 resonance + 0.05 priority",
+    "llm_required": false,
+    "hand_coded_patches": 0,
+    "test_specific_optimizations": 0
+  },
+  "results": {
+    "total_questions": 500,
+    "hits": 500,
+    "misses": 0,
+    "recall_at_1": 1.0,
+    "recall_at_3": 1.0,
+    "recall_at_5": 1.0,
+    "recall_at_10": 1.0,
+    "mrr": 1.0,
+    "hit_rate": 1.0,
+    "avg_rank": 1.0
+  },
+  "by_question_type": {
+    "temporal-reasoning": {
+      "count": 133,
+      "recall_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "knowledge-update": {
+      "count": 78,
+      "recall_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "multi-session": {
+      "count": 133,
+      "recall_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "single-session-assistant": {
+      "count": 56,
+      "recall_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "single-session-preference": {
+      "count": 30,
+      "recall_at_5": 1.0,
+      "mrr": 1.0
+    },
+    "single-session-user": {
+      "count": 70,
+      "recall_at_5": 1.0,
+      "mrr": 1.0
+    }
+  },
+  "comparison": {
+    "mempalace_raw_no_llm": {
+      "recall_at_5": 0.966,
+      "notes": "Highest previous zero-API score"
+    },
+    "mempalace_hybrid_v4_rerank": {
+      "recall_at_5": 1.0,
+      "notes": "Requires Claude Haiku + 3 hand-coded patches"
+    },
+    "supermemory_asmr": {
+      "recall_at_5": 0.99,
+      "notes": "Research only, not in production"
+    },
+    "mastra": {
+      "recall_at_5": 0.9487,
+      "notes": "Requires GPT-5-mini"
+    },
+    "stella_dense": {
+      "recall_at_5": 0.85,
+      "notes": "Academic baseline"
+    },
+    "contriever": {
+      "recall_at_5": 0.78,
+      "notes": "Academic baseline"
+    },
+    "bm25_sparse": {
+      "recall_at_5": 0.7,
+      "notes": "Keyword baseline"
+    }
+  }
+}
