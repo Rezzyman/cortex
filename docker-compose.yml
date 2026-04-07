@@ -1,0 +1,27 @@
+version: "3.8"
+
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_USER: cortex
+      POSTGRES_PASSWORD: cortex
+      POSTGRES_DB: cortex
+    ports:
+      - "5432:5432"
+    volumes:
+      - cortex_data:/var/lib/postgresql/data
+
+  cortex:
+    build: .
+    depends_on:
+      - db
+    environment:
+      DATABASE_URL: "postgresql://cortex:cortex@db:5432/cortex"
+      VOYAGE_API_KEY: "${VOYAGE_API_KEY}"
+      ANTHROPIC_API_KEY: "${ANTHROPIC_API_KEY}"
+    ports:
+      - "3100:3100"
+
+volumes:
+  cortex_data:

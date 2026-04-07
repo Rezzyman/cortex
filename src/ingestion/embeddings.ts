@@ -1,0 +1,156 @@
+/**
+ * CORTEX V2 — Embedding Engine
+ *
+ * Supports two providers:
+ *   - "ollama" (default): Local inference via mxbai-embed-large (1024-dim)
+ *   - "voyage": VoyageAI API (voyage-3, 1024-dim)
+ *
+ * Configure via env:
+ *   EMBEDDING_PROVIDER=ollama|voyage (default: ollama)
+ *   EMBEDDING_MODEL=mxbai-embed-large|voyage-3 (auto-set per provider)
+ *   OLLAMA_URL=http://localhost:11434
+ *   VOYAGE_API_KEY=pa-...
+ */
+import "dotenv/config";
+
+const EMBEDDING_PROVIDER = process.env.EMBEDDING_PROVIDER || "ollama";
+const OLLAMA_URL = process.env.OLLAMA_URL || "http://localhost:11434";
+const VOYAGE_API_KEY = process.env.VOYAGE_API_KEY || "";
+const EMBEDDING_MODEL =
+  process.env.EMBEDDING_MODEL ||
+  (EMBEDDING_PROVIDER === "voyage" ? "voyage-3" : "mxbai-embed-large");
+const EMBEDDING_DIM = 1024;
+const BATCH_SIZE = 32;
+
+async function sleep(ms: number) {
+  return new Promise((r) => setTimeout(r, ms));
+}
+
+// ─── Ollama Provider ────────────────────────────────────
+
+async function ollamaEmbed(text: string): Promise<number[]> {
+  const response = await fetch(`${OLLAMA_URL}/api/embeddings`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      model: EMBEDDING_MODEL,
+      prompt: text,
+    }),
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+    throw new Error(`Ollama embedding error (${response.status}): ${error}`);
+  }
+
+  const data = (await response.json()) as { embedding: number[] };
+  return data.embedding;
+}
+
+// ─── Voyage Provider ────────────────────────────────────
+
+async function voyageEmbedBatch(texts: string[]): Promise<number[][]> {
+  if (!VOYAGE_API_KEY) {
+    throw new Error("VOYAGE_API_KEY is required when EMBEDDING_PROVIDER=voyage");
+  }
+
+  const response = await fetch("https://api.voyageai.com/v1/embeddings", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${VOYAGE_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: EMBEDDING_MODEL,
+      input: texts,
+      input_type: "document",
+    }),
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+    throw new Error(`Voyage embedding error (${response.status}): ${error}`);
+  }
+
+  const data = (await response.json()) as {
+    data: Array<{ embedding: number[] }>;
+  };
+  return data.data.map((d) => d.embedding);
+}
+
+async function voyageEmbedQuery(text: string): Promise<number[]> {
+  if (!VOYAGE_API_KEY) {
+    throw new Error("VOYAGE_API_KEY is required when EMBEDDING_PROVIDER=voyage");
+  }
+
+  const response = await fetch("https://api.voyageai.com/v1/embeddings", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${VOYAGE_API_KEY}`,
+    },
+    body: JSON.stringify({
+      model: EMBEDDING_MODEL,
+      input: [text],
+      input_type: "query",
+    }),
+  });
+
+  if (!response.ok) {
+    const error = await response.text();
+    throw new Error(`Voyage query embedding error (${response.status}): ${error}`);
+  }
+
+  const data = (await response.json()) as {
+    data: Array<{ embedding: number[] }>;
+  };
+  return data.data[0].embedding;
+}
+
+// ─── Unified Interface ──────────────────────────────────
+
+/**
+ * Generate embeddings for multiple texts.
+ * Routes to Ollama or Voyage based on EMBEDDING_PROVIDER env.
+ */
+export async function embedTexts(texts: string[]): Promise<number[][]> {
+  if (EMBEDDING_PROVIDER === "voyage") {
+    const allEmbeddings: number[][] = [];
+    for (let i = 0; i < texts.length; i += BATCH_SIZE) {
+      const batch = texts.slice(i, i + BATCH_SIZE);
+      const embeddings = await voyageEmbedBatch(batch);
+      allEmbeddings.push(...embeddings);
+      console.log(
+        `[embeddings] Batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(texts.length / BATCH_SIZE)} — ${batch.length} texts (voyage)`
+      );
+      if (i + BATCH_SIZE < texts.length) await sleep(100);
+    }
+    return allEmbeddings;
+  }
+
+  // Default: Ollama
+  const allEmbeddings: number[][] = [];
+  for (let i = 0; i < texts.length; i += BATCH_SIZE) {
+    const batch = texts.slice(i, i + BATCH_SIZE);
+    const embeddings = await Promise.all(batch.map((t) => ollamaEmbed(t)));
+    allEmbeddings.push(...embeddings);
+    console.log(
+      `[embeddings] Batch ${Math.floor(i / BATCH_SIZE) + 1}/${Math.ceil(texts.length / BATCH_SIZE)} — ${batch.length} texts (ollama)`
+    );
+    if (i + BATCH_SIZE < texts.length) await sleep(200);
+  }
+  return allEmbeddings;
+}
+
+/**
+ * Embed a single query text.
+ * Uses input_type="query" for Voyage (optimized for search retrieval).
+ */
+export async function embedQuery(text: string): Promise<number[]> {
+  if (EMBEDDING_PROVIDER === "voyage") {
+    return voyageEmbedQuery(text);
+  }
+  return ollamaEmbed(text);
+}
+
+export { EMBEDDING_DIM, EMBEDDING_MODEL, EMBEDDING_PROVIDER };
