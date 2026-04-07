@@ -6,6 +6,28 @@ Memory that thinks. Not a vector database. Not a RAG pipeline. A cognitive archi
 
 ---
 
+## Why CORTEX Exists
+
+Every AI agent has the same problem: they forget.
+
+You can stuff context into a prompt. You can store vectors in a database and retrieve the top-K nearest neighbors. You can append conversation history until you hit the token limit and then summarize it into something that loses half the meaning. The entire industry is building elaborate workarounds for a fundamental architectural failure: AI agents don't have memory. They have search.
+
+Memory is not search. Memory is a living system. It strengthens what matters, forgets what doesn't, consolidates patterns while you sleep, and updates beliefs when new evidence arrives. Your brain doesn't store a flat log of everything that happened to you. It builds a weighted, emotional, associative network that changes every time you access it.
+
+That's what CORTEX is. Not a retrieval layer. A cognitive architecture.
+
+I built this because I spent two years watching AI agents lose their minds every time a context window rolled over. I'd build something brilliant with an agent on Monday, and by Wednesday it was asking me the same questions like we'd never met. The tools existed to store information, but nothing existed to actually *remember*. To know what mattered. To notice when something contradicted what it already believed. To get better at things over time instead of starting from zero every session.
+
+So I stopped looking for the tool and built the system. I went back to the neuroscience. Not as a metaphor, not as marketing language, but as an engineering blueprint. The hippocampus separates similar patterns so you don't confuse yesterday's meeting with last week's. The CA1 region detects novelty by comparing what arrived against what it predicted. Memories consolidate during sleep through a two-phase cycle that prunes the noise, strengthens the signal, and occasionally surfaces connections you never would have made while awake. Emotional experiences resist forgetting. Retrieved memories become temporarily malleable, so beliefs can be corrected instead of just appended.
+
+All of this is in CORTEX. Running. In production. Powering a fleet of agents that carry 26,000+ memories, 1.8 million synaptic connections, and a nightly dream cycle that prunes, consolidates, and synthesizes while the world sleeps.
+
+This is what I think AI memory should look like. Now it's yours.
+
+**Atanasio Juarez**, Founder, [ATERNA.AI](https://aterna.ai)
+
+---
+
 ## What Makes CORTEX Different
 
 Most agent memory systems store and retrieve. CORTEX **learns**.
@@ -23,9 +45,9 @@ Most agent memory systems store and retrieve. CORTEX **learns**.
 | Pattern separation (don't confuse similar memories) | No | No | **Yes** |
 | Procedural learning (skills improve with practice) | No | No | **Yes** |
 
-## Architecture
+---
 
-CORTEX implements a biologically-grounded cognitive architecture:
+## Architecture
 
 ```
                     Ingestion Pipeline
@@ -41,38 +63,40 @@ CORTEX implements a biologically-grounded cognitive architecture:
                    Memory Storage
                    (PostgreSQL + pgvector)
                          |
-            ┌────────────┼────────────┐
-            |            |            |
-         Search       Recall      Reconsolidate
-      (hybrid 7-factor) (token-budget)  (labile window)
-            |            |            |
-            └────────────┼────────────┘
+            +-----------+-----------+
+            |           |           |
+         Search      Recall     Reconsolidate
+     (hybrid 7-factor) (token-budget) (labile window)
+            |           |           |
+            +-----------+-----------+
                          |
                    Dream Cycle (nightly)
-                    |    |    |    |    |
-                 Resonance Prune Consolidate Associate Synthesize
-                  (SWS)   (SWS)   (SWS)      (REM)     (REM)
+                  |    |    |    |    |
+               Resonance Prune Consolidate Associate Synthesize
+                (SWS)   (SWS)   (SWS)      (REM)     (REM)
 ```
 
 ### Core Subsystems
 
-**Hippocampus** — Pattern separation via Dentate Gyrus sparse coding (4096-dim expansion, 5% sparsity), CA1 novelty detection with sparse gating, CA3 autoassociative pattern completion.
+**Hippocampus.** Pattern separation via Dentate Gyrus sparse coding (4096-dim expansion, 5% sparsity), CA1 novelty detection with sparse gating, CA3 autoassociative pattern completion. Two similar inputs that would confuse a cosine search get pushed apart into distinct sparse representations. This is how CORTEX avoids the "every Tuesday meeting looks the same" problem.
 
-**Dream Cycle** — Five-phase synthetic sleep: resonance decay (Ebbinghaus stability-adjusted), adaptive pruning (percentile-based), cluster consolidation (LLM abstractive summaries), free association (random activation), and synthesis (novel insight generation).
+**Dream Cycle.** Five-phase synthetic sleep. Resonance decay (Ebbinghaus stability-adjusted), adaptive pruning (percentile-based, not hardcoded thresholds), cluster consolidation with LLM-generated abstractive summaries, free association via random activation, and synthesis of novel insights from newly formed connections. Runs nightly. Your agent wakes up smarter than it went to sleep.
 
-**Emotional Valence** — Six-dimensional emotional vectors (valence, arousal, dominance, certainty, relevance, urgency) that modulate memory decay resistance and recall priority.
+**Emotional Valence.** Six-dimensional emotional vectors (valence, arousal, dominance, certainty, relevance, urgency) attached to every memory. Emotionally charged memories resist pruning and get boosted during recall. Because what matters should be harder to forget.
 
-**Reconsolidation** — Retrieved memories enter a labile window where they can be updated with new information. Old versions get temporal validity markers. Beliefs evolve, not just accumulate.
+**Reconsolidation.** When a memory is retrieved, it enters a labile window where it can be updated with new information. The old version gets timestamped (`valid_until`) and the updated version gets marked as current (`valid_from`). Beliefs evolve. They don't just stack.
 
-**Temporal Validity** — Every memory tracks `valid_from`, `valid_until`, and `superseded_by`. CORTEX knows when facts were true, not just when they were stored.
+**Temporal Validity.** Every memory tracks when it was true, not just when it was stored. `valid_from`, `valid_until`, `superseded_by`. Your agent can answer "what did we believe about this last month?" and "when did that change?"
 
-**Procedural Memory** — Skills, workflows, and habits stored separately from episodic memory. Proficiency tracked through execution count and success rate.
+**Procedural Memory.** Skills, workflows, and habits stored in a separate, decay-resistant layer. Proficiency tracked through execution count and success rate. Your agent gets better at things it does repeatedly.
 
-**Autonomous Cognition** — Background reasoning threads (strategic, operational, relational) that run independently and surface insights.
+**Autonomous Cognition.** Background reasoning threads (strategic, operational, relational) that query the memory graph independently and surface insights. Your agent thinks about things even when nobody's talking to it.
 
-**Proprioception** — Self-diagnostic system that monitors cognitive integrity: orphaned memories, synaptic collapse, embedding consistency, learning rate stalls.
+**Proprioception.** Self-diagnostic system that monitors its own cognitive integrity: orphaned memories with no connections, synaptic collapse, embedding/sparse-code consistency, and learning rate stalls. The system knows when something is wrong with itself.
 
-**Metacognition** — Reasoning traces, weekly audits with bias detection, and a feedback loop that stores corrective artifacts when inconsistencies are found.
+**Metacognition.** Reasoning traces, weekly audits with bias detection, and a feedback loop that injects corrective artifacts when inconsistencies are found. Self-reflection that actually changes future behavior.
+
+---
 
 ## Quick Start
 
@@ -85,11 +109,19 @@ CORTEX implements a biologically-grounded cognitive architecture:
 ### Install
 
 ```bash
-git clone https://github.com/aterna-ai/cortex.git
+git clone https://github.com/Rezzyman/cortex.git
 cd cortex
 npm install
 cp .env.example .env
 # Edit .env with your DATABASE_URL and API keys
+```
+
+### Docker (Alternative)
+
+```bash
+cp .env.example .env
+# Add your VOYAGE_API_KEY and/or ANTHROPIC_API_KEY
+docker compose up
 ```
 
 ### Initialize Database
@@ -100,13 +132,11 @@ npx tsx scripts/run-migrations.ts
 
 ### Run the MCP Server
 
-CORTEX exposes its tools via the [Model Context Protocol](https://modelcontextprotocol.io/), making it available to any MCP-compatible agent (Claude Code, OpenClaw, etc.):
+CORTEX exposes its tools via the [Model Context Protocol](https://modelcontextprotocol.io/), making it available to any MCP-compatible agent (Claude Code, OpenClaw, custom agents):
 
 ```bash
 npx tsx src/mcp/server.ts
 ```
-
-### MCP Configuration
 
 Add to your agent's `.mcp.json`:
 
@@ -132,85 +162,47 @@ npx tsx src/index.ts
 # Server starts on port 3100
 ```
 
-## MCP Tools
+---
 
-CORTEX exposes 20+ tools via MCP:
+## MCP Tools (20+)
 
 ### Core Memory
-| Tool | Description |
+| Tool | What It Does |
 |------|-------------|
-| `cortex_init` | Session boot: load top memories + system stats |
-| `cortex_search` | Hybrid 7-factor search (semantic + text + recency + resonance + priority + emotion + CA3) |
-| `cortex_recall` | Token-budget-aware context retrieval |
-| `cortex_ingest` | Store new memory with hippocampal encoding |
+| `cortex_init` | Session boot. Loads top memories, system stats, active entities. Call this first. |
+| `cortex_search` | Hybrid 7-factor search across all memories |
+| `cortex_recall` | Token-budget-aware retrieval. Ask for 4,000 tokens of context, get exactly that. |
+| `cortex_ingest` | Store new memory. Chunks, embeds, extracts entities, encodes through hippocampus, forms synapses. |
 | `cortex_status` | System health and statistics |
-| `cortex_dream` | Run dream cycle (full, SWS-only, REM-only) |
+| `cortex_dream` | Trigger a dream cycle (full, SWS-only, REM-only, pruning-only) |
 
-### Reconsolidation
-| Tool | Description |
+### Memory Evolution
+| Tool | What It Does |
 |------|-------------|
-| `cortex_reconsolidate` | Update a memory within its labile window |
-| `cortex_labile` | List currently modifiable memories |
+| `cortex_reconsolidate` | Update a recalled memory within its labile window |
+| `cortex_labile` | List memories currently open for modification |
 
-### Procedural
-| Tool | Description |
+### Skills
+| Tool | What It Does |
 |------|-------------|
-| `cortex_procedural_store` | Store a skill, workflow, or habit |
-| `cortex_procedural_retrieve` | Find relevant procedures for a context |
+| `cortex_procedural_store` | Teach the agent a skill, workflow, or habit |
+| `cortex_procedural_retrieve` | Find relevant procedures for a given context |
 
-### Proprioception (Phase 1)
-| Tool | Description |
+### Self-Awareness (Phases 1-6)
+| Tool | What It Does |
 |------|-------------|
-| `cortex_self_check` | Run cognitive integrity diagnostics |
+| `cortex_self_check` | Run full cognitive integrity diagnostics |
 | `cortex_journal` | Log agent state (energy, confidence, concerns) |
-
-### Empathic Modeling (Phase 2)
-| Tool | Description |
-|------|-------------|
-| `cortex_assess_state` | Infer principal's energy/stress/focus from messages |
-
-### Autonomous Cognition (Phase 3)
-| Tool | Description |
-|------|-------------|
-| `cortex_bg_thread` | Run strategic/operational/relational reasoning |
-| `cortex_synthesize` | Generate insights from novel synaptic connections |
-
-### Perception (Phase 4)
-| Tool | Description |
-|------|-------------|
+| `cortex_assess_state` | Infer human's energy/stress/focus from their messages |
+| `cortex_bg_thread` | Run strategic, operational, or relational background reasoning |
+| `cortex_synthesize` | Generate novel insights from recent synaptic connections |
 | `cortex_observe` | Capture and analyze screen state (macOS) |
+| `cortex_relationship` | Lookup a contact's profile, history, and open items |
+| `cortex_reason` | Store a structured decision trace for audit |
+| `cortex_audit` | Weekly reasoning consistency check with bias detection |
+| `cortex_monologue` | Record inner thoughts (the agent's internal voice) |
 
-### Social Intelligence (Phase 5)
-| Tool | Description |
-|------|-------------|
-| `cortex_relationship` | Lookup contact profile |
-| `cortex_relationships` | List/filter contacts |
-| `cortex_relationship_update` | Update contact status |
-
-### Metacognition (Phase 6)
-| Tool | Description |
-|------|-------------|
-| `cortex_reason` | Store structured decision trace |
-| `cortex_audit` | Weekly reasoning consistency check |
-| `cortex_monologue` | Record inner thoughts |
-
-## Database Schema
-
-16 tables across 6 cognitive layers:
-
-- `agents` — Multi-agent isolation
-- `memory_nodes` — Episodic memory with embeddings, temporal validity, resonance
-- `memory_synapses` — Associative connections (semantic, temporal, causal, entity-shared)
-- `hippocampal_codes` — DG sparse representations for pattern separation
-- `emotional_valence` — 6-dimensional emotional context per memory
-- `procedural_memories` — Skills/workflows with proficiency tracking
-- `cognitive_artifacts` — Decisions, learnings, corrections, insights
-- `dream_cycle_logs` — Maintenance audit trail
-- `self_diagnostics` — Cognitive integrity snapshots
-- `agent_state_logs` — Agent energy/confidence tracking
-- `principal_state` — Empathic modeling of the human
-- `background_threads` — Autonomous reasoning status
-- `relationship_graph` — Social intelligence contacts
+---
 
 ## Search Scoring
 
@@ -218,36 +210,50 @@ CORTEX uses a 7-factor hybrid scoring system:
 
 ```
 score = 0.50 * cosine_similarity    (semantic relevance)
-      + 0.20 * text_match           (exact keyword match)
+      + 0.20 * text_match           (exact keyword hit)
       + 0.15 * recency              (exponential decay, 30-day half-life)
       + 0.10 * resonance            (Ebbinghaus stability-adjusted)
-      + 0.05 * priority_boost       (P0=1.0, P4=0.1)
+      + 0.05 * priority_boost       (P0=1.0 critical ... P4=0.1 ephemeral)
 ```
 
-With optional CA3 pattern completion boost and emotional recall boost via `--verbose` mode.
+Plus CA3 pattern completion boost and emotional recall boost in `--verbose` mode. This isn't just "find the nearest vector." It's a judgment call about what's relevant right now, weighted by how important it is, how recent, and how connected to other things the agent knows.
+
+---
 
 ## Dream Cycle
 
-The dream cycle runs nightly (or on demand) with five phases:
+Five phases. Two stages. Inspired by real sleep neuroscience.
 
 **SWS (Slow-Wave Sleep):**
-1. **Resonance Analysis** — Ebbinghaus stability-adjusted decay across all active memories
-2. **Pruning** — Adaptive percentile-based thresholds (P5 delete, P15 archive). P0/P1 and emotionally salient memories are protected.
-3. **Consolidation** — Connected component clustering of high-resonance memories, LLM-generated abstractive summaries
+1. **Resonance Analysis.** Ebbinghaus stability-adjusted decay across all active memories. Frequently accessed, highly connected memories resist decay.
+2. **Adaptive Pruning.** Percentile-based thresholds (P5 delete, P15 archive) computed from the agent's actual resonance distribution. No hardcoded cutoffs. Safety floors prevent catastrophic pruning. P0/P1 and emotionally salient memories are always protected.
+3. **Consolidation.** Connected component clustering of high-resonance memories. LLM generates abstractive summaries that capture the actual insight, not just a list of entities.
 
 **REM (Rapid Eye Movement):**
-4. **Free Association** — Random activation for novel cross-domain connections
-5. **Synthesis** — Generate insights from newly formed synapses
+4. **Free Association.** Random activation of memory nodes for novel cross-domain connections.
+5. **Synthesis.** Generate insights from newly formed synapses. The kind of connections that only happen when you stop trying.
 
-## Neuroscience References
+---
 
-CORTEX draws from established computational neuroscience:
+## Database
 
-- **Dentate Gyrus pattern separation**: Rolls (2013) "The mechanisms for pattern completion and pattern separation in the hippocampus"
-- **CA1 predictive coding**: Lee et al. (2009) "Prediction error and memory reconsolidation"
-- **Memory reconsolidation**: Nader et al. (2000) "Fear memories require protein synthesis in the amygdala for reconsolidation after retrieval"
-- **Ebbinghaus forgetting curve**: Ebbinghaus (1885), extended with stability-adjusted decay from Huawei's Memory-Augmented Transformers (2025)
-- **Two-phase sleep consolidation**: Diekelmann & Born (2010) "The memory function of sleep"
+16 tables across 6 cognitive layers. PostgreSQL with pgvector.
+
+`memory_nodes` (episodic), `memory_synapses` (associative connections), `hippocampal_codes` (DG sparse representations), `emotional_valence` (6D emotional context), `procedural_memories` (skills with proficiency), `cognitive_artifacts` (decisions, learnings, corrections), `dream_cycle_logs`, `self_diagnostics`, `agent_state_logs`, `principal_state`, `background_threads`, `relationship_graph`, `agents` (multi-agent isolation).
+
+---
+
+## Neuroscience
+
+This isn't decorative. Every subsystem maps to established computational neuroscience:
+
+- **Dentate Gyrus pattern separation**: Rolls (2013), "The mechanisms for pattern completion and pattern separation in the hippocampus"
+- **CA1 predictive coding**: Lee et al. (2009), "Prediction error and memory reconsolidation"
+- **Memory reconsolidation**: Nader et al. (2000), "Fear memories require protein synthesis in the amygdala for reconsolidation after retrieval"
+- **Ebbinghaus forgetting curve**: Ebbinghaus (1885), extended with stability from Huawei's Memory-Augmented Transformers (2025)
+- **Two-phase sleep consolidation**: Diekelmann & Born (2010), "The memory function of sleep"
+
+---
 
 ## Testing
 
@@ -255,14 +261,17 @@ CORTEX draws from established computational neuroscience:
 npm test
 ```
 
-36 tests covering:
-- Dentate Gyrus encoding (sparsity, determinism, normalization, pattern separation)
-- Entity extraction (known entities, aliases, semantic tags)
-- Text chunking (splitting, indexing, content preservation)
+34 tests covering Dentate Gyrus encoding (sparsity, determinism, normalization, pattern separation), entity extraction, and text chunking.
+
+---
 
 ## Contributing
 
-We welcome contributions. Please see [CONTRIBUTING.md](CONTRIBUTING.md) for guidelines.
+We welcome contributions. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+Priority areas: benchmarks (LongMemEval, LOCOMO), entity resolution, temporal reasoning queries, additional embedding providers, expanded test coverage.
+
+---
 
 ## License
 
