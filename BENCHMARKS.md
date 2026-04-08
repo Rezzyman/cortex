@@ -118,6 +118,40 @@ npx tsx benchmarks/locomo/run-retrieval.ts --topk 10
 
 ---
 
+## CogBench (ICLR 2026 MemAgents Workshop)
+
+**49 scenarios testing 7 cognitive capabilities no existing benchmark measures.**
+
+CogBench evaluates capabilities beyond retrieval accuracy: temporal validity enforcement, belief reconsolidation, hippocampal novelty detection, emotional recall advantage, cross-agent knowledge transfer, compounding intelligence through consolidation, and procedural skill learning.
+
+### Results
+
+| Task | Scenarios | Pass Rate | Mean Score |
+|------|-----------|-----------|------------|
+| **Temporal Validity** | 10 | 100% | **100.0%** |
+| **Reconsolidation** | 10 | 100% | **99.3%** |
+| **Novelty Detection** | 5 | 80% | **88.9%** |
+| **Emotional Recall** | 8 | 50% | **56.5%** |
+| **Cross-Agent Transfer** | 5 | 100% | **81.6%** |
+| **Compounding Intelligence** | 5 | 80% | **44.0%** |
+| **Procedural Learning** | 6 | 100% | **100.0%** |
+
+**Composite Score: 78.5%** (95% CI: 77.3%–91.0%)
+
+### Run CogBench
+
+```bash
+# Generate dataset (no DB needed)
+npx tsx benchmarks/cogbench/generate.ts --seed 42
+
+# Run evaluation (needs CORTEX DB)
+npx tsx benchmarks/cogbench/run.ts --verbose
+```
+
+See [benchmarks/cogbench/README.md](benchmarks/cogbench/README.md) for full methodology and metrics.
+
+---
+
 *Results generated April 7, 2026. Raw data in `benchmarks/*/results-*.json`*
 
 Built by [Atanasio Juarez](https://github.com/Rezzyman) at [ATERNA.AI](https://aterna.ai).

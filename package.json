@@ -18,6 +18,8 @@
     "mcp": "tsx src/mcp/server.ts",
     "migrate": "tsx scripts/run-migrations.ts",
     "backfill:hippocampal": "tsx scripts/backfill-hippocampal.ts",
+    "cogbench:generate": "tsx benchmarks/cogbench/generate.ts",
+    "cogbench:run": "tsx benchmarks/cogbench/run.ts",
     "typecheck": "tsc --noEmit",
     "test": "node --experimental-vm-modules node_modules/.bin/jest --passWithNoTests",
     "test:watch": "node --experimental-vm-modules node_modules/.bin/jest --watch"

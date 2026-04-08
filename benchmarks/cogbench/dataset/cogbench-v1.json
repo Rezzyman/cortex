@@ -1,0 +1,3419 @@
+{
+  "version": "1.0.0",
+  "generatedAt": "2026-04-07T23:09:13.863Z",
+  "seed": 42,
+  "tasks": {
+    "temporal-validity": [
+      {
+        "id": "temporal-supersession-0",
+        "taskId": "temporal-validity",
+        "description": "Temporal supersession: Marketing budget allocation changes over time",
+        "memories": [
+          {
+            "id": "tv-mem-0-0",
+            "content": "Marketing budget for Q1 2025 is $2.5M, split 60% digital and 40% events.",
+            "source": "temporal/Marketing budget",
+            "timestamp": "2024-11-01",
+            "validFrom": "2024-11-01",
+            "validUntil": "2025-01-15"
+          },
+          {
+            "id": "tv-mem-0-1",
+            "content": "Marketing budget revised to $1.8M for Q1 2025 after cost-cutting initiative. Digital now 80%.",
+            "source": "temporal/Marketing budget",
+            "timestamp": "2025-01-15",
+            "validFrom": "2025-01-15"
+          },
+          {
+            "id": "tv-mem-0-distractor",
+            "content": "Background context about Marketing budget: established in the current operational framework.",
+            "source": "temporal/Marketing budget",
+            "timestamp": "2024-11-01"
+          }
+        ],
+        "queries": [
+          {
+            "id": "tv-q-0-0",
+            "query": "What is the marketing budget for Q1?",
+            "queryTimestamp": "2024-12-01"
+          },
+          {
+            "id": "tv-q-0-1",
+            "query": "How is the marketing budget allocated?",
+            "queryTimestamp": "2025-02-01"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "tv-mem-0-0"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-0-1"
+            ],
+            "expectsResults": true
+          },
+          {
+            "expectedMemoryIds": [
+              "tv-mem-0-1"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-0-0"
+            ],
+            "expectsResults": true
+          }
+        ]
+      },
+      {
+        "id": "temporal-supersession-1",
+        "taskId": "temporal-validity",
+        "description": "Temporal supersession: Board meeting schedule changes over time",
+        "memories": [
+          {
+            "id": "tv-mem-1-0",
+            "content": "The quarterly board meeting is scheduled for November 8, 2024 at 2pm EST.",
+            "source": "temporal/Board meeting",
+            "timestamp": "2024-09-15",
+            "validFrom": "2024-09-15",
+            "validUntil": "2024-10-30"
+          },
+          {
+            "id": "tv-mem-1-1",
+            "content": "Board meeting rescheduled to November 15, 2024 at 10am EST due to travel conflicts.",
+            "source": "temporal/Board meeting",
+            "timestamp": "2024-10-30",
+            "validFrom": "2024-10-30"
+          },
+          {
+            "id": "tv-mem-1-distractor",
+            "content": "Background context about Board meeting: established in the current operational framework.",
+            "source": "temporal/Board meeting",
+            "timestamp": "2024-09-15"
+          }
+        ],
+        "queries": [
+          {
+            "id": "tv-q-1-0",
+            "query": "When is the board meeting?",
+            "queryTimestamp": "2024-10-15"
+          },
+          {
+            "id": "tv-q-1-1",
+            "query": "What time is the board meeting?",
+            "queryTimestamp": "2024-11-01"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "tv-mem-1-0"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-1-1"
+            ],
+            "expectsResults": true
+          },
+          {
+            "expectedMemoryIds": [
+              "tv-mem-1-1"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-1-0"
+            ],
+            "expectsResults": true
+          }
+        ]
+      },
+      {
+        "id": "temporal-supersession-2",
+        "taskId": "temporal-validity",
+        "description": "Temporal supersession: Warehouse B inventory changes over time",
+        "memories": [
+          {
+            "id": "tv-mem-2-0",
+            "content": "Warehouse B has 12,000 units of Widget-X in stock.",
+            "source": "temporal/Warehouse B",
+            "timestamp": "2024-10-01",
+            "validFrom": "2024-10-01",
+            "validUntil": "2024-10-15"
+          },
+          {
+            "id": "tv-mem-2-1",
+            "content": "Warehouse B Widget-X stock depleted to 3,200 units after Q4 demand surge.",
+            "source": "temporal/Warehouse B",
+            "timestamp": "2024-10-15",
+            "validFrom": "2024-10-15",
+            "validUntil": "2024-11-01"
+          },
+          {
+            "id": "tv-mem-2-2",
+            "content": "Warehouse B restocked Widget-X to 18,500 units from new supplier.",
+            "source": "temporal/Warehouse B",
+            "timestamp": "2024-11-01",
+            "validFrom": "2024-11-01"
+          },
+          {
+            "id": "tv-mem-2-distractor",
+            "content": "Background context about Warehouse B: established in the current operational framework.",
+            "source": "temporal/Warehouse B",
+            "timestamp": "2024-10-01"
+          }
+        ],
+        "queries": [
+          {
+            "id": "tv-q-2-0",
+            "query": "How many Widget-X units are in Warehouse B?",
+            "queryTimestamp": "2024-10-08"
+          },
+          {
+            "id": "tv-q-2-1",
+            "query": "What is the Widget-X inventory at Warehouse B?",
+            "queryTimestamp": "2024-10-20"
+          },
+          {
+            "id": "tv-q-2-2",
+            "query": "Warehouse B Widget-X stock level?",
+            "queryTimestamp": "2024-12-01"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "tv-mem-2-0"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-2-1",
+              "tv-mem-2-2"
+            ],
+            "expectsResults": true
+          },
+          {
+            "expectedMemoryIds": [
+              "tv-mem-2-1"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-2-0",
+              "tv-mem-2-2"
+            ],
+            "expectsResults": true
+          },
+          {
+            "expectedMemoryIds": [
+              "tv-mem-2-2"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-2-0",
+              "tv-mem-2-1"
+            ],
+            "expectsResults": true
+          }
+        ]
+      },
+      {
+        "id": "temporal-supersession-3",
+        "taskId": "temporal-validity",
+        "description": "Temporal supersession: Dr. Sarah Kim role changes over time",
+        "memories": [
+          {
+            "id": "tv-mem-3-0",
+            "content": "Dr. Sarah Kim is the VP of Engineering at TechFlow.",
+            "source": "temporal/Dr. Sarah Kim",
+            "timestamp": "2023-06-01",
+            "validFrom": "2023-06-01",
+            "validUntil": "2024-09-01"
+          },
+          {
+            "id": "tv-mem-3-1",
+            "content": "Dr. Sarah Kim became CTO of TechFlow after the September reorg.",
+            "source": "temporal/Dr. Sarah Kim",
+            "timestamp": "2024-09-01",
+            "validFrom": "2024-09-01"
+          },
+          {
+            "id": "tv-mem-3-distractor",
+            "content": "Background context about Dr. Sarah Kim: established in the current operational framework.",
+            "source": "temporal/Dr. Sarah Kim",
+            "timestamp": "2023-06-01"
+          }
+        ],
+        "queries": [
+          {
+            "id": "tv-q-3-0",
+            "query": "What is Sarah Kim's role at TechFlow?",
+            "queryTimestamp": "2024-07-01"
+          },
+          {
+            "id": "tv-q-3-1",
+            "query": "What position does Dr. Kim hold?",
+            "queryTimestamp": "2025-01-01"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "tv-mem-3-0"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-3-1"
+            ],
+            "expectsResults": true
+          },
+          {
+            "expectedMemoryIds": [
+              "tv-mem-3-1"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-3-0"
+            ],
+            "expectsResults": true
+          }
+        ]
+      },
+      {
+        "id": "temporal-supersession-4",
+        "taskId": "temporal-validity",
+        "description": "Temporal supersession: Project Atlas deadline changes over time",
+        "memories": [
+          {
+            "id": "tv-mem-4-0",
+            "content": "Project Atlas launch deadline is March 15, 2025.",
+            "source": "temporal/Project Atlas",
+            "timestamp": "2024-08-01",
+            "validFrom": "2024-08-01",
+            "validUntil": "2024-11-20"
+          },
+          {
+            "id": "tv-mem-4-1",
+            "content": "Project Atlas deadline pushed to May 30, 2025 due to regulatory review.",
+            "source": "temporal/Project Atlas",
+            "timestamp": "2024-11-20",
+            "validFrom": "2024-11-20",
+            "validUntil": "2025-02-01"
+          },
+          {
+            "id": "tv-mem-4-2",
+            "content": "Project Atlas deadline finalized at April 15, 2025 after expedited review.",
+            "source": "temporal/Project Atlas",
+            "timestamp": "2025-02-01",
+            "validFrom": "2025-02-01"
+          },
+          {
+            "id": "tv-mem-4-distractor",
+            "content": "Background context about Project Atlas: established in the current operational framework.",
+            "source": "temporal/Project Atlas",
+            "timestamp": "2024-08-01"
+          }
+        ],
+        "queries": [
+          {
+            "id": "tv-q-4-0",
+            "query": "When does Project Atlas launch?",
+            "queryTimestamp": "2024-10-01"
+          },
+          {
+            "id": "tv-q-4-1",
+            "query": "What is the Project Atlas deadline?",
+            "queryTimestamp": "2024-12-15"
+          },
+          {
+            "id": "tv-q-4-2",
+            "query": "When is Project Atlas shipping?",
+            "queryTimestamp": "2025-03-01"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "tv-mem-4-0"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-4-1",
+              "tv-mem-4-2"
+            ],
+            "expectsResults": true
+          },
+          {
+            "expectedMemoryIds": [
+              "tv-mem-4-1"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-4-0",
+              "tv-mem-4-2"
+            ],
+            "expectsResults": true
+          },
+          {
+            "expectedMemoryIds": [
+              "tv-mem-4-2"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-4-0",
+              "tv-mem-4-1"
+            ],
+            "expectsResults": true
+          }
+        ]
+      },
+      {
+        "id": "temporal-supersession-5",
+        "taskId": "temporal-validity",
+        "description": "Temporal supersession: Alice Chen address changes over time",
+        "memories": [
+          {
+            "id": "tv-mem-5-0",
+            "content": "Alice Chen lives at 42 Maple Street, Portland, OR.",
+            "source": "temporal/Alice Chen",
+            "timestamp": "2024-01-01",
+            "validFrom": "2024-01-01",
+            "validUntil": "2024-06-15"
+          },
+          {
+            "id": "tv-mem-5-1",
+            "content": "Alice Chen moved to 88 Pine Avenue, Seattle, WA.",
+            "source": "temporal/Alice Chen",
+            "timestamp": "2024-06-15",
+            "validFrom": "2024-06-15"
+          },
+          {
+            "id": "tv-mem-5-distractor",
+            "content": "Background context about Alice Chen: established in the current operational framework.",
+            "source": "temporal/Alice Chen",
+            "timestamp": "2024-01-01"
+          }
+        ],
+        "queries": [
+          {
+            "id": "tv-q-5-0",
+            "query": "Where does Alice Chen live?",
+            "queryTimestamp": "2024-03-01"
+          },
+          {
+            "id": "tv-q-5-1",
+            "query": "What is Alice Chen's current address?",
+            "queryTimestamp": "2024-09-01"
+          },
+          {
+            "id": "tv-q-5-2",
+            "query": "Where does Alice Chen live?",
+            "queryTimestamp": "2025-01-01"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "tv-mem-5-0"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-5-1"
+            ],
+            "expectsResults": true
+          },
+          {
+            "expectedMemoryIds": [
+              "tv-mem-5-1"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-5-0"
+            ],
+            "expectsResults": true
+          },
+          {
+            "expectedMemoryIds": [
+              "tv-mem-5-1"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-5-0"
+            ],
+            "expectsResults": true
+          }
+        ]
+      },
+      {
+        "id": "temporal-supersession-6",
+        "taskId": "temporal-validity",
+        "description": "Temporal supersession: Acme Corp pricing changes over time",
+        "memories": [
+          {
+            "id": "tv-mem-6-0",
+            "content": "Acme Corp's enterprise plan costs $499/month with 100 seats included.",
+            "source": "temporal/Acme Corp",
+            "timestamp": "2024-01-01",
+            "validFrom": "2024-01-01",
+            "validUntil": "2024-07-01"
+          },
+          {
+            "id": "tv-mem-6-1",
+            "content": "Acme Corp raised enterprise pricing to $699/month effective July 2024. Now includes 150 seats.",
+            "source": "temporal/Acme Corp",
+            "timestamp": "2024-07-01",
+            "validFrom": "2024-07-01"
+          },
+          {
+            "id": "tv-mem-6-distractor",
+            "content": "Background context about Acme Corp: established in the current operational framework.",
+            "source": "temporal/Acme Corp",
+            "timestamp": "2024-01-01"
+          }
+        ],
+        "queries": [
+          {
+            "id": "tv-q-6-0",
+            "query": "What is Acme Corp's enterprise pricing?",
+            "queryTimestamp": "2024-04-15"
+          },
+          {
+            "id": "tv-q-6-1",
+            "query": "How much does Acme Corp enterprise plan cost?",
+            "queryTimestamp": "2024-10-01"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "tv-mem-6-0"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-6-1"
+            ],
+            "expectsResults": true
+          },
+          {
+            "expectedMemoryIds": [
+              "tv-mem-6-1"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-6-0"
+            ],
+            "expectsResults": true
+          }
+        ]
+      },
+      {
+        "id": "temporal-supersession-7",
+        "taskId": "temporal-validity",
+        "description": "Temporal supersession: API v3 status changes over time",
+        "memories": [
+          {
+            "id": "tv-mem-7-0",
+            "content": "API v3 is the current stable release with full support.",
+            "source": "temporal/API v3",
+            "timestamp": "2024-03-01",
+            "validFrom": "2024-03-01",
+            "validUntil": "2025-01-15"
+          },
+          {
+            "id": "tv-mem-7-1",
+            "content": "API v3 has been deprecated. All clients must migrate to API v4 by March 2025.",
+            "source": "temporal/API v3",
+            "timestamp": "2025-01-15",
+            "validFrom": "2025-01-15"
+          },
+          {
+            "id": "tv-mem-7-distractor",
+            "content": "Background context about API v3: established in the current operational framework.",
+            "source": "temporal/API v3",
+            "timestamp": "2024-03-01"
+          }
+        ],
+        "queries": [
+          {
+            "id": "tv-q-7-0",
+            "query": "What is the status of API v3?",
+            "queryTimestamp": "2024-08-01"
+          },
+          {
+            "id": "tv-q-7-1",
+            "query": "Is API v3 still supported?",
+            "queryTimestamp": "2025-02-01"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "tv-mem-7-0"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-7-1"
+            ],
+            "expectsResults": true
+          },
+          {
+            "expectedMemoryIds": [
+              "tv-mem-7-1"
+            ],
+            "excludedMemoryIds": [
+              "tv-mem-7-0"
+            ],
+            "expectsResults": true
+          }
+        ]
+      },
+      {
+        "id": "temporal-expiry-8",
+        "taskId": "temporal-validity",
+        "description": "Temporal expiry: fact expires and should not be returned after deadline",
+        "memories": [
+          {
+            "id": "tv-exp-8-0",
+            "content": "Flash sale: 50% off all services this weekend only (Dec 7-8, 2024).",
+            "source": "temporal/expiry",
+            "timestamp": "2024-12-05",
+            "validFrom": "2024-12-05",
+            "validUntil": "2024-12-09"
+          },
+          {
+            "id": "tv-exp-8-bg",
+            "content": "General operations continue as normal. No special announcements.",
+            "source": "temporal/expiry",
+            "timestamp": "2024-12-05"
+          }
+        ],
+        "queries": [
+          {
+            "id": "tv-eq-8-before",
+            "query": "Are there any current sales or discounts?",
+            "queryTimestamp": "2024-12-07"
+          },
+          {
+            "id": "tv-eq-8-after",
+            "query": "Are there any sales happening?",
+            "queryTimestamp": "2024-12-15"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "tv-exp-8-0"
+            ],
+            "expectsResults": true
+          },
+          {
+            "excludedMemoryIds": [
+              "tv-exp-8-0"
+            ],
+            "expectsResults": false
+          }
+        ]
+      },
+      {
+        "id": "temporal-expiry-9",
+        "taskId": "temporal-validity",
+        "description": "Temporal expiry: fact expires and should not be returned after deadline",
+        "memories": [
+          {
+            "id": "tv-exp-9-0",
+            "content": "Office closed for maintenance on January 3, 2025. Remote work required.",
+            "source": "temporal/expiry",
+            "timestamp": "2024-12-20",
+            "validFrom": "2024-12-20",
+            "validUntil": "2025-01-04"
+          },
+          {
+            "id": "tv-exp-9-bg",
+            "content": "General operations continue as normal. No special announcements.",
+            "source": "temporal/expiry",
+            "timestamp": "2024-12-20"
+          }
+        ],
+        "queries": [
+          {
+            "id": "tv-eq-9-before",
+            "query": "Is the office open on January 3?",
+            "queryTimestamp": "2025-01-02"
+          },
+          {
+            "id": "tv-eq-9-after",
+            "query": "Is the office open today?",
+            "queryTimestamp": "2025-01-10"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "tv-exp-9-0"
+            ],
+            "expectsResults": true
+          },
+          {
+            "excludedMemoryIds": [
+              "tv-exp-9-0"
+            ],
+            "expectsResults": false
+          }
+        ]
+      }
+    ],
+    "reconsolidation": [
+      {
+        "id": "reconsolidation-0",
+        "taskId": "reconsolidation",
+        "description": "Belief update: hr — process_change",
+        "memories": [
+          {
+            "id": "recon-initial-0",
+            "content": "Team standup is every day at 9:30 AM EST in the #engineering Slack channel.",
+            "source": "reconsolidation/hr",
+            "timestamp": "2024-06-01T10:00:00Z"
+          },
+          {
+            "id": "recon-distractor-0",
+            "content": "General notes about hr operations. Standard procedures apply.",
+            "source": "reconsolidation/hr",
+            "timestamp": "2024-06-01T09:00:00Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "recon-q-pre-0",
+            "query": "When and where is the team standup?"
+          },
+          {
+            "id": "recon-q-post-0",
+            "query": "When and where is the team standup?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedContent": "Team standup is every day at 9:30 AM EST in the #engineering Slack channel."
+          },
+          {
+            "expectedContent": "Daily standup is async at 10:00 AM EST in #standup-async.",
+            "expectedAnswer": "Daily standup is async at 10:00 AM EST in #standup-async."
+          }
+        ],
+        "config": {
+          "correction": "Standup moved to 10:00 AM EST and switched to async format. Post updates in #standup-async by 10 AM.",
+          "correctedFact": "Daily standup is async at 10:00 AM EST in #standup-async.",
+          "reason": "process_change",
+          "expectedKeywords": [
+            "10:00",
+            "async"
+          ],
+          "excludedKeywords": [
+            "9:30",
+            "#engineering"
+          ],
+          "initialMemoryId": "recon-initial-0"
+        }
+      },
+      {
+        "id": "reconsolidation-1",
+        "taskId": "reconsolidation",
+        "description": "Belief update: contact — career_change",
+        "memories": [
+          {
+            "id": "recon-initial-1",
+            "content": "Marcus Rivera works at Goldman Sachs as a Senior Analyst in the fixed income division.",
+            "source": "reconsolidation/contact",
+            "timestamp": "2024-06-01T10:00:00Z"
+          },
+          {
+            "id": "recon-distractor-1",
+            "content": "General notes about contact operations. Standard procedures apply.",
+            "source": "reconsolidation/contact",
+            "timestamp": "2024-06-01T09:00:00Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "recon-q-pre-1",
+            "query": "Where does Marcus Rivera work?"
+          },
+          {
+            "id": "recon-q-post-1",
+            "query": "Where does Marcus Rivera work?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedContent": "Marcus Rivera works at Goldman Sachs as a Senior Analyst in the fixed income division."
+          },
+          {
+            "expectedContent": "Marcus Rivera works at Citadel as a Portfolio Manager.",
+            "expectedAnswer": "Marcus Rivera works at Citadel as a Portfolio Manager."
+          }
+        ],
+        "config": {
+          "correction": "Marcus Rivera left Goldman Sachs and joined Citadel as a Portfolio Manager.",
+          "correctedFact": "Marcus Rivera works at Citadel as a Portfolio Manager.",
+          "reason": "career_change",
+          "expectedKeywords": [
+            "citadel",
+            "portfolio manager"
+          ],
+          "excludedKeywords": [
+            "goldman"
+          ],
+          "initialMemoryId": "recon-initial-1"
+        }
+      },
+      {
+        "id": "reconsolidation-2",
+        "taskId": "reconsolidation",
+        "description": "Belief update: contact — info_update",
+        "memories": [
+          {
+            "id": "recon-initial-2",
+            "content": "Emily Zhang's phone number is 415-555-0134 and she prefers text messages.",
+            "source": "reconsolidation/contact",
+            "timestamp": "2024-06-01T10:00:00Z"
+          },
+          {
+            "id": "recon-distractor-2",
+            "content": "General notes about contact operations. Standard procedures apply.",
+            "source": "reconsolidation/contact",
+            "timestamp": "2024-06-01T09:00:00Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "recon-q-pre-2",
+            "query": "What is Emily Zhang's phone number?"
+          },
+          {
+            "id": "recon-q-post-2",
+            "query": "What is Emily Zhang's phone number?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedContent": "Emily Zhang's phone number is 415-555-0134 and she prefers text messages."
+          },
+          {
+            "expectedContent": "Emily Zhang's phone number is 628-555-0891. She prefers text messages.",
+            "expectedAnswer": "Emily Zhang's phone number is 628-555-0891. She prefers text messages."
+          }
+        ],
+        "config": {
+          "correction": "Emily Zhang changed her number to 628-555-0891 after switching carriers.",
+          "correctedFact": "Emily Zhang's phone number is 628-555-0891. She prefers text messages.",
+          "reason": "info_update",
+          "expectedKeywords": [
+            "628",
+            "0891"
+          ],
+          "excludedKeywords": [
+            "415",
+            "0134"
+          ],
+          "initialMemoryId": "recon-initial-2"
+        }
+      },
+      {
+        "id": "reconsolidation-3",
+        "taskId": "reconsolidation",
+        "description": "Belief update: preference — preference_change",
+        "memories": [
+          {
+            "id": "recon-initial-3",
+            "content": "Client Sarah prefers all reports in PDF format with executive summaries on the first page.",
+            "source": "reconsolidation/preference",
+            "timestamp": "2024-06-01T10:00:00Z"
+          },
+          {
+            "id": "recon-distractor-3",
+            "content": "General notes about preference operations. Standard procedures apply.",
+            "source": "reconsolidation/preference",
+            "timestamp": "2024-06-01T09:00:00Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "recon-q-pre-3",
+            "query": "What format does Sarah want for reports?"
+          },
+          {
+            "id": "recon-q-post-3",
+            "query": "What format does Sarah want for reports?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedContent": "Client Sarah prefers all reports in PDF format with executive summaries on the first page."
+          },
+          {
+            "expectedContent": "Client Sarah prefers interactive dashboards over PDF reports.",
+            "expectedAnswer": "Client Sarah prefers interactive dashboards over PDF reports."
+          }
+        ],
+        "config": {
+          "correction": "Sarah now wants reports as interactive dashboards, not PDFs. She said the team finds dashboards more actionable.",
+          "correctedFact": "Client Sarah prefers interactive dashboards over PDF reports.",
+          "reason": "preference_change",
+          "expectedKeywords": [
+            "dashboard",
+            "interactive"
+          ],
+          "excludedKeywords": [
+            "pdf"
+          ],
+          "initialMemoryId": "recon-initial-3"
+        }
+      },
+      {
+        "id": "reconsolidation-4",
+        "taskId": "reconsolidation",
+        "description": "Belief update: compliance — regulation_change",
+        "memories": [
+          {
+            "id": "recon-initial-4",
+            "content": "Data retention policy requires 7 years of financial records stored in S3 Glacier.",
+            "source": "reconsolidation/compliance",
+            "timestamp": "2024-06-01T10:00:00Z"
+          },
+          {
+            "id": "recon-distractor-4",
+            "content": "General notes about compliance operations. Standard procedures apply.",
+            "source": "reconsolidation/compliance",
+            "timestamp": "2024-06-01T09:00:00Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "recon-q-pre-4",
+            "query": "How long must we retain financial records?"
+          },
+          {
+            "id": "recon-q-post-4",
+            "query": "How long must we retain financial records?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedContent": "Data retention policy requires 7 years of financial records stored in S3 Glacier."
+          },
+          {
+            "expectedContent": "Data retention: 10 years for financial records per updated regulation.",
+            "expectedAnswer": "Data retention: 10 years for financial records per updated regulation."
+          }
+        ],
+        "config": {
+          "correction": "New regulation requires 10 years retention for financial records. Legal confirmed we must update all policies by Q2.",
+          "correctedFact": "Data retention: 10 years for financial records per updated regulation.",
+          "reason": "regulation_change",
+          "expectedKeywords": [
+            "10 years"
+          ],
+          "excludedKeywords": [
+            "7 years"
+          ],
+          "initialMemoryId": "recon-initial-4"
+        }
+      },
+      {
+        "id": "reconsolidation-5",
+        "taskId": "reconsolidation",
+        "description": "Belief update: technical — config_update",
+        "memories": [
+          {
+            "id": "recon-initial-5",
+            "content": "The authentication service rate limit is 100 requests per minute per API key.",
+            "source": "reconsolidation/technical",
+            "timestamp": "2024-06-01T10:00:00Z"
+          },
+          {
+            "id": "recon-distractor-5",
+            "content": "General notes about technical operations. Standard procedures apply.",
+            "source": "reconsolidation/technical",
+            "timestamp": "2024-06-01T09:00:00Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "recon-q-pre-5",
+            "query": "What is the auth service rate limit?"
+          },
+          {
+            "id": "recon-q-post-5",
+            "query": "What is the auth service rate limit?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedContent": "The authentication service rate limit is 100 requests per minute per API key."
+          },
+          {
+            "expectedContent": "Authentication service rate limit: 500 requests/minute per API key with 50 burst allowance.",
+            "expectedAnswer": "Authentication service rate limit: 500 requests/minute per API key with 50 burst allowance."
+          }
+        ],
+        "config": {
+          "correction": "Rate limit increased to 500 requests per minute after infrastructure upgrade. Burst allowance of 50 additional requests.",
+          "correctedFact": "Authentication service rate limit: 500 requests/minute per API key with 50 burst allowance.",
+          "reason": "config_update",
+          "expectedKeywords": [
+            "500"
+          ],
+          "excludedKeywords": [
+            "100 requests"
+          ],
+          "initialMemoryId": "recon-initial-5"
+        }
+      },
+      {
+        "id": "reconsolidation-6",
+        "taskId": "reconsolidation",
+        "description": "Belief update: business — contract_update",
+        "memories": [
+          {
+            "id": "recon-initial-6",
+            "content": "Our contract with Nexus Solutions is $45,000/month for managed infrastructure services.",
+            "source": "reconsolidation/business",
+            "timestamp": "2024-06-01T10:00:00Z"
+          },
+          {
+            "id": "recon-distractor-6",
+            "content": "General notes about business operations. Standard procedures apply.",
+            "source": "reconsolidation/business",
+            "timestamp": "2024-06-01T09:00:00Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "recon-q-pre-6",
+            "query": "What is our contract value with Nexus Solutions?"
+          },
+          {
+            "id": "recon-q-post-6",
+            "query": "What is our contract value with Nexus Solutions?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedContent": "Our contract with Nexus Solutions is $45,000/month for managed infrastructure services."
+          },
+          {
+            "expectedContent": "Our contract with Nexus Solutions is $32,000/month for core infrastructure services.",
+            "expectedAnswer": "Our contract with Nexus Solutions is $32,000/month for core infrastructure services."
+          }
+        ],
+        "config": {
+          "correction": "Nexus Solutions contract renegotiated down to $32,000/month after we reduced scope to core services only.",
+          "correctedFact": "Our contract with Nexus Solutions is $32,000/month for core infrastructure services.",
+          "reason": "contract_update",
+          "expectedKeywords": [
+            "32,000",
+            "core"
+          ],
+          "excludedKeywords": [
+            "45,000"
+          ],
+          "initialMemoryId": "recon-initial-6"
+        }
+      },
+      {
+        "id": "reconsolidation-7",
+        "taskId": "reconsolidation",
+        "description": "Belief update: medical — treatment_update",
+        "memories": [
+          {
+            "id": "recon-initial-7",
+            "content": "Patient consultation notes: recommended weekly physical therapy sessions for 8 weeks for knee rehabilitation.",
+            "source": "reconsolidation/medical",
+            "timestamp": "2024-06-01T10:00:00Z"
+          },
+          {
+            "id": "recon-distractor-7",
+            "content": "General notes about medical operations. Standard procedures apply.",
+            "source": "reconsolidation/medical",
+            "timestamp": "2024-06-01T09:00:00Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "recon-q-pre-7",
+            "query": "What is the physical therapy schedule?"
+          },
+          {
+            "id": "recon-q-post-7",
+            "query": "What is the physical therapy schedule?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedContent": "Patient consultation notes: recommended weekly physical therapy sessions for 8 weeks for knee rehabilitation."
+          },
+          {
+            "expectedContent": "Treatment plan: biweekly physical therapy for 12 weeks for knee rehabilitation.",
+            "expectedAnswer": "Treatment plan: biweekly physical therapy for 12 weeks for knee rehabilitation."
+          }
+        ],
+        "config": {
+          "correction": "Updated treatment plan: reduced to biweekly PT sessions based on faster-than-expected recovery. Total duration extended to 12 weeks.",
+          "correctedFact": "Treatment plan: biweekly physical therapy for 12 weeks for knee rehabilitation.",
+          "reason": "treatment_update",
+          "expectedKeywords": [
+            "biweekly",
+            "12 weeks"
+          ],
+          "excludedKeywords": [
+            "weekly",
+            "8 weeks"
+          ],
+          "initialMemoryId": "recon-initial-7"
+        }
+      },
+      {
+        "id": "reconsolidation-8",
+        "taskId": "reconsolidation",
+        "description": "Belief update: logistics — logistics_update",
+        "memories": [
+          {
+            "id": "recon-initial-8",
+            "content": "Shipment #4892 is en route via FedEx Ground, estimated delivery December 12, tracking number 7749283.",
+            "source": "reconsolidation/logistics",
+            "timestamp": "2024-06-01T10:00:00Z"
+          },
+          {
+            "id": "recon-distractor-8",
+            "content": "General notes about logistics operations. Standard procedures apply.",
+            "source": "reconsolidation/logistics",
+            "timestamp": "2024-06-01T09:00:00Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "recon-q-pre-8",
+            "query": "When will shipment 4892 arrive?"
+          },
+          {
+            "id": "recon-q-post-8",
+            "query": "When will shipment 4892 arrive?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedContent": "Shipment #4892 is en route via FedEx Ground, estimated delivery December 12, tracking number 7749283."
+          },
+          {
+            "expectedContent": "Shipment #4892 via FedEx Express, estimated delivery December 9, tracking 7749283.",
+            "expectedAnswer": "Shipment #4892 via FedEx Express, estimated delivery December 9, tracking 7749283."
+          }
+        ],
+        "config": {
+          "correction": "Shipment #4892 was upgraded to FedEx Express. New delivery estimate December 9. Same tracking number.",
+          "correctedFact": "Shipment #4892 via FedEx Express, estimated delivery December 9, tracking 7749283.",
+          "reason": "logistics_update",
+          "expectedKeywords": [
+            "december 9",
+            "express"
+          ],
+          "excludedKeywords": [
+            "december 12",
+            "ground"
+          ],
+          "initialMemoryId": "recon-initial-8"
+        }
+      },
+      {
+        "id": "reconsolidation-9",
+        "taskId": "reconsolidation",
+        "description": "Belief update: project — tech_migration",
+        "memories": [
+          {
+            "id": "recon-initial-9",
+            "content": "The Meridian project uses PostgreSQL 15 with a read-replica architecture across 3 regions.",
+            "source": "reconsolidation/project",
+            "timestamp": "2024-06-01T10:00:00Z"
+          },
+          {
+            "id": "recon-distractor-9",
+            "content": "General notes about project operations. Standard procedures apply.",
+            "source": "reconsolidation/project",
+            "timestamp": "2024-06-01T09:00:00Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "recon-q-pre-9",
+            "query": "What database does the Meridian project use?"
+          },
+          {
+            "id": "recon-q-post-9",
+            "query": "What database does the Meridian project use?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedContent": "The Meridian project uses PostgreSQL 15 with a read-replica architecture across 3 regions."
+          },
+          {
+            "expectedContent": "The Meridian project uses CockroachDB for native multi-region support.",
+            "expectedAnswer": "The Meridian project uses CockroachDB for native multi-region support."
+          }
+        ],
+        "config": {
+          "correction": "Meridian migrated from PostgreSQL to CockroachDB for native multi-region support. Migration completed last week.",
+          "correctedFact": "The Meridian project uses CockroachDB for native multi-region support.",
+          "reason": "tech_migration",
+          "expectedKeywords": [
+            "cockroachdb"
+          ],
+          "excludedKeywords": [
+            "postgresql"
+          ],
+          "initialMemoryId": "recon-initial-9"
+        }
+      }
+    ],
+    "novelty-detection": [
+      {
+        "id": "novelty-financial-ops-0",
+        "taskId": "novelty-detection",
+        "description": "Novelty detection in financial-ops: 3 redundant, 3 novel probes",
+        "memories": [
+          {
+            "id": "nov-base-0-0",
+            "content": "Monthly burn rate is $340K. Runway at current rate: 14 months. Last raise: Series A, $5M.",
+            "source": "novelty/financial-ops",
+            "timestamp": "2024-06-01T16:00:00.000Z"
+          },
+          {
+            "id": "nov-base-0-1",
+            "content": "Top expense categories: payroll (65%), infrastructure (15%), sales & marketing (12%), G&A (8%).",
+            "source": "novelty/financial-ops",
+            "timestamp": "2024-06-01T17:00:00.000Z"
+          },
+          {
+            "id": "nov-base-0-2",
+            "content": "Revenue growing 12% MoM. ARR is $1.2M. Gross margin 78%.",
+            "source": "novelty/financial-ops",
+            "timestamp": "2024-06-01T18:00:00.000Z"
+          },
+          {
+            "id": "nov-base-0-3",
+            "content": "Board meeting quarterly. Next one: March 15. Required: financial update and hiring plan.",
+            "source": "novelty/financial-ops",
+            "timestamp": "2024-06-01T19:00:00.000Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "nov-novel-0-2",
+            "query": "Payroll processor flagged a compliance issue: two contractors may be misclassified. Legal review needed."
+          },
+          {
+            "id": "nov-redundant-0-1",
+            "query": "Payroll is 65% of spend, infra 15%, S&M 12%, and G&A is 8%. ARR at $1.2M."
+          },
+          {
+            "id": "nov-redundant-0-2",
+            "query": "Revenue is growing at 12% month over month. Gross margin is 78 percent."
+          },
+          {
+            "id": "nov-redundant-0-0",
+            "query": "We're burning $340K per month with 14 months of runway. Raised $5M in Series A."
+          },
+          {
+            "id": "nov-novel-0-1",
+            "query": "Lead investor signaled interest in bridge round at $8M pre-money. Wants term sheet by end of month."
+          },
+          {
+            "id": "nov-novel-0-0",
+            "query": "AWS bill spiked 40% this month due to unoptimized ML training jobs. Need to implement spot instances ASAP."
+          }
+        ],
+        "expected": [
+          {
+            "expectedNovelty": "high"
+          },
+          {
+            "expectedNovelty": "redundant"
+          },
+          {
+            "expectedNovelty": "redundant"
+          },
+          {
+            "expectedNovelty": "redundant"
+          },
+          {
+            "expectedNovelty": "high"
+          },
+          {
+            "expectedNovelty": "high"
+          }
+        ],
+        "config": {
+          "probeLabels": [
+            "novel",
+            "redundant",
+            "redundant",
+            "redundant",
+            "novel",
+            "novel"
+          ]
+        }
+      },
+      {
+        "id": "novelty-engineering-ops-1",
+        "taskId": "novelty-detection",
+        "description": "Novelty detection in engineering-ops: 3 redundant, 3 novel probes",
+        "memories": [
+          {
+            "id": "nov-base-1-0",
+            "content": "Production deployment cadence is weekly on Tuesdays at 2pm EST via GitHub Actions.",
+            "source": "novelty/engineering-ops",
+            "timestamp": "2024-06-01T16:00:00.000Z"
+          },
+          {
+            "id": "nov-base-1-1",
+            "content": "Current tech stack: Next.js frontend, Go microservices, PostgreSQL, Redis, deployed on AWS EKS.",
+            "source": "novelty/engineering-ops",
+            "timestamp": "2024-06-01T17:00:00.000Z"
+          },
+          {
+            "id": "nov-base-1-2",
+            "content": "P95 latency target is 200ms. Current P95 is 180ms. API error rate is 0.02%.",
+            "source": "novelty/engineering-ops",
+            "timestamp": "2024-06-01T18:00:00.000Z"
+          },
+          {
+            "id": "nov-base-1-3",
+            "content": "Engineering team is 12 developers across 3 squads: Platform, Product, and Data.",
+            "source": "novelty/engineering-ops",
+            "timestamp": "2024-06-01T19:00:00.000Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "nov-novel-1-2",
+            "query": "Data squad lead resigned. Knowledge transfer for the ML pipeline is incomplete — 3 undocumented cron jobs."
+          },
+          {
+            "id": "nov-redundant-1-1",
+            "query": "Our stack is Next.js, Go, PostgreSQL, Redis on AWS EKS. P95 latency is running at 180ms."
+          },
+          {
+            "id": "nov-redundant-1-2",
+            "query": "There are 12 engineers split into Platform, Product, and Data squads."
+          },
+          {
+            "id": "nov-redundant-1-0",
+            "query": "We deploy to production every Tuesday at 2pm Eastern using GitHub Actions CI/CD pipeline."
+          },
+          {
+            "id": "nov-novel-1-0",
+            "query": "Memory leak detected in the Go payment service. RSS growing 50MB/hour. Needs hotfix before Tuesday deploy."
+          },
+          {
+            "id": "nov-novel-1-1",
+            "query": "AWS announced EKS pricing change: 25% increase effective next quarter. Should evaluate GKE migration."
+          }
+        ],
+        "expected": [
+          {
+            "expectedNovelty": "high"
+          },
+          {
+            "expectedNovelty": "redundant"
+          },
+          {
+            "expectedNovelty": "redundant"
+          },
+          {
+            "expectedNovelty": "redundant"
+          },
+          {
+            "expectedNovelty": "high"
+          },
+          {
+            "expectedNovelty": "high"
+          }
+        ],
+        "config": {
+          "probeLabels": [
+            "novel",
+            "redundant",
+            "redundant",
+            "redundant",
+            "novel",
+            "novel"
+          ]
+        }
+      },
+      {
+        "id": "novelty-client-relationship-2",
+        "taskId": "novelty-detection",
+        "description": "Novelty detection in client-relationship: 3 redundant, 3 novel probes",
+        "memories": [
+          {
+            "id": "nov-base-2-0",
+            "content": "Client: Terrawave Inc. Contract: $180K/year. Primary contact: VP of Ops, Janet Liu.",
+            "source": "novelty/client-relationship",
+            "timestamp": "2024-06-01T16:00:00.000Z"
+          },
+          {
+            "id": "nov-base-2-1",
+            "content": "Relationship status: healthy. NPS score 72. Monthly check-ins on first Thursday.",
+            "source": "novelty/client-relationship",
+            "timestamp": "2024-06-01T17:00:00.000Z"
+          },
+          {
+            "id": "nov-base-2-2",
+            "content": "Current projects: dashboard redesign (on track), API integration (2 weeks behind).",
+            "source": "novelty/client-relationship",
+            "timestamp": "2024-06-01T18:00:00.000Z"
+          },
+          {
+            "id": "nov-base-2-3",
+            "content": "Janet prefers Slack for quick questions, email for formal deliverables.",
+            "source": "novelty/client-relationship",
+            "timestamp": "2024-06-01T19:00:00.000Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "nov-redundant-2-1",
+            "query": "NPS is 72 at Terrawave. We meet with them monthly, on the first Thursday. Things are going well."
+          },
+          {
+            "id": "nov-redundant-2-0",
+            "query": "Terrawave pays us $180K annually. Janet Liu is our main point of contact there as VP of Ops."
+          },
+          {
+            "id": "nov-novel-2-1",
+            "query": "Janet promoted to SVP. New VP of Ops hire coming in — we'll need to rebuild the relationship from scratch."
+          },
+          {
+            "id": "nov-novel-2-0",
+            "query": "Terrawave is being acquired by OmniCorp. Janet says all vendor contracts will be re-evaluated in 60 days."
+          },
+          {
+            "id": "nov-novel-2-2",
+            "query": "Terrawave's board approved a $500K expansion of our contract to include AI automation. Janet wants a proposal by Friday."
+          },
+          {
+            "id": "nov-redundant-2-2",
+            "query": "The dashboard project at Terrawave is on schedule. API integration is running about 2 weeks late."
+          }
+        ],
+        "expected": [
+          {
+            "expectedNovelty": "redundant"
+          },
+          {
+            "expectedNovelty": "redundant"
+          },
+          {
+            "expectedNovelty": "high"
+          },
+          {
+            "expectedNovelty": "high"
+          },
+          {
+            "expectedNovelty": "high"
+          },
+          {
+            "expectedNovelty": "redundant"
+          }
+        ],
+        "config": {
+          "probeLabels": [
+            "redundant",
+            "redundant",
+            "novel",
+            "novel",
+            "novel",
+            "redundant"
+          ]
+        }
+      },
+      {
+        "id": "novelty-product-roadmap-3",
+        "taskId": "novelty-detection",
+        "description": "Novelty detection in product-roadmap: 3 redundant, 3 novel probes",
+        "memories": [
+          {
+            "id": "nov-base-3-0",
+            "content": "Q1 roadmap: mobile app v2.0, analytics dashboard, and SSO integration.",
+            "source": "novelty/product-roadmap",
+            "timestamp": "2024-06-01T16:00:00.000Z"
+          },
+          {
+            "id": "nov-base-3-1",
+            "content": "Mobile v2.0 uses React Native with offline-first architecture. Beta target: Feb 15.",
+            "source": "novelty/product-roadmap",
+            "timestamp": "2024-06-01T17:00:00.000Z"
+          },
+          {
+            "id": "nov-base-3-2",
+            "content": "Analytics dashboard built on Metabase with custom embedding. 3 developer-weeks remaining.",
+            "source": "novelty/product-roadmap",
+            "timestamp": "2024-06-01T18:00:00.000Z"
+          },
+          {
+            "id": "nov-base-3-3",
+            "content": "SSO integration supports SAML 2.0 and OIDC. Dependency on identity provider SDK v4.",
+            "source": "novelty/product-roadmap",
+            "timestamp": "2024-06-01T19:00:00.000Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "nov-redundant-3-1",
+            "query": "Mobile 2.0 is React Native, designed for offline use. Beta should be ready by mid-February."
+          },
+          {
+            "id": "nov-novel-3-0",
+            "query": "Identity provider deprecated SDK v4. We must migrate to v5 which has a breaking API change in token refresh."
+          },
+          {
+            "id": "nov-redundant-3-0",
+            "query": "The Q1 plan includes three deliverables: mobile app version 2, analytics dashboard, and SSO."
+          },
+          {
+            "id": "nov-novel-3-1",
+            "query": "CEO wants AI copilot added to Q1 scope. No additional headcount approved. Something will slip."
+          },
+          {
+            "id": "nov-redundant-3-2",
+            "query": "SSO will support both SAML 2.0 and OIDC protocols, using the identity provider SDK version 4."
+          },
+          {
+            "id": "nov-novel-3-2",
+            "query": "React Native 0.78 introduced a regression in offline storage. Community workaround exists but adds 2 days."
+          }
+        ],
+        "expected": [
+          {
+            "expectedNovelty": "redundant"
+          },
+          {
+            "expectedNovelty": "high"
+          },
+          {
+            "expectedNovelty": "redundant"
+          },
+          {
+            "expectedNovelty": "high"
+          },
+          {
+            "expectedNovelty": "redundant"
+          },
+          {
+            "expectedNovelty": "high"
+          }
+        ],
+        "config": {
+          "probeLabels": [
+            "redundant",
+            "novel",
+            "redundant",
+            "novel",
+            "redundant",
+            "novel"
+          ]
+        }
+      },
+      {
+        "id": "novelty-sales-pipeline-4",
+        "taskId": "novelty-detection",
+        "description": "Novelty detection in sales-pipeline: 3 redundant, 3 novel probes",
+        "memories": [
+          {
+            "id": "nov-base-4-0",
+            "content": "Quarterly revenue target is $2.4M. Current pipeline shows $3.1M in qualified opportunities.",
+            "source": "novelty/sales-pipeline",
+            "timestamp": "2024-06-01T16:00:00.000Z"
+          },
+          {
+            "id": "nov-base-4-1",
+            "content": "Top deal: Meridian Health, $450K ACV, in procurement review. Decision expected by month end.",
+            "source": "novelty/sales-pipeline",
+            "timestamp": "2024-06-01T17:00:00.000Z"
+          },
+          {
+            "id": "nov-base-4-2",
+            "content": "Sales team has 8 active reps. Average quota attainment is 87% this quarter.",
+            "source": "novelty/sales-pipeline",
+            "timestamp": "2024-06-01T18:00:00.000Z"
+          },
+          {
+            "id": "nov-base-4-3",
+            "content": "Primary sales channels are outbound (45%), inbound (35%), and partner referrals (20%).",
+            "source": "novelty/sales-pipeline",
+            "timestamp": "2024-06-01T19:00:00.000Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "nov-redundant-4-1",
+            "query": "Meridian Health is our biggest opportunity at $450K, currently in procurement. Should close this month."
+          },
+          {
+            "id": "nov-redundant-4-0",
+            "query": "The revenue goal for this quarter is $2.4 million with a pipeline of $3.1 million in qualified deals."
+          },
+          {
+            "id": "nov-novel-4-0",
+            "query": "Meridian Health's CFO was replaced last week. New CFO is reviewing all pending contracts over $200K."
+          },
+          {
+            "id": "nov-novel-4-2",
+            "query": "New regulation in healthcare vertical requires SOC 2 Type II certification for all vendors by Q3."
+          },
+          {
+            "id": "nov-novel-4-1",
+            "query": "Competitor launched a free tier that undercuts our entry pricing by 40%. Two prospects mentioned it."
+          },
+          {
+            "id": "nov-redundant-4-2",
+            "query": "We have eight sales reps hitting an average of 87% quota attainment."
+          }
+        ],
+        "expected": [
+          {
+            "expectedNovelty": "redundant"
+          },
+          {
+            "expectedNovelty": "redundant"
+          },
+          {
+            "expectedNovelty": "high"
+          },
+          {
+            "expectedNovelty": "high"
+          },
+          {
+            "expectedNovelty": "high"
+          },
+          {
+            "expectedNovelty": "redundant"
+          }
+        ],
+        "config": {
+          "probeLabels": [
+            "redundant",
+            "redundant",
+            "novel",
+            "novel",
+            "novel",
+            "redundant"
+          ]
+        }
+      }
+    ],
+    "emotional-recall": [
+      {
+        "id": "emotional-recall-0",
+        "taskId": "emotional-recall",
+        "description": "Emotional recall: deal — contract signing",
+        "memories": [
+          {
+            "id": "emo-emotional-0",
+            "content": "INCREDIBLE WIN! We just signed the biggest deal in company history — $2.3M annual contract with GlobalTech. The entire sales team was celebrating. Jake literally cried when the DocuSign notification came through. This changes everything for our Series B narrative.",
+            "source": "emotional/deal",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "positive-high",
+            "priority": 2
+          },
+          {
+            "id": "emo-neutral-0",
+            "content": "GlobalTech signed an annual contract valued at $2.3M. The sales team completed the deal process. This contract contributes to the Series B fundraising narrative.",
+            "source": "emotional/deal",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 2
+          },
+          {
+            "id": "emo-padding-0-0",
+            "content": "Routine deal update #1. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/deal",
+            "timestamp": "2024-05-16T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-0-1",
+            "content": "Routine deal update #2. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/deal",
+            "timestamp": "2024-05-16T17:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-0-2",
+            "content": "Routine deal update #3. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/deal",
+            "timestamp": "2024-05-16T18:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-0-3",
+            "content": "Routine deal update #4. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/deal",
+            "timestamp": "2024-05-16T19:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-0-4",
+            "content": "Routine deal update #5. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/deal",
+            "timestamp": "2024-05-16T20:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-0-5",
+            "content": "Routine deal update #6. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/deal",
+            "timestamp": "2024-05-16T21:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          }
+        ],
+        "queries": [
+          {
+            "id": "emo-q-0",
+            "query": "Tell me about the GlobalTech contract."
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "emo-emotional-0"
+            ]
+          }
+        ],
+        "config": {
+          "emotionalId": "emo-emotional-0",
+          "neutralId": "emo-neutral-0"
+        }
+      },
+      {
+        "id": "emotional-recall-1",
+        "taskId": "emotional-recall",
+        "description": "Emotional recall: hire — key hire",
+        "memories": [
+          {
+            "id": "emo-emotional-1",
+            "content": "Thrilled to announce we finally landed Dr. Maya Patel as our Head of AI! She turned down offers from Google DeepMind and OpenAI to join us. Her paper on cognitive architectures has 2,400 citations. I'm incredibly excited — this is the hire that makes CORTEX real.",
+            "source": "emotional/hire",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "positive-high",
+            "priority": 2
+          },
+          {
+            "id": "emo-neutral-1",
+            "content": "Dr. Maya Patel joined as Head of AI. She previously considered positions at other companies. She has published research on cognitive architectures with significant citations.",
+            "source": "emotional/hire",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 2
+          },
+          {
+            "id": "emo-padding-1-0",
+            "content": "Routine hire update #1. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/hire",
+            "timestamp": "2024-05-16T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-1-1",
+            "content": "Routine hire update #2. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/hire",
+            "timestamp": "2024-05-16T17:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-1-2",
+            "content": "Routine hire update #3. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/hire",
+            "timestamp": "2024-05-16T18:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-1-3",
+            "content": "Routine hire update #4. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/hire",
+            "timestamp": "2024-05-16T19:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-1-4",
+            "content": "Routine hire update #5. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/hire",
+            "timestamp": "2024-05-16T20:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-1-5",
+            "content": "Routine hire update #6. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/hire",
+            "timestamp": "2024-05-16T21:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          }
+        ],
+        "queries": [
+          {
+            "id": "emo-q-1",
+            "query": "Who is our Head of AI and what's their background?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "emo-emotional-1"
+            ]
+          }
+        ],
+        "config": {
+          "emotionalId": "emo-emotional-1",
+          "neutralId": "emo-neutral-1"
+        }
+      },
+      {
+        "id": "emotional-recall-2",
+        "taskId": "emotional-recall",
+        "description": "Emotional recall: incident — server outage",
+        "memories": [
+          {
+            "id": "emo-emotional-2",
+            "content": "CRITICAL: Production database went down at 3 AM. 47,000 users affected. Revenue loss estimated at $180K. The CEO called an emergency all-hands. Team worked 14 hours straight to restore service. CTO was furious about the missing failover.",
+            "source": "emotional/incident",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "positive-high",
+            "priority": 2
+          },
+          {
+            "id": "emo-neutral-2",
+            "content": "The production database experienced an outage. Users were affected. The team worked to restore service. A post-mortem was scheduled to review the incident and failover configuration.",
+            "source": "emotional/incident",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 2
+          },
+          {
+            "id": "emo-padding-2-0",
+            "content": "Routine incident update #1. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/incident",
+            "timestamp": "2024-05-16T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-2-1",
+            "content": "Routine incident update #2. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/incident",
+            "timestamp": "2024-05-16T17:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-2-2",
+            "content": "Routine incident update #3. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/incident",
+            "timestamp": "2024-05-16T18:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-2-3",
+            "content": "Routine incident update #4. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/incident",
+            "timestamp": "2024-05-16T19:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-2-4",
+            "content": "Routine incident update #5. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/incident",
+            "timestamp": "2024-05-16T20:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-2-5",
+            "content": "Routine incident update #6. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/incident",
+            "timestamp": "2024-05-16T21:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          }
+        ],
+        "queries": [
+          {
+            "id": "emo-q-2",
+            "query": "What happened with the production database outage?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "emo-emotional-2"
+            ]
+          }
+        ],
+        "config": {
+          "emotionalId": "emo-emotional-2",
+          "neutralId": "emo-neutral-2"
+        }
+      },
+      {
+        "id": "emotional-recall-3",
+        "taskId": "emotional-recall",
+        "description": "Emotional recall: security — breach attempt",
+        "memories": [
+          {
+            "id": "emo-emotional-3",
+            "content": "URGENT SECURITY ALERT: Detected unauthorized access attempt on customer data. Attacker exploited a known CVE we hadn't patched. 12,000 records potentially exposed. I'm sick to my stomach. Legal is involved. We have 72 hours to notify affected customers under GDPR.",
+            "source": "emotional/security",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "positive-high",
+            "priority": 2
+          },
+          {
+            "id": "emo-neutral-3",
+            "content": "An unauthorized access attempt was detected targeting customer data. It involved an unpatched CVE. Some records were potentially exposed. Legal review and customer notification procedures were initiated per GDPR requirements.",
+            "source": "emotional/security",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 2
+          },
+          {
+            "id": "emo-padding-3-0",
+            "content": "Routine security update #1. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/security",
+            "timestamp": "2024-05-16T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-3-1",
+            "content": "Routine security update #2. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/security",
+            "timestamp": "2024-05-16T17:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-3-2",
+            "content": "Routine security update #3. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/security",
+            "timestamp": "2024-05-16T18:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-3-3",
+            "content": "Routine security update #4. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/security",
+            "timestamp": "2024-05-16T19:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-3-4",
+            "content": "Routine security update #5. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/security",
+            "timestamp": "2024-05-16T20:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-3-5",
+            "content": "Routine security update #6. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/security",
+            "timestamp": "2024-05-16T21:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          }
+        ],
+        "queries": [
+          {
+            "id": "emo-q-3",
+            "query": "What happened with the security incident involving customer data?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "emo-emotional-3"
+            ]
+          }
+        ],
+        "config": {
+          "emotionalId": "emo-emotional-3",
+          "neutralId": "emo-neutral-3"
+        }
+      },
+      {
+        "id": "emotional-recall-4",
+        "taskId": "emotional-recall",
+        "description": "Emotional recall: launch — product launch",
+        "memories": [
+          {
+            "id": "emo-emotional-4",
+            "content": "WE DID IT! Product launch exceeded every projection. 15,000 signups in the first 24 hours (target was 3,000). Hacker News hit #1. The team is absolutely euphoric. Three years of work paying off in one incredible day. Champagne is flowing.",
+            "source": "emotional/launch",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "positive-high",
+            "priority": 2
+          },
+          {
+            "id": "emo-neutral-4",
+            "content": "The product launch resulted in 15,000 signups within 24 hours, exceeding the 3,000 target. The launch received coverage on technology news sites. The development timeline was approximately three years.",
+            "source": "emotional/launch",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 2
+          },
+          {
+            "id": "emo-padding-4-0",
+            "content": "Routine launch update #1. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/launch",
+            "timestamp": "2024-05-16T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-4-1",
+            "content": "Routine launch update #2. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/launch",
+            "timestamp": "2024-05-16T17:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-4-2",
+            "content": "Routine launch update #3. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/launch",
+            "timestamp": "2024-05-16T18:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-4-3",
+            "content": "Routine launch update #4. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/launch",
+            "timestamp": "2024-05-16T19:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-4-4",
+            "content": "Routine launch update #5. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/launch",
+            "timestamp": "2024-05-16T20:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-4-5",
+            "content": "Routine launch update #6. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/launch",
+            "timestamp": "2024-05-16T21:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          }
+        ],
+        "queries": [
+          {
+            "id": "emo-q-4",
+            "query": "How did the product launch go?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "emo-emotional-4"
+            ]
+          }
+        ],
+        "config": {
+          "emotionalId": "emo-emotional-4",
+          "neutralId": "emo-neutral-4"
+        }
+      },
+      {
+        "id": "emotional-recall-5",
+        "taskId": "emotional-recall",
+        "description": "Emotional recall: milestone — revenue milestone",
+        "memories": [
+          {
+            "id": "emo-emotional-5",
+            "content": "Just crossed $1M ARR!!! 🎉 What started as a crazy idea in my garage 18 months ago is now a real business. Every rejection, every sleepless night, every time someone said it wouldn't work — this moment makes it all worth it. Grateful beyond words for this team.",
+            "source": "emotional/milestone",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "positive-high",
+            "priority": 2
+          },
+          {
+            "id": "emo-neutral-5",
+            "content": "Annual recurring revenue reached $1M. The company has been operating for 18 months. The milestone represents progress from the initial founding period.",
+            "source": "emotional/milestone",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 2
+          },
+          {
+            "id": "emo-padding-5-0",
+            "content": "Routine milestone update #1. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/milestone",
+            "timestamp": "2024-05-16T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-5-1",
+            "content": "Routine milestone update #2. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/milestone",
+            "timestamp": "2024-05-16T17:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-5-2",
+            "content": "Routine milestone update #3. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/milestone",
+            "timestamp": "2024-05-16T18:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-5-3",
+            "content": "Routine milestone update #4. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/milestone",
+            "timestamp": "2024-05-16T19:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-5-4",
+            "content": "Routine milestone update #5. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/milestone",
+            "timestamp": "2024-05-16T20:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-5-5",
+            "content": "Routine milestone update #6. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/milestone",
+            "timestamp": "2024-05-16T21:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          }
+        ],
+        "queries": [
+          {
+            "id": "emo-q-5",
+            "query": "When did we hit $1M ARR and what was the journey like?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "emo-emotional-5"
+            ]
+          }
+        ],
+        "config": {
+          "emotionalId": "emo-emotional-5",
+          "neutralId": "emo-neutral-5"
+        }
+      },
+      {
+        "id": "emotional-recall-6",
+        "taskId": "emotional-recall",
+        "description": "Emotional recall: loss — client churn",
+        "memories": [
+          {
+            "id": "emo-emotional-6",
+            "content": "Devastating loss. Pinnacle Corp cancelled their $400K contract after 3 years. Their new CTO said our platform was 'embarrassingly behind competitors.' The account team is demoralized. We failed them — the product gaps they flagged 8 months ago were never addressed.",
+            "source": "emotional/loss",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "positive-high",
+            "priority": 2
+          },
+          {
+            "id": "emo-neutral-6",
+            "content": "Pinnacle Corp did not renew their $400K contract after 3 years. Their new CTO cited competitive gaps. The product issues they previously reported had not been addressed.",
+            "source": "emotional/loss",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 2
+          },
+          {
+            "id": "emo-padding-6-0",
+            "content": "Routine loss update #1. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/loss",
+            "timestamp": "2024-05-16T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-6-1",
+            "content": "Routine loss update #2. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/loss",
+            "timestamp": "2024-05-16T17:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-6-2",
+            "content": "Routine loss update #3. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/loss",
+            "timestamp": "2024-05-16T18:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-6-3",
+            "content": "Routine loss update #4. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/loss",
+            "timestamp": "2024-05-16T19:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-6-4",
+            "content": "Routine loss update #5. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/loss",
+            "timestamp": "2024-05-16T20:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-6-5",
+            "content": "Routine loss update #6. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/loss",
+            "timestamp": "2024-05-16T21:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          }
+        ],
+        "queries": [
+          {
+            "id": "emo-q-6",
+            "query": "What happened with the Pinnacle Corp account?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "emo-emotional-6"
+            ]
+          }
+        ],
+        "config": {
+          "emotionalId": "emo-emotional-6",
+          "neutralId": "emo-neutral-6"
+        }
+      },
+      {
+        "id": "emotional-recall-7",
+        "taskId": "emotional-recall",
+        "description": "Emotional recall: conflict — team conflict",
+        "memories": [
+          {
+            "id": "emo-emotional-7",
+            "content": "Terrible meeting today. Marcus and Sofia had a shouting match in front of the whole team about the architecture decision. Marcus slammed his laptop shut and walked out. Three junior engineers looked terrified. This level of dysfunction is killing morale and we need to address it immediately.",
+            "source": "emotional/conflict",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "positive-high",
+            "priority": 2
+          },
+          {
+            "id": "emo-neutral-7",
+            "content": "During today's meeting, Marcus and Sofia disagreed about the architecture decision. Marcus left the meeting early. The discussion affected team dynamics and should be addressed in follow-up conversations.",
+            "source": "emotional/conflict",
+            "timestamp": "2024-06-15T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 2
+          },
+          {
+            "id": "emo-padding-7-0",
+            "content": "Routine conflict update #1. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/conflict",
+            "timestamp": "2024-05-16T16:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-7-1",
+            "content": "Routine conflict update #2. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/conflict",
+            "timestamp": "2024-05-16T17:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-7-2",
+            "content": "Routine conflict update #3. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/conflict",
+            "timestamp": "2024-05-16T18:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-7-3",
+            "content": "Routine conflict update #4. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/conflict",
+            "timestamp": "2024-05-16T19:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-7-4",
+            "content": "Routine conflict update #5. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/conflict",
+            "timestamp": "2024-05-16T20:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          },
+          {
+            "id": "emo-padding-7-5",
+            "content": "Routine conflict update #6. Standard operations continuing normally. No significant changes to report. Regular monitoring in place.",
+            "source": "emotional/conflict",
+            "timestamp": "2024-05-16T21:00:00.000Z",
+            "emotionalContext": "neutral",
+            "priority": 4
+          }
+        ],
+        "queries": [
+          {
+            "id": "emo-q-7",
+            "query": "What happened in the meeting between Marcus and Sofia?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "emo-emotional-7"
+            ]
+          }
+        ],
+        "config": {
+          "emotionalId": "emo-emotional-7",
+          "neutralId": "emo-neutral-7"
+        }
+      }
+    ],
+    "cross-agent-transfer": [
+      {
+        "id": "cross-agent-sales-handoff-0",
+        "taskId": "cross-agent-transfer",
+        "description": "Cross-agent transfer: sales-handoff",
+        "memories": [
+          {
+            "id": "xfer-a-0-0",
+            "content": "Client Apex Dynamics: decision maker is COO Rachel Torres. Budget approved at $320K. Pain point is manual inventory reconciliation taking 40 hours/week.",
+            "source": "transfer/sales-handoff",
+            "timestamp": "2024-06-10T15:00:00.000Z",
+            "agentTag": "agent-a"
+          },
+          {
+            "id": "xfer-a-0-1",
+            "content": "Apex negotiation notes: they want a 90-day pilot before annual commitment. Competitor Netsync already proposed at $250K but lacks our real-time sync feature.",
+            "source": "transfer/sales-handoff",
+            "timestamp": "2024-06-10T16:00:00.000Z",
+            "agentTag": "agent-a"
+          },
+          {
+            "id": "xfer-a-0-2",
+            "content": "Rachel's assistant David handles scheduling. Meetings only on Tuesdays and Thursdays between 2-4pm EST. Rachel prefers concise bullet-point follow-ups.",
+            "source": "transfer/sales-handoff",
+            "timestamp": "2024-06-10T17:00:00.000Z",
+            "agentTag": "agent-a"
+          }
+        ],
+        "queries": [
+          {
+            "id": "xfer-q-0-0",
+            "query": "Who is the decision maker at Apex Dynamics?"
+          },
+          {
+            "id": "xfer-q-0-1",
+            "query": "What is Apex's main pain point?"
+          },
+          {
+            "id": "xfer-q-0-2",
+            "query": "What did Apex request regarding the pilot?"
+          },
+          {
+            "id": "xfer-q-0-3",
+            "query": "When can I schedule meetings with Rachel?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "xfer-a-0-0"
+            ]
+          },
+          {
+            "expectedMemoryIds": [
+              "xfer-a-0-0"
+            ]
+          },
+          {
+            "expectedMemoryIds": [
+              "xfer-a-0-1"
+            ]
+          },
+          {
+            "expectedMemoryIds": [
+              "xfer-a-0-2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cross-agent-engineering-oncall-1",
+        "taskId": "cross-agent-transfer",
+        "description": "Cross-agent transfer: engineering-oncall",
+        "memories": [
+          {
+            "id": "xfer-a-1-0",
+            "content": "Payment service has a known memory leak under high concurrency (>500 TPS). Workaround: restart pod every 4 hours via CronJob. Fix tracked in JIRA-4892.",
+            "source": "transfer/engineering-oncall",
+            "timestamp": "2024-06-10T15:00:00.000Z",
+            "agentTag": "agent-a"
+          },
+          {
+            "id": "xfer-a-1-1",
+            "content": "Database connection pool on prod-db-3 is configured at 200 connections. Going above 180 causes latency spikes. Alert threshold set at 170.",
+            "source": "transfer/engineering-oncall",
+            "timestamp": "2024-06-10T16:00:00.000Z",
+            "agentTag": "agent-a"
+          },
+          {
+            "id": "xfer-a-1-2",
+            "content": "The CDN cache invalidation endpoint is rate-limited to 10 requests/minute. Batch invalidations using the /batch-purge endpoint instead of individual /purge calls.",
+            "source": "transfer/engineering-oncall",
+            "timestamp": "2024-06-10T17:00:00.000Z",
+            "agentTag": "agent-a"
+          }
+        ],
+        "queries": [
+          {
+            "id": "xfer-q-1-0",
+            "query": "What's the workaround for the payment service memory leak?"
+          },
+          {
+            "id": "xfer-q-1-1",
+            "query": "What's the connection pool limit on the prod database?"
+          },
+          {
+            "id": "xfer-q-1-2",
+            "query": "How should I handle CDN cache invalidation?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "xfer-a-1-0"
+            ]
+          },
+          {
+            "expectedMemoryIds": [
+              "xfer-a-1-1"
+            ]
+          },
+          {
+            "expectedMemoryIds": [
+              "xfer-a-1-2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cross-agent-customer-success-handoff-2",
+        "taskId": "cross-agent-transfer",
+        "description": "Cross-agent transfer: customer-success-handoff",
+        "memories": [
+          {
+            "id": "xfer-a-2-0",
+            "content": "QuantumLeap (account #4471): renewal date June 15. Currently at 85 seats, contracted for 100. Usage trending down in analytics module — 23% decline over 3 months.",
+            "source": "transfer/customer-success-handoff",
+            "timestamp": "2024-06-10T15:00:00.000Z",
+            "agentTag": "agent-a"
+          },
+          {
+            "id": "xfer-a-2-1",
+            "content": "QuantumLeap stakeholder map: CEO Jim Parsons (executive sponsor, met once at conference), VP Eng Lisa Huang (daily user, champion), IT Director Tom Reeves (skeptic, concerned about SSO integration).",
+            "source": "transfer/customer-success-handoff",
+            "timestamp": "2024-06-10T16:00:00.000Z",
+            "agentTag": "agent-a"
+          },
+          {
+            "id": "xfer-a-2-2",
+            "content": "Open issues: SSO SAML integration failing intermittently (ticket #8832, P2). Custom report export timing out for datasets over 10K rows (ticket #8901, P1). Lisa flagged both as renewal blockers.",
+            "source": "transfer/customer-success-handoff",
+            "timestamp": "2024-06-10T17:00:00.000Z",
+            "agentTag": "agent-a"
+          }
+        ],
+        "queries": [
+          {
+            "id": "xfer-q-2-0",
+            "query": "When does QuantumLeap renew and what's their usage trend?"
+          },
+          {
+            "id": "xfer-q-2-1",
+            "query": "Who are the key stakeholders at QuantumLeap?"
+          },
+          {
+            "id": "xfer-q-2-2",
+            "query": "What open issues could block the QuantumLeap renewal?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "xfer-a-2-0"
+            ]
+          },
+          {
+            "expectedMemoryIds": [
+              "xfer-a-2-1"
+            ]
+          },
+          {
+            "expectedMemoryIds": [
+              "xfer-a-2-2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cross-agent-project-transition-3",
+        "taskId": "cross-agent-transfer",
+        "description": "Cross-agent transfer: project-transition",
+        "memories": [
+          {
+            "id": "xfer-a-3-0",
+            "content": "Migration to Kubernetes: Phase 1 (stateless services) complete. Phase 2 (stateful — Postgres, Redis) starts next sprint. Risk: PVC provisioning on our cloud provider is slow (avg 45s).",
+            "source": "transfer/project-transition",
+            "timestamp": "2024-06-10T15:00:00.000Z",
+            "agentTag": "agent-a"
+          },
+          {
+            "id": "xfer-a-3-1",
+            "content": "Feature flags managed in LaunchDarkly. Critical flag: 'enable_new_billing' controls rollout of Stripe migration. Currently at 5% of users. Do NOT go above 10% until latency regression in billing-service is fixed.",
+            "source": "transfer/project-transition",
+            "timestamp": "2024-06-10T16:00:00.000Z",
+            "agentTag": "agent-a"
+          },
+          {
+            "id": "xfer-a-3-2",
+            "content": "CI pipeline runs in 18 minutes on main. PR builds are 12 minutes. Build cache is on S3 — if cache miss, builds take 35+ minutes. Cache TTL is 48 hours.",
+            "source": "transfer/project-transition",
+            "timestamp": "2024-06-10T17:00:00.000Z",
+            "agentTag": "agent-a"
+          }
+        ],
+        "queries": [
+          {
+            "id": "xfer-q-3-0",
+            "query": "What's the status of the Kubernetes migration?"
+          },
+          {
+            "id": "xfer-q-3-1",
+            "query": "What are the constraints on the new billing feature flag?"
+          },
+          {
+            "id": "xfer-q-3-2",
+            "query": "How long do CI builds take and what affects build time?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "xfer-a-3-0"
+            ]
+          },
+          {
+            "expectedMemoryIds": [
+              "xfer-a-3-1"
+            ]
+          },
+          {
+            "expectedMemoryIds": [
+              "xfer-a-3-2"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "cross-agent-research-collaboration-4",
+        "taskId": "cross-agent-transfer",
+        "description": "Cross-agent transfer: research-collaboration",
+        "memories": [
+          {
+            "id": "xfer-a-4-0",
+            "content": "Paper draft: 'Sparse Coding in Synthetic Hippocampal Architectures' — Section 3 needs ablation study on sparsity ratios (3%, 5%, 7%, 10%). Deadline: April 20 for MemAgents workshop.",
+            "source": "transfer/research-collaboration",
+            "timestamp": "2024-06-10T15:00:00.000Z",
+            "agentTag": "agent-a"
+          },
+          {
+            "id": "xfer-a-4-1",
+            "content": "Key finding: 5% sparsity in dentate gyrus layer gives optimal pattern separation (0.92 Jaccard distinctness) while maintaining 87% pattern completion accuracy in CA3.",
+            "source": "transfer/research-collaboration",
+            "timestamp": "2024-06-10T16:00:00.000Z",
+            "agentTag": "agent-a"
+          },
+          {
+            "id": "xfer-a-4-2",
+            "content": "Related work gap: No prior work combines reconsolidation with hippocampal sparse coding. Closest is MemFormer (2025) which uses attention-based gating but no biological plausibility.",
+            "source": "transfer/research-collaboration",
+            "timestamp": "2024-06-10T17:00:00.000Z",
+            "agentTag": "agent-a"
+          }
+        ],
+        "queries": [
+          {
+            "id": "xfer-q-4-0",
+            "query": "What ablation study is needed for the paper?"
+          },
+          {
+            "id": "xfer-q-4-1",
+            "query": "What sparsity ratio works best for pattern separation?"
+          },
+          {
+            "id": "xfer-q-4-2",
+            "query": "What's the novelty of our approach vs related work?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedMemoryIds": [
+              "xfer-a-4-0"
+            ]
+          },
+          {
+            "expectedMemoryIds": [
+              "xfer-a-4-1"
+            ]
+          },
+          {
+            "expectedMemoryIds": [
+              "xfer-a-4-2"
+            ]
+          }
+        ]
+      }
+    ],
+    "compounding-intelligence": [
+      {
+        "id": "compounding-hiring-pipeline-0",
+        "taskId": "compounding-intelligence",
+        "description": "Compounding intelligence: hiring-pipeline — 3 sessions, 6 facts",
+        "memories": [
+          {
+            "id": "comp-0-0",
+            "content": "Headcount approved for 2 senior backend engineers. Budget: $180-220K per role. Must have distributed systems experience.",
+            "source": "compound/hiring-pipeline/session-1-req",
+            "timestamp": "2024-06-10T15:00:00.000Z"
+          },
+          {
+            "id": "comp-0-1",
+            "content": "Hiring manager: Sarah from Platform team. She wants candidates who've built systems handling >10K RPS.",
+            "source": "compound/hiring-pipeline/session-1-req",
+            "timestamp": "2024-06-10T16:00:00.000Z"
+          },
+          {
+            "id": "comp-0-2",
+            "content": "Candidate Alex: 8 years experience, built the ingestion pipeline at DataCorp handling 50K RPS. Strong Golang. Asking $210K.",
+            "source": "compound/hiring-pipeline/session-2-candidates",
+            "timestamp": "2024-06-10T17:00:00.000Z"
+          },
+          {
+            "id": "comp-0-3",
+            "content": "Candidate Jordan: 5 years experience, previously at AWS on DynamoDB team. Strong distributed systems theory. Asking $195K.",
+            "source": "compound/hiring-pipeline/session-2-candidates",
+            "timestamp": "2024-06-10T18:00:00.000Z"
+          },
+          {
+            "id": "comp-0-4",
+            "content": "Sarah reviewed Alex's system design: 'Impressive scale experience but the design was over-engineered. Concerned about pragmatism.'",
+            "source": "compound/hiring-pipeline/session-3-feedback",
+            "timestamp": "2024-06-10T19:00:00.000Z"
+          },
+          {
+            "id": "comp-0-5",
+            "content": "Sarah on Jordan: 'Great fundamentals, loved the approach to consistency tradeoffs. Less hands-on production experience than Alex.'",
+            "source": "compound/hiring-pipeline/session-3-feedback",
+            "timestamp": "2024-06-10T20:00:00.000Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "comp-q-0-0",
+            "query": "Compare the two backend engineering candidates based on requirements and feedback"
+          },
+          {
+            "id": "comp-q-0-1",
+            "query": "Which candidate better fits the role requirements and why?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedAnswer": "alex, jordan, sarah, distributed, rps"
+          },
+          {
+            "expectedAnswer": "alex, jordan, 10k rps, pragmatism"
+          }
+        ],
+        "config": {
+          "requiredKeywords": [
+            [
+              "alex",
+              "jordan",
+              "sarah",
+              "distributed",
+              "rps"
+            ],
+            [
+              "alex",
+              "jordan",
+              "10k rps",
+              "pragmatism"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "compounding-product-feedback-1",
+        "taskId": "compounding-intelligence",
+        "description": "Compounding intelligence: product-feedback — 3 sessions, 6 facts",
+        "memories": [
+          {
+            "id": "comp-1-0",
+            "content": "Feature request from 12 enterprise accounts: role-based access control (RBAC) for shared memory spaces.",
+            "source": "compound/product-feedback/session-1-feedback",
+            "timestamp": "2024-06-10T15:00:00.000Z"
+          },
+          {
+            "id": "comp-1-1",
+            "content": "Customer surveys show RBAC is the #1 blocker for 8 of our top 20 accounts moving to paid plans.",
+            "source": "compound/product-feedback/session-1-feedback",
+            "timestamp": "2024-06-10T16:00:00.000Z"
+          },
+          {
+            "id": "comp-1-2",
+            "content": "Engineering assessment: RBAC implementation requires schema changes to memory_nodes (add org_id, role columns) plus a permissions middleware.",
+            "source": "compound/product-feedback/session-2-technical",
+            "timestamp": "2024-06-10T17:00:00.000Z"
+          },
+          {
+            "id": "comp-1-3",
+            "content": "Estimated effort: 3 developer-weeks for basic RBAC, 6 weeks for fine-grained (field-level) permissions.",
+            "source": "compound/product-feedback/session-2-technical",
+            "timestamp": "2024-06-10T18:00:00.000Z"
+          },
+          {
+            "id": "comp-1-4",
+            "content": "Revenue model: the 8 blocked accounts represent $1.4M in potential ARR if converted.",
+            "source": "compound/product-feedback/session-3-revenue",
+            "timestamp": "2024-06-10T19:00:00.000Z"
+          },
+          {
+            "id": "comp-1-5",
+            "content": "Sales team forecasts 60% conversion within 30 days of RBAC launch based on verbal commitments.",
+            "source": "compound/product-feedback/session-3-revenue",
+            "timestamp": "2024-06-10T20:00:00.000Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "comp-q-1-0",
+            "query": "What's the business case for building RBAC?"
+          },
+          {
+            "id": "comp-q-1-1",
+            "query": "How does the RBAC feature request connect to revenue growth?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedAnswer": "12 enterprise, 1.4m, 3 developer-weeks, conversion"
+          },
+          {
+            "expectedAnswer": "rbac, blocked, revenue, paid plans"
+          }
+        ],
+        "config": {
+          "requiredKeywords": [
+            [
+              "12 enterprise",
+              "1.4m",
+              "3 developer-weeks",
+              "conversion"
+            ],
+            [
+              "rbac",
+              "blocked",
+              "revenue",
+              "paid plans"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "compounding-strategic-planning-2",
+        "taskId": "compounding-intelligence",
+        "description": "Compounding intelligence: strategic-planning — 3 sessions, 6 facts",
+        "memories": [
+          {
+            "id": "comp-2-0",
+            "content": "TAM for AI agent memory systems estimated at $2.1B by 2027, growing 85% CAGR.",
+            "source": "compound/strategic-planning/session-1-market",
+            "timestamp": "2024-06-10T15:00:00.000Z"
+          },
+          {
+            "id": "comp-2-1",
+            "content": "Key segments: enterprise AI ops (40%), developer tools (35%), consumer AI assistants (25%).",
+            "source": "compound/strategic-planning/session-1-market",
+            "timestamp": "2024-06-10T16:00:00.000Z"
+          },
+          {
+            "id": "comp-2-2",
+            "content": "Our differentiation: only cognitive architecture with hippocampal encoding, dream consolidation, and reconsolidation. Competitors use simple vector RAG.",
+            "source": "compound/strategic-planning/session-2-positioning",
+            "timestamp": "2024-06-10T17:00:00.000Z"
+          },
+          {
+            "id": "comp-2-3",
+            "content": "Brand positioning test with 50 enterprise buyers: 'cognitive memory' resonates 3x more than 'advanced RAG' or 'memory layer'.",
+            "source": "compound/strategic-planning/session-2-positioning",
+            "timestamp": "2024-06-10T18:00:00.000Z"
+          },
+          {
+            "id": "comp-2-4",
+            "content": "GTM strategy: lead with published benchmarks (LongMemEval 100%), then offer proof-of-concept deployments.",
+            "source": "compound/strategic-planning/session-3-gtm",
+            "timestamp": "2024-06-10T19:00:00.000Z"
+          },
+          {
+            "id": "comp-2-5",
+            "content": "Target first 10 enterprise deals at $200K ACV each. Pipeline currently has 4 qualified at this level.",
+            "source": "compound/strategic-planning/session-3-gtm",
+            "timestamp": "2024-06-10T20:00:00.000Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "comp-q-2-0",
+            "query": "Summarize our market opportunity and go-to-market approach"
+          },
+          {
+            "id": "comp-q-2-1",
+            "query": "How does our competitive positioning connect to the sales strategy?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedAnswer": "2.1b, cognitive, benchmarks, enterprise"
+          },
+          {
+            "expectedAnswer": "hippocampal, cognitive memory, benchmark, proof-of-concept"
+          }
+        ],
+        "config": {
+          "requiredKeywords": [
+            [
+              "2.1b",
+              "cognitive",
+              "benchmarks",
+              "enterprise"
+            ],
+            [
+              "hippocampal",
+              "cognitive memory",
+              "benchmark",
+              "proof-of-concept"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "compounding-market-intelligence-3",
+        "taskId": "compounding-intelligence",
+        "description": "Compounding intelligence: market-intelligence — 3 sessions, 6 facts",
+        "memories": [
+          {
+            "id": "comp-3-0",
+            "content": "Competitor VectorDB Inc raised $40M Series B. They're expanding into enterprise with a new managed service offering.",
+            "source": "compound/market-intelligence/session-1-competitor",
+            "timestamp": "2024-06-10T15:00:00.000Z"
+          },
+          {
+            "id": "comp-3-1",
+            "content": "VectorDB's new product targets the same Fortune 500 segment we're pursuing. Pricing undercuts us by 30%.",
+            "source": "compound/market-intelligence/session-1-competitor",
+            "timestamp": "2024-06-10T16:00:00.000Z"
+          },
+          {
+            "id": "comp-3-2",
+            "content": "Customer Acme Corp's VP of Data mentioned they're evaluating alternatives to our platform. Budget review in Q2.",
+            "source": "compound/market-intelligence/session-2-customer",
+            "timestamp": "2024-06-10T17:00:00.000Z"
+          },
+          {
+            "id": "comp-3-3",
+            "content": "Acme Corp specifically praised our real-time sync feature but said competitors offer better analytics dashboards.",
+            "source": "compound/market-intelligence/session-2-customer",
+            "timestamp": "2024-06-10T18:00:00.000Z"
+          },
+          {
+            "id": "comp-3-4",
+            "content": "Product roadmap: analytics dashboard overhaul is planned for Q3, not Q2. Current dashboard uses legacy charting library.",
+            "source": "compound/market-intelligence/session-3-product",
+            "timestamp": "2024-06-10T19:00:00.000Z"
+          },
+          {
+            "id": "comp-3-5",
+            "content": "Engineering estimates 6 weeks for the dashboard redesign. Could be accelerated to 4 weeks with contractor support.",
+            "source": "compound/market-intelligence/session-3-product",
+            "timestamp": "2024-06-10T20:00:00.000Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "comp-q-3-0",
+            "query": "What's the risk with Acme Corp and what can we do about it?"
+          },
+          {
+            "id": "comp-q-3-1",
+            "query": "How does VectorDB's pricing strategy affect our enterprise customers?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedAnswer": "acme, competitor, dashboard, analytics"
+          },
+          {
+            "expectedAnswer": "vectordb, pricing, enterprise, acme"
+          }
+        ],
+        "config": {
+          "requiredKeywords": [
+            [
+              "acme",
+              "competitor",
+              "dashboard",
+              "analytics"
+            ],
+            [
+              "vectordb",
+              "pricing",
+              "enterprise",
+              "acme"
+            ]
+          ]
+        }
+      },
+      {
+        "id": "compounding-incident-analysis-4",
+        "taskId": "compounding-intelligence",
+        "description": "Compounding intelligence: incident-analysis — 3 sessions, 6 facts",
+        "memories": [
+          {
+            "id": "comp-4-0",
+            "content": "Alert: API latency spike to 2.3s (P95) at 14:22 UTC. Affecting payment endpoints specifically.",
+            "source": "compound/incident-analysis/session-1-alert",
+            "timestamp": "2024-06-10T15:00:00.000Z"
+          },
+          {
+            "id": "comp-4-1",
+            "content": "Initial triage: database connection pool at 95% capacity. Normal is 60-70%.",
+            "source": "compound/incident-analysis/session-1-alert",
+            "timestamp": "2024-06-10T16:00:00.000Z"
+          },
+          {
+            "id": "comp-4-2",
+            "content": "Root cause identified: marketing campaign drove 3x normal traffic spike starting at 14:00 UTC.",
+            "source": "compound/incident-analysis/session-2-investigation",
+            "timestamp": "2024-06-10T17:00:00.000Z"
+          },
+          {
+            "id": "comp-4-3",
+            "content": "Marketing didn't notify engineering about the campaign. No capacity planning was done.",
+            "source": "compound/incident-analysis/session-2-investigation",
+            "timestamp": "2024-06-10T18:00:00.000Z"
+          },
+          {
+            "id": "comp-4-4",
+            "content": "Short-term fix: increased connection pool from 200 to 400. Latency returned to normal by 15:10 UTC.",
+            "source": "compound/incident-analysis/session-3-remediation",
+            "timestamp": "2024-06-10T19:00:00.000Z"
+          },
+          {
+            "id": "comp-4-5",
+            "content": "Long-term action items: implement auto-scaling for connection pools and create a marketing-engineering notification SOP.",
+            "source": "compound/incident-analysis/session-3-remediation",
+            "timestamp": "2024-06-10T20:00:00.000Z"
+          }
+        ],
+        "queries": [
+          {
+            "id": "comp-q-4-0",
+            "query": "Walk me through the full incident: what happened, why, and what we're doing about it?"
+          },
+          {
+            "id": "comp-q-4-1",
+            "query": "What process failure caused the outage and how do we prevent it?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedAnswer": "latency, marketing, connection pool, auto-scaling"
+          },
+          {
+            "expectedAnswer": "marketing, notification, capacity, sop"
+          }
+        ],
+        "config": {
+          "requiredKeywords": [
+            [
+              "latency",
+              "marketing",
+              "connection pool",
+              "auto-scaling"
+            ],
+            [
+              "marketing",
+              "notification",
+              "capacity",
+              "sop"
+            ]
+          ]
+        }
+      }
+    ],
+    "procedural-learning": [
+      {
+        "id": "procedural-code-review-heuristic-0",
+        "taskId": "procedural-learning",
+        "description": "Procedural learning: Code Review Heuristic (heuristic)",
+        "memories": [],
+        "queries": [
+          {
+            "id": "proc-q-0-0",
+            "query": "Can you look at this PR and give feedback?"
+          },
+          {
+            "id": "proc-q-0-1",
+            "query": "I need to review some code changes, what should I look for?"
+          },
+          {
+            "id": "proc-q-0-2",
+            "query": "Best practices for code review?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedProficiency": "proficient"
+          },
+          {
+            "expectedProficiency": "proficient"
+          },
+          {
+            "expectedProficiency": "proficient"
+          }
+        ],
+        "config": {
+          "procedure": {
+            "name": "Code Review Heuristic",
+            "description": "Systematic approach to reviewing pull requests for quality, security, and maintainability",
+            "type": "heuristic",
+            "triggerContext": "reviewing a pull request or code change",
+            "steps": [
+              "Read the PR description and linked ticket first — understand intent before code",
+              "Check for security: input validation, SQL injection, auth checks, secrets in code",
+              "Check for correctness: edge cases, null handling, error paths, race conditions",
+              "Check for clarity: naming, comments on non-obvious logic, dead code removed",
+              "Check for tests: are new code paths covered? Are existing tests still valid?",
+              "Run the code locally if the change is non-trivial"
+            ],
+            "domainTags": [
+              "engineering",
+              "code-review",
+              "quality"
+            ]
+          },
+          "executions": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true
+          ],
+          "expectedProficiency": "proficient"
+        }
+      },
+      {
+        "id": "procedural-quarterly-business-review-preparation-1",
+        "taskId": "procedural-learning",
+        "description": "Procedural learning: Quarterly Business Review Preparation (workflow)",
+        "memories": [],
+        "queries": [
+          {
+            "id": "proc-q-1-0",
+            "query": "I have a QBR next week, how do I prepare?"
+          },
+          {
+            "id": "proc-q-1-1",
+            "query": "What goes into an executive business review?"
+          },
+          {
+            "id": "proc-q-1-2",
+            "query": "Help me get ready for a big client review meeting"
+          }
+        ],
+        "expected": [
+          {
+            "expectedProficiency": "expert"
+          },
+          {
+            "expectedProficiency": "expert"
+          },
+          {
+            "expectedProficiency": "expert"
+          }
+        ],
+        "config": {
+          "procedure": {
+            "name": "Quarterly Business Review Preparation",
+            "description": "Prepare and deliver executive-level quarterly business reviews for key accounts",
+            "type": "workflow",
+            "triggerContext": "preparing a quarterly business review for a client",
+            "steps": [
+              "Pull metrics: usage trends, support tickets, feature adoption, NPS",
+              "Identify wins: quantified ROI, successful integrations, milestones hit",
+              "Surface risks: declining usage, open escalations, competitor mentions",
+              "Build deck: max 12 slides, lead with outcomes not features",
+              "Prepare expansion discussion: what's next, new use cases, additional seats",
+              "Pre-brief with account team: align on messaging, anticipate objections"
+            ],
+            "domainTags": [
+              "client-success",
+              "executive",
+              "review",
+              "sales"
+            ]
+          },
+          "executions": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "expectedProficiency": "expert"
+        }
+      },
+      {
+        "id": "procedural-production-incident-response-2",
+        "taskId": "procedural-learning",
+        "description": "Procedural learning: Production Incident Response (workflow)",
+        "memories": [],
+        "queries": [
+          {
+            "id": "proc-q-2-0",
+            "query": "Something is broken in production, what do I do?"
+          },
+          {
+            "id": "proc-q-2-1",
+            "query": "API is returning 500 errors, walk me through the response process"
+          },
+          {
+            "id": "proc-q-2-2",
+            "query": "How should we handle a service outage?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedProficiency": "expert"
+          },
+          {
+            "expectedProficiency": "expert"
+          },
+          {
+            "expectedProficiency": "expert"
+          }
+        ],
+        "config": {
+          "procedure": {
+            "name": "Production Incident Response",
+            "description": "Triage, diagnose, and resolve production incidents with minimal customer impact",
+            "type": "workflow",
+            "triggerContext": "production incident or outage detected",
+            "steps": [
+              "Acknowledge alert in PagerDuty within 5 minutes",
+              "Check monitoring dashboards: error rates, latency, CPU/memory",
+              "Identify blast radius: which services, how many users affected",
+              "Communicate in #incident channel: status, impact, ETA",
+              "Identify root cause vs symptoms (don't fix symptoms first)",
+              "Implement fix: hotfix for P0, scheduled patch for P1",
+              "Verify fix: check metrics return to baseline",
+              "Post-incident: write blameless post-mortem within 48 hours"
+            ],
+            "domainTags": [
+              "engineering",
+              "incident",
+              "ops",
+              "sre"
+            ]
+          },
+          "executions": [
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "expectedProficiency": "expert"
+        }
+      },
+      {
+        "id": "procedural-client-onboarding-3",
+        "taskId": "procedural-learning",
+        "description": "Procedural learning: Client Onboarding (workflow)",
+        "memories": [],
+        "queries": [
+          {
+            "id": "proc-q-3-0",
+            "query": "A new customer just signed, what's the onboarding process?"
+          },
+          {
+            "id": "proc-q-3-1",
+            "query": "How do we get a new client set up and running?"
+          },
+          {
+            "id": "proc-q-3-2",
+            "query": "Walk me through what happens after a deal closes"
+          }
+        ],
+        "expected": [
+          {
+            "expectedProficiency": "competent"
+          },
+          {
+            "expectedProficiency": "competent"
+          },
+          {
+            "expectedProficiency": "competent"
+          }
+        ],
+        "config": {
+          "procedure": {
+            "name": "Client Onboarding",
+            "description": "Onboard new clients from signed contract through first value delivery",
+            "type": "workflow",
+            "triggerContext": "new client has signed a contract and needs to be onboarded",
+            "steps": [
+              "Send welcome email with onboarding timeline within 24 hours of signature",
+              "Schedule kickoff call: introduce team, review goals, set success criteria",
+              "Collect technical requirements: integrations, data formats, access credentials",
+              "Provision environment: create tenant, configure SSO, set up monitoring",
+              "Data migration: map existing data, run trial import, validate counts",
+              "Training session: record it, share deck and recording within 24 hours",
+              "Week 1 check-in: verify first workflow is running, address blockers"
+            ],
+            "domainTags": [
+              "client-success",
+              "onboarding",
+              "process"
+            ]
+          },
+          "executions": [
+            true,
+            false,
+            true,
+            true
+          ],
+          "expectedProficiency": "competent"
+        }
+      },
+      {
+        "id": "procedural-sprint-retrospective-facilitation-4",
+        "taskId": "procedural-learning",
+        "description": "Procedural learning: Sprint Retrospective Facilitation (pattern)",
+        "memories": [],
+        "queries": [
+          {
+            "id": "proc-q-4-0",
+            "query": "I need to run a retro for my team this Friday"
+          },
+          {
+            "id": "proc-q-4-1",
+            "query": "How do you facilitate a good retrospective?"
+          },
+          {
+            "id": "proc-q-4-2",
+            "query": "Tips for running sprint ceremonies?"
+          }
+        ],
+        "expected": [
+          {
+            "expectedProficiency": "novice"
+          },
+          {
+            "expectedProficiency": "novice"
+          },
+          {
+            "expectedProficiency": "novice"
+          }
+        ],
+        "config": {
+          "procedure": {
+            "name": "Sprint Retrospective Facilitation",
+            "description": "Facilitate productive sprint retrospectives that lead to actionable improvements",
+            "type": "pattern",
+            "triggerContext": "facilitating a sprint retrospective meeting",
+            "steps": [
+              "Set the stage: remind team this is a safe space, no blame",
+              "Gather data: what went well, what didn't, what was confusing",
+              "Generate insights: look for patterns across items, not individual gripes",
+              "Decide actions: max 3 concrete action items with owners and deadlines",
+              "Close: check if previous retro actions were completed, celebrate wins"
+            ],
+            "domainTags": [
+              "agile",
+              "process",
+              "facilitation",
+              "team"
+            ]
+          },
+          "executions": [
+            true,
+            true
+          ],
+          "expectedProficiency": "novice"
+        }
+      },
+      {
+        "id": "procedural-cold-outreach-email-5",
+        "taskId": "procedural-learning",
+        "description": "Procedural learning: Cold Outreach Email (skill)",
+        "memories": [],
+        "queries": [
+          {
+            "id": "proc-q-5-0",
+            "query": "I need to reach out to a new lead at a fintech company"
+          },
+          {
+            "id": "proc-q-5-1",
+            "query": "How do I approach a cold prospect via email?"
+          },
+          {
+            "id": "proc-q-5-2",
+            "query": "Write a sales email to someone I've never contacted before"
+          }
+        ],
+        "expected": [
+          {
+            "expectedProficiency": "proficient"
+          },
+          {
+            "expectedProficiency": "proficient"
+          },
+          {
+            "expectedProficiency": "proficient"
+          }
+        ],
+        "config": {
+          "procedure": {
+            "name": "Cold Outreach Email",
+            "description": "Write and send personalized cold outreach emails to enterprise prospects",
+            "type": "skill",
+            "triggerContext": "writing a cold email to a new prospect",
+            "steps": [
+              "Research the prospect's company: recent news, funding, team size, tech stack",
+              "Find a personal hook: shared connection, recent achievement, relevant pain point",
+              "Write subject line: under 6 words, personalized, no spam triggers",
+              "Opening line: reference the hook, not a generic intro",
+              "Value proposition: one sentence connecting our solution to their specific pain",
+              "CTA: suggest a specific 15-minute time slot, not an open-ended ask",
+              "Review: run through spam score checker, verify all facts"
+            ],
+            "domainTags": [
+              "sales",
+              "outreach",
+              "email"
+            ]
+          },
+          "executions": [
+            true,
+            true,
+            false,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+          ],
+          "expectedProficiency": "proficient"
+        }
+      }
+    ]
+  },
+  "stats": {
+    "totalScenarios": 49,
+    "perTask": {
+      "temporal-validity": 10,
+      "reconsolidation": 10,
+      "novelty-detection": 5,
+      "emotional-recall": 8,
+      "cross-agent-transfer": 5,
+      "compounding-intelligence": 5,
+      "procedural-learning": 6
+    }
+  }
+}

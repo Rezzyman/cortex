@@ -48,10 +48,11 @@ export interface ReconsolidationResult {
 export async function markLabile(memoryIds: number[]): Promise<void> {
   if (memoryIds.length === 0) return;
 
+  const idList = `{${memoryIds.join(",")}}`;
   await db.execute(sql`
     UPDATE memory_nodes
     SET last_recalled_at = NOW()
-    WHERE id = ANY(${memoryIds}::int[])
+    WHERE id = ANY(${idList}::int[])
   `);
 }
 
@@ -166,14 +167,19 @@ export async function reconsolidate(
     10
   );
 
+  const newEntities = extractEntities(newContent);
+  const newTags = extractSemanticTags(newContent);
+  const entitiesLiteral = `{${newEntities.map((e) => `"${e.replace(/"/g, '\\"')}"`).join(",")}}`;
+  const tagsLiteral = `{${newTags.map((t) => `"${t.replace(/"/g, '\\"')}"`).join(",")}}`;
+
   await db.execute(sql`
     UPDATE memory_nodes
     SET content = ${newContent},
         embedding = ${`[${newEmbedding.join(",")}]`}::vector,
         resonance_score = ${newResonance},
         novelty_score = ${noveltyResult.noveltyScore},
-        entities = ${sql`${extractEntities(newContent)}::text[]`},
-        semantic_tags = ${sql`${extractSemanticTags(newContent)}::text[]`},
+        entities = ${entitiesLiteral}::text[],
+        semantic_tags = ${tagsLiteral}::text[],
         valid_from = NOW(),
         valid_until = NULL,
         updated_at = NOW(),

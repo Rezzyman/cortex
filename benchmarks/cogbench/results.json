@@ -1,0 +1,2207 @@
+{
+  "benchmark": "CogBench",
+  "version": "1.0.0",
+  "system": "CORTEX V2.4",
+  "timestamp": "2026-04-08T00:24:50.323Z",
+  "compositeScore": 0.7849945383934764,
+  "tasks": [
+    {
+      "taskId": "temporal-validity",
+      "totalScenarios": 10,
+      "passed": 10,
+      "failed": 0,
+      "meanScore": 1,
+      "medianScore": 1,
+      "metrics": {
+        "temporalPrecision": 1,
+        "temporalRecall": 1,
+        "expiryCompliance": 1
+      }
+    },
+    {
+      "taskId": "reconsolidation",
+      "totalScenarios": 10,
+      "passed": 10,
+      "failed": 0,
+      "meanScore": 0.9925,
+      "medianScore": 1,
+      "metrics": {
+        "updateSuccessRate": 1,
+        "labileCompliance": 1,
+        "contentAccuracy": 1
+      }
+    },
+    {
+      "taskId": "novelty-detection",
+      "totalScenarios": 5,
+      "passed": 4,
+      "failed": 1,
+      "meanScore": 0.888888888888889,
+      "medianScore": 1,
+      "metrics": {
+        "noveltyAUC": 0.888888888888889,
+        "truePositiveRate": 1,
+        "falsePositiveRate": 1
+      }
+    },
+    {
+      "taskId": "emotional-recall",
+      "totalScenarios": 8,
+      "passed": 4,
+      "failed": 4,
+      "meanScore": 0.58,
+      "medianScore": 0.58,
+      "metrics": {
+        "emotionalRecallAdvantage": 0.5,
+        "decayResistanceRatio": 0.7000000000000001
+      }
+    },
+    {
+      "taskId": "cross-agent-transfer",
+      "totalScenarios": 5,
+      "passed": 5,
+      "failed": 0,
+      "meanScore": 0.8158452380952379,
+      "medianScore": 0.8078571428571427,
+      "metrics": {
+        "transferRecall": 1,
+        "knowledgeLossRate": 0
+      }
+    },
+    {
+      "taskId": "compounding-intelligence",
+      "totalScenarios": 5,
+      "passed": 4,
+      "failed": 1,
+      "meanScore": 0.44000000000000006,
+      "medianScore": 0.5,
+      "metrics": {
+        "compoundGain": 0,
+        "synapseUtilization": 0
+      }
+    },
+    {
+      "taskId": "procedural-learning",
+      "totalScenarios": 6,
+      "passed": 6,
+      "failed": 0,
+      "meanScore": 1,
+      "medianScore": 1,
+      "metrics": {
+        "proficiencyAccuracy": 1,
+        "contextRetrievalPrecision": 1
+      }
+    }
+  ],
+  "scenarios": [
+    {
+      "scenarioId": "temporal-supersession-0",
+      "taskId": "temporal-validity",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "tv-q-0-0",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        },
+        {
+          "queryId": "tv-q-0-1",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        }
+      ],
+      "durationMs": 2352
+    },
+    {
+      "scenarioId": "temporal-supersession-1",
+      "taskId": "temporal-validity",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "tv-q-1-0",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        },
+        {
+          "queryId": "tv-q-1-1",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        }
+      ],
+      "durationMs": 1951
+    },
+    {
+      "scenarioId": "temporal-supersession-2",
+      "taskId": "temporal-validity",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "tv-q-2-0",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        },
+        {
+          "queryId": "tv-q-2-1",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        },
+        {
+          "queryId": "tv-q-2-2",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        }
+      ],
+      "durationMs": 3199
+    },
+    {
+      "scenarioId": "temporal-supersession-3",
+      "taskId": "temporal-validity",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "tv-q-3-0",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        },
+        {
+          "queryId": "tv-q-3-1",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        }
+      ],
+      "durationMs": 1967
+    },
+    {
+      "scenarioId": "temporal-supersession-4",
+      "taskId": "temporal-validity",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "tv-q-4-0",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        },
+        {
+          "queryId": "tv-q-4-1",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        },
+        {
+          "queryId": "tv-q-4-2",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        }
+      ],
+      "durationMs": 2659
+    },
+    {
+      "scenarioId": "temporal-supersession-5",
+      "taskId": "temporal-validity",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "tv-q-5-0",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        },
+        {
+          "queryId": "tv-q-5-1",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        },
+        {
+          "queryId": "tv-q-5-2",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        }
+      ],
+      "durationMs": 2667
+    },
+    {
+      "scenarioId": "temporal-supersession-6",
+      "taskId": "temporal-validity",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "tv-q-6-0",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        },
+        {
+          "queryId": "tv-q-6-1",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        }
+      ],
+      "durationMs": 2216
+    },
+    {
+      "scenarioId": "temporal-supersession-7",
+      "taskId": "temporal-validity",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "tv-q-7-0",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        },
+        {
+          "queryId": "tv-q-7-1",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        }
+      ],
+      "durationMs": 2393
+    },
+    {
+      "scenarioId": "temporal-expiry-8",
+      "taskId": "temporal-validity",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "tv-eq-8-before",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        },
+        {
+          "queryId": "tv-eq-8-after",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        }
+      ],
+      "durationMs": 1502
+    },
+    {
+      "scenarioId": "temporal-expiry-9",
+      "taskId": "temporal-validity",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "tv-eq-9-before",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        },
+        {
+          "queryId": "tv-eq-9-after",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "temporalPrecision": 1,
+            "temporalRecall": 1,
+            "expiryCompliance": 1
+          }
+        }
+      ],
+      "durationMs": 1733
+    },
+    {
+      "scenarioId": "reconsolidation-0",
+      "taskId": "reconsolidation",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "recon-q-pre-0",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "phase": "pre-reconsolidation",
+            "found": true
+          }
+        },
+        {
+          "queryId": "recon-q-post-0",
+          "passed": true,
+          "score": 1.0000000000000002,
+          "details": {
+            "phase": "post-reconsolidation",
+            "updateSuccess": 1,
+            "labileCompliance": 1,
+            "contentAccuracy": 1,
+            "stalePenalty": 0,
+            "reconStatus": "reconsolidated",
+            "keywordHits": 2,
+            "keywordMisses": 0
+          }
+        }
+      ],
+      "durationMs": 3778
+    },
+    {
+      "scenarioId": "reconsolidation-1",
+      "taskId": "reconsolidation",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "recon-q-pre-1",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "phase": "pre-reconsolidation",
+            "found": true
+          }
+        },
+        {
+          "queryId": "recon-q-post-1",
+          "passed": true,
+          "score": 1.0000000000000002,
+          "details": {
+            "phase": "post-reconsolidation",
+            "updateSuccess": 1,
+            "labileCompliance": 1,
+            "contentAccuracy": 1,
+            "stalePenalty": 0,
+            "reconStatus": "reconsolidated",
+            "keywordHits": 2,
+            "keywordMisses": 0
+          }
+        }
+      ],
+      "durationMs": 2921
+    },
+    {
+      "scenarioId": "reconsolidation-2",
+      "taskId": "reconsolidation",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "recon-q-pre-2",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "phase": "pre-reconsolidation",
+            "found": true
+          }
+        },
+        {
+          "queryId": "recon-q-post-2",
+          "passed": true,
+          "score": 1.0000000000000002,
+          "details": {
+            "phase": "post-reconsolidation",
+            "updateSuccess": 1,
+            "labileCompliance": 1,
+            "contentAccuracy": 1,
+            "stalePenalty": 0,
+            "reconStatus": "reconsolidated",
+            "keywordHits": 2,
+            "keywordMisses": 0
+          }
+        }
+      ],
+      "durationMs": 2931
+    },
+    {
+      "scenarioId": "reconsolidation-3",
+      "taskId": "reconsolidation",
+      "passed": true,
+      "score": 0.9500000000000001,
+      "queryResults": [
+        {
+          "queryId": "recon-q-pre-3",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "phase": "pre-reconsolidation",
+            "found": true
+          }
+        },
+        {
+          "queryId": "recon-q-post-3",
+          "passed": true,
+          "score": 0.9000000000000001,
+          "details": {
+            "phase": "post-reconsolidation",
+            "updateSuccess": 1,
+            "labileCompliance": 1,
+            "contentAccuracy": 1,
+            "stalePenalty": 1,
+            "reconStatus": "reconsolidated",
+            "keywordHits": 2,
+            "keywordMisses": 1
+          }
+        }
+      ],
+      "durationMs": 3038
+    },
+    {
+      "scenarioId": "reconsolidation-4",
+      "taskId": "reconsolidation",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "recon-q-pre-4",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "phase": "pre-reconsolidation",
+            "found": true
+          }
+        },
+        {
+          "queryId": "recon-q-post-4",
+          "passed": true,
+          "score": 1.0000000000000002,
+          "details": {
+            "phase": "post-reconsolidation",
+            "updateSuccess": 1,
+            "labileCompliance": 1,
+            "contentAccuracy": 1,
+            "stalePenalty": 0,
+            "reconStatus": "reconsolidated",
+            "keywordHits": 1,
+            "keywordMisses": 0
+          }
+        }
+      ],
+      "durationMs": 2688
+    },
+    {
+      "scenarioId": "reconsolidation-5",
+      "taskId": "reconsolidation",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "recon-q-pre-5",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "phase": "pre-reconsolidation",
+            "found": true
+          }
+        },
+        {
+          "queryId": "recon-q-post-5",
+          "passed": true,
+          "score": 1.0000000000000002,
+          "details": {
+            "phase": "post-reconsolidation",
+            "updateSuccess": 1,
+            "labileCompliance": 1,
+            "contentAccuracy": 1,
+            "stalePenalty": 0,
+            "reconStatus": "reconsolidated",
+            "keywordHits": 1,
+            "keywordMisses": 0
+          }
+        }
+      ],
+      "durationMs": 2720
+    },
+    {
+      "scenarioId": "reconsolidation-6",
+      "taskId": "reconsolidation",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "recon-q-pre-6",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "phase": "pre-reconsolidation",
+            "found": true
+          }
+        },
+        {
+          "queryId": "recon-q-post-6",
+          "passed": true,
+          "score": 1.0000000000000002,
+          "details": {
+            "phase": "post-reconsolidation",
+            "updateSuccess": 1,
+            "labileCompliance": 1,
+            "contentAccuracy": 1,
+            "stalePenalty": 0,
+            "reconStatus": "reconsolidated",
+            "keywordHits": 2,
+            "keywordMisses": 0
+          }
+        }
+      ],
+      "durationMs": 2693
+    },
+    {
+      "scenarioId": "reconsolidation-7",
+      "taskId": "reconsolidation",
+      "passed": true,
+      "score": 0.9750000000000001,
+      "queryResults": [
+        {
+          "queryId": "recon-q-pre-7",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "phase": "pre-reconsolidation",
+            "found": true
+          }
+        },
+        {
+          "queryId": "recon-q-post-7",
+          "passed": true,
+          "score": 0.9500000000000002,
+          "details": {
+            "phase": "post-reconsolidation",
+            "updateSuccess": 1,
+            "labileCompliance": 1,
+            "contentAccuracy": 1,
+            "stalePenalty": 0.5,
+            "reconStatus": "reconsolidated",
+            "keywordHits": 2,
+            "keywordMisses": 1
+          }
+        }
+      ],
+      "durationMs": 2959
+    },
+    {
+      "scenarioId": "reconsolidation-8",
+      "taskId": "reconsolidation",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "recon-q-pre-8",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "phase": "pre-reconsolidation",
+            "found": true
+          }
+        },
+        {
+          "queryId": "recon-q-post-8",
+          "passed": true,
+          "score": 1.0000000000000002,
+          "details": {
+            "phase": "post-reconsolidation",
+            "updateSuccess": 1,
+            "labileCompliance": 1,
+            "contentAccuracy": 1,
+            "stalePenalty": 0,
+            "reconStatus": "reconsolidated",
+            "keywordHits": 2,
+            "keywordMisses": 0
+          }
+        }
+      ],
+      "durationMs": 3692
+    },
+    {
+      "scenarioId": "reconsolidation-9",
+      "taskId": "reconsolidation",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "recon-q-pre-9",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "phase": "pre-reconsolidation",
+            "found": true
+          }
+        },
+        {
+          "queryId": "recon-q-post-9",
+          "passed": true,
+          "score": 1.0000000000000002,
+          "details": {
+            "phase": "post-reconsolidation",
+            "updateSuccess": 1,
+            "labileCompliance": 1,
+            "contentAccuracy": 1,
+            "stalePenalty": 0,
+            "reconStatus": "reconsolidated",
+            "keywordHits": 1,
+            "keywordMisses": 0
+          }
+        }
+      ],
+      "durationMs": 3173
+    },
+    {
+      "scenarioId": "novelty-financial-ops-0",
+      "taskId": "novelty-detection",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "nov-novel-0-2",
+          "passed": true,
+          "score": 1.2080253359958282,
+          "details": {
+            "noveltyScore": 1.2080253359958282,
+            "expectedLabel": "novel",
+            "classified": "novel",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-redundant-0-1",
+          "passed": true,
+          "score": 3.4202230622700025,
+          "details": {
+            "noveltyScore": -2.4202230622700025,
+            "expectedLabel": "redundant",
+            "classified": "redundant",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-redundant-0-2",
+          "passed": true,
+          "score": 3.424975813028298,
+          "details": {
+            "noveltyScore": -2.424975813028298,
+            "expectedLabel": "redundant",
+            "classified": "redundant",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-redundant-0-0",
+          "passed": true,
+          "score": 3.5093125286357507,
+          "details": {
+            "noveltyScore": -2.5093125286357507,
+            "expectedLabel": "redundant",
+            "classified": "redundant",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-novel-0-1",
+          "passed": true,
+          "score": 1.4017718105496526,
+          "details": {
+            "noveltyScore": 1.4017718105496526,
+            "expectedLabel": "novel",
+            "classified": "novel",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-novel-0-0",
+          "passed": true,
+          "score": 1.702632429064836,
+          "details": {
+            "noveltyScore": 1.702632429064836,
+            "expectedLabel": "novel",
+            "classified": "novel",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        }
+      ],
+      "durationMs": 6478
+    },
+    {
+      "scenarioId": "novelty-engineering-ops-1",
+      "taskId": "novelty-detection",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "nov-novel-1-2",
+          "passed": true,
+          "score": 2.211937748126478,
+          "details": {
+            "noveltyScore": 2.211937748126478,
+            "expectedLabel": "novel",
+            "classified": "novel",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-redundant-1-1",
+          "passed": true,
+          "score": 2.7043729705915878,
+          "details": {
+            "noveltyScore": -1.7043729705915875,
+            "expectedLabel": "redundant",
+            "classified": "redundant",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-redundant-1-2",
+          "passed": true,
+          "score": 3.1750207848093557,
+          "details": {
+            "noveltyScore": -2.1750207848093557,
+            "expectedLabel": "redundant",
+            "classified": "redundant",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-redundant-1-0",
+          "passed": true,
+          "score": 3.1035899203100765,
+          "details": {
+            "noveltyScore": -2.1035899203100765,
+            "expectedLabel": "redundant",
+            "classified": "redundant",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-novel-1-0",
+          "passed": false,
+          "score": 0.49609389577110813,
+          "details": {
+            "noveltyScore": 0.49609389577110813,
+            "expectedLabel": "novel",
+            "classified": "redundant",
+            "correct": false,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-novel-1-1",
+          "passed": true,
+          "score": 0.8310714663507337,
+          "details": {
+            "noveltyScore": 0.8310714663507337,
+            "expectedLabel": "novel",
+            "classified": "novel",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        }
+      ],
+      "durationMs": 7052
+    },
+    {
+      "scenarioId": "novelty-client-relationship-2",
+      "taskId": "novelty-detection",
+      "passed": false,
+      "score": 0.4444444444444445,
+      "queryResults": [
+        {
+          "queryId": "nov-redundant-2-1",
+          "passed": false,
+          "score": -1.3902017625753555,
+          "details": {
+            "noveltyScore": 2.3902017625753555,
+            "expectedLabel": "redundant",
+            "classified": "novel",
+            "correct": false,
+            "auc": 0.4444444444444445,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-redundant-2-0",
+          "passed": true,
+          "score": 2.7962304007781817,
+          "details": {
+            "noveltyScore": -1.7962304007781817,
+            "expectedLabel": "redundant",
+            "classified": "redundant",
+            "correct": true,
+            "auc": 0.4444444444444445,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-novel-2-1",
+          "passed": true,
+          "score": 2.9800225703515495,
+          "details": {
+            "noveltyScore": 2.9800225703515495,
+            "expectedLabel": "novel",
+            "classified": "novel",
+            "correct": true,
+            "auc": 0.4444444444444445,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-novel-2-0",
+          "passed": true,
+          "score": 2.306565222801601,
+          "details": {
+            "noveltyScore": 2.306565222801601,
+            "expectedLabel": "novel",
+            "classified": "novel",
+            "correct": true,
+            "auc": 0.4444444444444445,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-novel-2-2",
+          "passed": true,
+          "score": 1.7403301839946135,
+          "details": {
+            "noveltyScore": 1.7403301839946135,
+            "expectedLabel": "novel",
+            "classified": "novel",
+            "correct": true,
+            "auc": 0.4444444444444445,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-redundant-2-2",
+          "passed": false,
+          "score": -2.2745129398490778,
+          "details": {
+            "noveltyScore": 3.2745129398490778,
+            "expectedLabel": "redundant",
+            "classified": "novel",
+            "correct": false,
+            "auc": 0.4444444444444445,
+            "tpr": 1,
+            "fpr": 1
+          }
+        }
+      ],
+      "durationMs": 9330
+    },
+    {
+      "scenarioId": "novelty-product-roadmap-3",
+      "taskId": "novelty-detection",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "nov-redundant-3-1",
+          "passed": true,
+          "score": 3.5185672219993696,
+          "details": {
+            "noveltyScore": -2.5185672219993696,
+            "expectedLabel": "redundant",
+            "classified": "redundant",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-novel-3-0",
+          "passed": true,
+          "score": 2.116832316748772,
+          "details": {
+            "noveltyScore": 2.116832316748772,
+            "expectedLabel": "novel",
+            "classified": "novel",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-redundant-3-0",
+          "passed": true,
+          "score": 2.903948324511986,
+          "details": {
+            "noveltyScore": -1.9039483245119861,
+            "expectedLabel": "redundant",
+            "classified": "redundant",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-novel-3-1",
+          "passed": true,
+          "score": 1.425867171322458,
+          "details": {
+            "noveltyScore": 1.425867171322458,
+            "expectedLabel": "novel",
+            "classified": "novel",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-redundant-3-2",
+          "passed": true,
+          "score": 3.3487443123221454,
+          "details": {
+            "noveltyScore": -2.3487443123221454,
+            "expectedLabel": "redundant",
+            "classified": "redundant",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-novel-3-2",
+          "passed": true,
+          "score": 0.9879466114233384,
+          "details": {
+            "noveltyScore": 0.9879466114233384,
+            "expectedLabel": "novel",
+            "classified": "novel",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        }
+      ],
+      "durationMs": 9723
+    },
+    {
+      "scenarioId": "novelty-sales-pipeline-4",
+      "taskId": "novelty-detection",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "nov-redundant-4-1",
+          "passed": true,
+          "score": 2.839197245160043,
+          "details": {
+            "noveltyScore": -1.839197245160043,
+            "expectedLabel": "redundant",
+            "classified": "redundant",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-redundant-4-0",
+          "passed": true,
+          "score": 2.8768453027680194,
+          "details": {
+            "noveltyScore": -1.8768453027680194,
+            "expectedLabel": "redundant",
+            "classified": "redundant",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-novel-4-0",
+          "passed": true,
+          "score": 1.8893688965074875,
+          "details": {
+            "noveltyScore": 1.8893688965074875,
+            "expectedLabel": "novel",
+            "classified": "novel",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-novel-4-2",
+          "passed": true,
+          "score": 1.8262613152889442,
+          "details": {
+            "noveltyScore": 1.8262613152889442,
+            "expectedLabel": "novel",
+            "classified": "novel",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-novel-4-1",
+          "passed": true,
+          "score": 0.8199358404941255,
+          "details": {
+            "noveltyScore": 0.8199358404941255,
+            "expectedLabel": "novel",
+            "classified": "novel",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        },
+        {
+          "queryId": "nov-redundant-4-2",
+          "passed": true,
+          "score": 3.032585387777539,
+          "details": {
+            "noveltyScore": -2.032585387777539,
+            "expectedLabel": "redundant",
+            "classified": "redundant",
+            "correct": true,
+            "auc": 1,
+            "tpr": 1,
+            "fpr": 1
+          }
+        }
+      ],
+      "durationMs": 7470
+    },
+    {
+      "scenarioId": "emotional-recall-0",
+      "taskId": "emotional-recall",
+      "passed": false,
+      "score": 0.27999999999999997,
+      "queryResults": [
+        {
+          "queryId": "emo-q-0",
+          "passed": false,
+          "score": 0.27999999999999997,
+          "details": {
+            "era": 0,
+            "decayResistance": 0.7,
+            "emotionalRank": 2,
+            "neutralRank": 1,
+            "emotionalSurvived": true,
+            "neutralSurvived": true,
+            "avgEmotionalResonance": 3.4285305,
+            "avgNeutralResonance": 3.4285307
+          }
+        }
+      ],
+      "durationMs": 19223
+    },
+    {
+      "scenarioId": "emotional-recall-1",
+      "taskId": "emotional-recall",
+      "passed": false,
+      "score": 0.27999999999999997,
+      "queryResults": [
+        {
+          "queryId": "emo-q-1",
+          "passed": false,
+          "score": 0.27999999999999997,
+          "details": {
+            "era": 0,
+            "decayResistance": 0.7,
+            "emotionalRank": 2,
+            "neutralRank": 1,
+            "emotionalSurvived": true,
+            "neutralSurvived": true,
+            "avgEmotionalResonance": 3.7262948,
+            "avgNeutralResonance": 3.7262952
+          }
+        }
+      ],
+      "durationMs": 16078
+    },
+    {
+      "scenarioId": "emotional-recall-2",
+      "taskId": "emotional-recall",
+      "passed": false,
+      "score": 0.27999999999999997,
+      "queryResults": [
+        {
+          "queryId": "emo-q-2",
+          "passed": false,
+          "score": 0.27999999999999997,
+          "details": {
+            "era": 0,
+            "decayResistance": 0.7,
+            "emotionalRank": 2,
+            "neutralRank": 1,
+            "emotionalSurvived": true,
+            "neutralSurvived": true,
+            "avgEmotionalResonance": 2.9999952,
+            "avgNeutralResonance": 2.9999957
+          }
+        }
+      ],
+      "durationMs": 14262
+    },
+    {
+      "scenarioId": "emotional-recall-3",
+      "taskId": "emotional-recall",
+      "passed": true,
+      "score": 0.8799999999999999,
+      "queryResults": [
+        {
+          "queryId": "emo-q-3",
+          "passed": true,
+          "score": 0.8799999999999999,
+          "details": {
+            "era": 1,
+            "decayResistance": 0.7,
+            "emotionalRank": 1,
+            "neutralRank": 2,
+            "emotionalSurvived": true,
+            "neutralSurvived": true,
+            "avgEmotionalResonance": 2.9999952,
+            "avgNeutralResonance": 2.9999955
+          }
+        }
+      ],
+      "durationMs": 14380
+    },
+    {
+      "scenarioId": "emotional-recall-4",
+      "taskId": "emotional-recall",
+      "passed": true,
+      "score": 0.8799999999999999,
+      "queryResults": [
+        {
+          "queryId": "emo-q-4",
+          "passed": true,
+          "score": 0.8799999999999999,
+          "details": {
+            "era": 1,
+            "decayResistance": 0.7,
+            "emotionalRank": 1,
+            "neutralRank": 2,
+            "emotionalSurvived": true,
+            "neutralSurvived": true,
+            "avgEmotionalResonance": 2.9999952,
+            "avgNeutralResonance": 2.9999955
+          }
+        }
+      ],
+      "durationMs": 14565
+    },
+    {
+      "scenarioId": "emotional-recall-5",
+      "taskId": "emotional-recall",
+      "passed": true,
+      "score": 0.8799999999999999,
+      "queryResults": [
+        {
+          "queryId": "emo-q-5",
+          "passed": true,
+          "score": 0.8799999999999999,
+          "details": {
+            "era": 1,
+            "decayResistance": 0.7,
+            "emotionalRank": 1,
+            "neutralRank": 2,
+            "emotionalSurvived": true,
+            "neutralSurvived": true,
+            "avgEmotionalResonance": 2.9999952,
+            "avgNeutralResonance": 2.9999955
+          }
+        }
+      ],
+      "durationMs": 14258
+    },
+    {
+      "scenarioId": "emotional-recall-6",
+      "taskId": "emotional-recall",
+      "passed": true,
+      "score": 0.8799999999999999,
+      "queryResults": [
+        {
+          "queryId": "emo-q-6",
+          "passed": true,
+          "score": 0.8799999999999999,
+          "details": {
+            "era": 1,
+            "decayResistance": 0.7,
+            "emotionalRank": 1,
+            "neutralRank": 2,
+            "emotionalSurvived": true,
+            "neutralSurvived": true,
+            "avgEmotionalResonance": 3.729098,
+            "avgNeutralResonance": 3.7290983
+          }
+        }
+      ],
+      "durationMs": 14928
+    },
+    {
+      "scenarioId": "emotional-recall-7",
+      "taskId": "emotional-recall",
+      "passed": false,
+      "score": 0.27999999999999997,
+      "queryResults": [
+        {
+          "queryId": "emo-q-7",
+          "passed": false,
+          "score": 0.27999999999999997,
+          "details": {
+            "era": 0,
+            "decayResistance": 0.7,
+            "emotionalRank": 2,
+            "neutralRank": 1,
+            "emotionalSurvived": true,
+            "neutralSurvived": true,
+            "avgEmotionalResonance": 3.4250906,
+            "avgNeutralResonance": 3.425091
+          }
+        }
+      ],
+      "durationMs": 15472
+    },
+    {
+      "scenarioId": "cross-agent-sales-handoff-0",
+      "taskId": "cross-agent-transfer",
+      "passed": true,
+      "score": 0.8012499999999999,
+      "queryResults": [
+        {
+          "queryId": "xfer-q-0-0",
+          "passed": true,
+          "score": 0.9249999999999999,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0.75,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        },
+        {
+          "queryId": "xfer-q-0-1",
+          "passed": true,
+          "score": 0.7599999999999999,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0.2,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        },
+        {
+          "queryId": "xfer-q-0-2",
+          "passed": true,
+          "score": 0.7599999999999999,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0.2,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        },
+        {
+          "queryId": "xfer-q-0-3",
+          "passed": true,
+          "score": 0.7599999999999999,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0.2,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        }
+      ],
+      "durationMs": 4649
+    },
+    {
+      "scenarioId": "cross-agent-engineering-oncall-1",
+      "taskId": "cross-agent-transfer",
+      "passed": true,
+      "score": 0.8583333333333333,
+      "queryResults": [
+        {
+          "queryId": "xfer-q-1-0",
+          "passed": true,
+          "score": 0.8999999999999999,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0.6666666666666666,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        },
+        {
+          "queryId": "xfer-q-1-1",
+          "passed": true,
+          "score": 0.8999999999999999,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0.6666666666666666,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        },
+        {
+          "queryId": "xfer-q-1-2",
+          "passed": true,
+          "score": 0.7749999999999999,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0.25,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        }
+      ],
+      "durationMs": 4220
+    },
+    {
+      "scenarioId": "cross-agent-customer-success-handoff-2",
+      "taskId": "cross-agent-transfer",
+      "passed": true,
+      "score": 0.7946428571428571,
+      "queryResults": [
+        {
+          "queryId": "xfer-q-2-0",
+          "passed": true,
+          "score": 0.8124999999999999,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0.375,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        },
+        {
+          "queryId": "xfer-q-2-1",
+          "passed": true,
+          "score": 0.7,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        },
+        {
+          "queryId": "xfer-q-2-2",
+          "passed": true,
+          "score": 0.8714285714285713,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0.5714285714285714,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        }
+      ],
+      "durationMs": 4164
+    },
+    {
+      "scenarioId": "cross-agent-project-transition-3",
+      "taskId": "cross-agent-transfer",
+      "passed": true,
+      "score": 0.8078571428571427,
+      "queryResults": [
+        {
+          "queryId": "xfer-q-3-0",
+          "passed": true,
+          "score": 0.7749999999999999,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0.25,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        },
+        {
+          "queryId": "xfer-q-3-1",
+          "passed": true,
+          "score": 0.82,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0.4,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        },
+        {
+          "queryId": "xfer-q-3-2",
+          "passed": true,
+          "score": 0.8285714285714285,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0.42857142857142855,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        }
+      ],
+      "durationMs": 4071
+    },
+    {
+      "scenarioId": "cross-agent-research-collaboration-4",
+      "taskId": "cross-agent-transfer",
+      "passed": true,
+      "score": 0.8171428571428571,
+      "queryResults": [
+        {
+          "queryId": "xfer-q-4-0",
+          "passed": true,
+          "score": 0.82,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0.4,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        },
+        {
+          "queryId": "xfer-q-4-1",
+          "passed": true,
+          "score": 0.8714285714285713,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0.5714285714285714,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        },
+        {
+          "queryId": "xfer-q-4-2",
+          "passed": true,
+          "score": 0.7599999999999999,
+          "details": {
+            "transferRecall": 1,
+            "knowledgeLoss": 0,
+            "contentMatch": 0.2,
+            "baselineHit": true,
+            "transferredResults": 3,
+            "totalTransferred": 3
+          }
+        }
+      ],
+      "durationMs": 4087
+    },
+    {
+      "scenarioId": "compounding-hiring-pipeline-0",
+      "taskId": "compounding-intelligence",
+      "passed": true,
+      "score": 0.5,
+      "queryResults": [
+        {
+          "queryId": "comp-q-0-0",
+          "passed": true,
+          "score": 0.5,
+          "details": {
+            "compoundGain": 0,
+            "synapseUtil": 0,
+            "baselineKeywordCoverage": 1,
+            "postKeywordCoverage": 1,
+            "keywordHits": 5,
+            "totalKeywords": 5,
+            "synapseCount": 0,
+            "totalNodes": 6
+          }
+        },
+        {
+          "queryId": "comp-q-0-1",
+          "passed": true,
+          "score": 0.5,
+          "details": {
+            "compoundGain": 0,
+            "synapseUtil": 0,
+            "baselineKeywordCoverage": 1,
+            "postKeywordCoverage": 1,
+            "keywordHits": 4,
+            "totalKeywords": 4,
+            "synapseCount": 0,
+            "totalNodes": 6
+          }
+        }
+      ],
+      "durationMs": 12934
+    },
+    {
+      "scenarioId": "compounding-product-feedback-1",
+      "taskId": "compounding-intelligence",
+      "passed": false,
+      "score": 0.2,
+      "queryResults": [
+        {
+          "queryId": "comp-q-1-0",
+          "passed": true,
+          "score": 0.3,
+          "details": {
+            "compoundGain": 0,
+            "synapseUtil": 0,
+            "baselineKeywordCoverage": 1,
+            "postKeywordCoverage": 0.75,
+            "keywordHits": 3,
+            "totalKeywords": 4,
+            "synapseCount": 0,
+            "totalNodes": 6
+          }
+        },
+        {
+          "queryId": "comp-q-1-1",
+          "passed": true,
+          "score": 0.1,
+          "details": {
+            "compoundGain": 0,
+            "synapseUtil": 0,
+            "baselineKeywordCoverage": 1,
+            "postKeywordCoverage": 0.5,
+            "keywordHits": 2,
+            "totalKeywords": 4,
+            "synapseCount": 0,
+            "totalNodes": 6
+          }
+        }
+      ],
+      "durationMs": 12050
+    },
+    {
+      "scenarioId": "compounding-strategic-planning-2",
+      "taskId": "compounding-intelligence",
+      "passed": true,
+      "score": 0.5,
+      "queryResults": [
+        {
+          "queryId": "comp-q-2-0",
+          "passed": true,
+          "score": 0.5,
+          "details": {
+            "compoundGain": 0,
+            "synapseUtil": 0,
+            "baselineKeywordCoverage": 1,
+            "postKeywordCoverage": 1,
+            "keywordHits": 4,
+            "totalKeywords": 4,
+            "synapseCount": 0,
+            "totalNodes": 6
+          }
+        },
+        {
+          "queryId": "comp-q-2-1",
+          "passed": true,
+          "score": 0.5,
+          "details": {
+            "compoundGain": 0,
+            "synapseUtil": 0,
+            "baselineKeywordCoverage": 1,
+            "postKeywordCoverage": 1,
+            "keywordHits": 4,
+            "totalKeywords": 4,
+            "synapseCount": 0,
+            "totalNodes": 6
+          }
+        }
+      ],
+      "durationMs": 11522
+    },
+    {
+      "scenarioId": "compounding-market-intelligence-3",
+      "taskId": "compounding-intelligence",
+      "passed": true,
+      "score": 0.5,
+      "queryResults": [
+        {
+          "queryId": "comp-q-3-0",
+          "passed": true,
+          "score": 0.5,
+          "details": {
+            "compoundGain": 0,
+            "synapseUtil": 0,
+            "baselineKeywordCoverage": 1,
+            "postKeywordCoverage": 1,
+            "keywordHits": 4,
+            "totalKeywords": 4,
+            "synapseCount": 0,
+            "totalNodes": 6
+          }
+        },
+        {
+          "queryId": "comp-q-3-1",
+          "passed": true,
+          "score": 0.5,
+          "details": {
+            "compoundGain": 0,
+            "synapseUtil": 0,
+            "baselineKeywordCoverage": 1,
+            "postKeywordCoverage": 1,
+            "keywordHits": 4,
+            "totalKeywords": 4,
+            "synapseCount": 0,
+            "totalNodes": 6
+          }
+        }
+      ],
+      "durationMs": 12526
+    },
+    {
+      "scenarioId": "compounding-incident-analysis-4",
+      "taskId": "compounding-intelligence",
+      "passed": true,
+      "score": 0.5,
+      "queryResults": [
+        {
+          "queryId": "comp-q-4-0",
+          "passed": true,
+          "score": 0.5,
+          "details": {
+            "compoundGain": 0,
+            "synapseUtil": 0,
+            "baselineKeywordCoverage": 1,
+            "postKeywordCoverage": 1,
+            "keywordHits": 4,
+            "totalKeywords": 4,
+            "synapseCount": 0,
+            "totalNodes": 6
+          }
+        },
+        {
+          "queryId": "comp-q-4-1",
+          "passed": true,
+          "score": 0.5,
+          "details": {
+            "compoundGain": 0,
+            "synapseUtil": 0,
+            "baselineKeywordCoverage": 1,
+            "postKeywordCoverage": 1,
+            "keywordHits": 4,
+            "totalKeywords": 4,
+            "synapseCount": 0,
+            "totalNodes": 6
+          }
+        }
+      ],
+      "durationMs": 11825
+    },
+    {
+      "scenarioId": "procedural-code-review-heuristic-0",
+      "taskId": "procedural-learning",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "proc-q-0-0",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "proficient",
+            "expectedProficiency": "proficient",
+            "executionCount": 11,
+            "successRate": 0.9090909090909091,
+            "matchType": "domain"
+          }
+        },
+        {
+          "queryId": "proc-q-0-1",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "proficient",
+            "expectedProficiency": "proficient",
+            "executionCount": 11,
+            "successRate": 0.9090909090909091,
+            "matchType": "domain"
+          }
+        },
+        {
+          "queryId": "proc-q-0-2",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "proficient",
+            "expectedProficiency": "proficient",
+            "executionCount": 11,
+            "successRate": 0.9090909090909091,
+            "matchType": "domain"
+          }
+        }
+      ],
+      "durationMs": 4126
+    },
+    {
+      "scenarioId": "procedural-quarterly-business-review-preparation-1",
+      "taskId": "procedural-learning",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "proc-q-1-0",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "expert",
+            "expectedProficiency": "expert",
+            "executionCount": 22,
+            "successRate": 1,
+            "matchType": "domain"
+          }
+        },
+        {
+          "queryId": "proc-q-1-1",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "expert",
+            "expectedProficiency": "expert",
+            "executionCount": 22,
+            "successRate": 1,
+            "matchType": "domain"
+          }
+        },
+        {
+          "queryId": "proc-q-1-2",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "expert",
+            "expectedProficiency": "expert",
+            "executionCount": 22,
+            "successRate": 1,
+            "matchType": "domain"
+          }
+        }
+      ],
+      "durationMs": 6796
+    },
+    {
+      "scenarioId": "procedural-production-incident-response-2",
+      "taskId": "procedural-learning",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "proc-q-2-0",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "expert",
+            "expectedProficiency": "expert",
+            "executionCount": 21,
+            "successRate": 0.9523809523809523,
+            "matchType": "domain"
+          }
+        },
+        {
+          "queryId": "proc-q-2-1",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "expert",
+            "expectedProficiency": "expert",
+            "executionCount": 21,
+            "successRate": 0.9523809523809523,
+            "matchType": "domain"
+          }
+        },
+        {
+          "queryId": "proc-q-2-2",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "expert",
+            "expectedProficiency": "expert",
+            "executionCount": 21,
+            "successRate": 0.9523809523809523,
+            "matchType": "domain"
+          }
+        }
+      ],
+      "durationMs": 6814
+    },
+    {
+      "scenarioId": "procedural-client-onboarding-3",
+      "taskId": "procedural-learning",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "proc-q-3-0",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "competent",
+            "expectedProficiency": "competent",
+            "executionCount": 4,
+            "successRate": 0.75,
+            "matchType": "semantic"
+          }
+        },
+        {
+          "queryId": "proc-q-3-1",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "competent",
+            "expectedProficiency": "competent",
+            "executionCount": 4,
+            "successRate": 0.75,
+            "matchType": "domain"
+          }
+        },
+        {
+          "queryId": "proc-q-3-2",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "competent",
+            "expectedProficiency": "competent",
+            "executionCount": 4,
+            "successRate": 0.75,
+            "matchType": "domain"
+          }
+        }
+      ],
+      "durationMs": 2445
+    },
+    {
+      "scenarioId": "procedural-sprint-retrospective-facilitation-4",
+      "taskId": "procedural-learning",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "proc-q-4-0",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "novice",
+            "expectedProficiency": "novice",
+            "executionCount": 2,
+            "successRate": 1,
+            "matchType": "domain"
+          }
+        },
+        {
+          "queryId": "proc-q-4-1",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "novice",
+            "expectedProficiency": "novice",
+            "executionCount": 2,
+            "successRate": 1,
+            "matchType": "domain"
+          }
+        },
+        {
+          "queryId": "proc-q-4-2",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "novice",
+            "expectedProficiency": "novice",
+            "executionCount": 2,
+            "successRate": 1,
+            "matchType": "domain"
+          }
+        }
+      ],
+      "durationMs": 1954
+    },
+    {
+      "scenarioId": "procedural-cold-outreach-email-5",
+      "taskId": "procedural-learning",
+      "passed": true,
+      "score": 1,
+      "queryResults": [
+        {
+          "queryId": "proc-q-5-0",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "proficient",
+            "expectedProficiency": "proficient",
+            "executionCount": 12,
+            "successRate": 0.9166666666666666,
+            "matchType": "domain"
+          }
+        },
+        {
+          "queryId": "proc-q-5-1",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "proficient",
+            "expectedProficiency": "proficient",
+            "executionCount": 12,
+            "successRate": 0.9166666666666666,
+            "matchType": "domain"
+          }
+        },
+        {
+          "queryId": "proc-q-5-2",
+          "passed": true,
+          "score": 1,
+          "details": {
+            "proficiencyAccuracy": 1,
+            "retrievalPrecision": 1,
+            "found": true,
+            "rank": 1,
+            "actualProficiency": "proficient",
+            "expectedProficiency": "proficient",
+            "executionCount": 12,
+            "successRate": 0.9166666666666666,
+            "matchType": "domain"
+          }
+        }
+      ],
+      "durationMs": 4482
+    }
+  ],
+  "timing": {
+    "totalMs": 329234,
+    "perTask": {
+      "temporal-validity": 22643,
+      "reconsolidation": 30596,
+      "novelty-detection": 40055,
+      "emotional-recall": 123173,
+      "cross-agent-transfer": 21196,
+      "compounding-intelligence": 60861,
+      "procedural-learning": 26620
+    }
+  }
+}
