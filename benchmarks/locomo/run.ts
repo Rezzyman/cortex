@@ -199,10 +199,18 @@ async function main() {
             [
               {
                 role: "user",
-                content: `Based on the following conversation context, answer the question. If the information is not available in the context, say "I don't have enough information to answer that question."\n\nContext:\n${context.slice(0, 6000)}\n\nQuestion: ${qa.question}\n\nAnswer concisely:`,
+                content: `Answer ONLY from the conversation context below. If the answer is NOT in the context, respond with exactly: "I don't have enough information to answer that question."
+
+Context:
+${context.slice(0, 6000)}
+
+Question: ${qa.question}
+
+Rules: If answerable, give ONLY the exact answer in the fewest possible words. No sentences. No explanation. Just the answer.
+Answer:`,
               },
             ],
-            { maxTokens: 100, temperature: 0 }
+            { maxTokens: 50, temperature: 0 }
           );
           generatedAnswer = response.content.trim();
         } else {
@@ -210,7 +218,24 @@ async function main() {
             [
               {
                 role: "user",
-                content: `Based on the following conversation context, answer the question as concisely as possible. Give only the answer, no explanation.\n\nContext:\n${context.slice(0, 6000)}\n\nQuestion: ${qa.question}\n\nAnswer:`,
+                content: `Answer the question using ONLY the conversation context below.
+
+Context:
+${context.slice(0, 6000)}
+
+Question: ${qa.question}
+
+Rules:
+- Give ONLY the direct answer, nothing else
+- Use the fewest words possible
+- For dates: use the exact format from the conversation (e.g., "7 May 2023" not "May 7th, 2023")
+- For names: just the name
+- For lists: comma-separated, no "and"
+- No sentences, no explanation, no "The answer is..."
+- If asking "when": give only the date/time
+- If asking "what": give only the thing
+- If asking "who": give only the name
+Answer:`,
               },
             ],
             { maxTokens: 100, temperature: 0 }
@@ -235,7 +260,7 @@ async function main() {
         f1 = abstains ? 1.0 : 0.0;
       } else if (qa.category === 1) {
         // Category 1: multi-hop, compute partial F1 per sub-answer
-        const subAnswers = qa.answer.split(",").map((a) => a.trim());
+        const subAnswers = String(qa.answer).split(",").map((a) => a.trim());
         const subF1s = subAnswers.map((sub) => computeF1(generatedAnswer, sub));
         f1 = subF1s.reduce((a, b) => a + b, 0) / subF1s.length;
       } else {
