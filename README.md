@@ -33,7 +33,7 @@ This is what I think AI memory should look like. Now it's yours.
 | | |
 |---|---|
 | **Status** | Running in production, v2.4, 6+ months |
-| **Scale** | 27 agents · 25,000+ active memories · 1.9M+ synapses |
+| **Scale** | 5,000+ active memories · 1.9M+ synapses *avg per agent* |
 | **Benchmarks** | [500/500 LongMemEval](BENCHMARKS.md) · [93.6% R@10 LoCoMo](BENCHMARKS.md) — zero LLM reranking |
 | **Science** | [Neuroscience references](REFERENCES.md) — hippocampal indexing, CA3 autoassociative recall, reconsolidation, Ebbinghaus stability |
 | **License** | Apache 2.0 |
