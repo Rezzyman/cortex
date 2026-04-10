@@ -129,15 +129,26 @@ server.tool(
       LIMIT ${limit}
     `);
 
-    // Update access counts
+    // Update access counts (telemetry — best-effort, non-fatal).
+    // NOTE (2026-04-10): Uses sql.raw with an explicit ARRAY literal because
+    // drizzle-orm serializes JS number arrays as PostgreSQL composite ROW(...)
+    // types which Postgres refuses to cast to int[] ("cannot cast type record
+    // to integer[]"). The wrapping try/catch ensures that a telemetry failure
+    // never kills a successful search response. resultIds are typed as number[]
+    // from the caller's SELECT rows, so there is no injection risk.
     const resultIds = (results.rows as Array<{ id: number }>).map((r) => r.id);
     if (resultIds.length > 0) {
-      await db.execute(sql`
-        UPDATE memory_nodes
-        SET access_count = access_count + 1,
-            last_accessed_at = NOW()
-        WHERE id = ANY(${resultIds}::int[])
-      `);
+      try {
+        const idsLiteral = `ARRAY[${resultIds.join(",")}]::int[]`;
+        await db.execute(sql`
+          UPDATE memory_nodes
+          SET access_count = access_count + 1,
+              last_accessed_at = NOW()
+          WHERE id = ANY(${sql.raw(idsLiteral)})
+        `);
+      } catch (err) {
+        console.error("[cortex_search] access count update failed (non-fatal):", err);
+      }
     }
 
     const formatted = (

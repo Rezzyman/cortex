@@ -327,7 +327,19 @@ export { markLabile, reconsolidate, isLabile };
 
 /**
  * Trigger recall on a set of memory node IDs (makes them labile).
- * Uses direct SQL to avoid postgres-js array serialization issues.
+ *
+ * Uses a PostgreSQL text-array literal (`{1,2,3}::int[]`) instead of
+ * drizzle-orm's template array interpolation. This benchmark harness has
+ * used this workaround since initial write because drizzle-orm serializes
+ * JS number arrays as composite ROW(...) types that Postgres refuses to cast
+ * to int[] ("cannot cast type record to integer[]").
+ *
+ * As of 2026-04-10, the canonical fix in the main codebase (src/) is to use
+ * `sql.raw(\`ARRAY[${ids.join(",")}]::int[]\`)` — both patterns work. This
+ * harness continues to use the text-literal pattern because it is battle-
+ * tested against the full CogBench suite. The rest of the client.ts file
+ * follows the same text-literal convention below (getResonanceScores,
+ * getActiveNodeIds, countSynapses) — keep it consistent within this file.
  */
 export async function recallAndMarkLabile(nodeIds: number[]): Promise<void> {
   if (nodeIds.length === 0) return;

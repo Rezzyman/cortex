@@ -44,15 +44,24 @@ export interface ReconsolidationResult {
  * Called automatically when memories are retrieved via search/recall.
  *
  * Uses the existing `last_recalled_at` column (added in Build 3 migration).
+ *
+ * NOTE (2026-04-10): Standardized on sql.raw with an explicit PostgreSQL
+ * ARRAY literal (matches cortex-v2 pattern). Previously used a text-array
+ * literal workaround `{1,2,3}::int[]` that relied on drizzle's string-parameter
+ * binding, which worked in practice but was brittle. The sql.raw ARRAY[]
+ * constructor is the canonical fix for drizzle-orm's composite-ROW serialization
+ * of JS number arrays that Postgres refuses to cast to int[] ("cannot cast
+ * type record to integer[]"). memoryIds are typed as number[] from upstream
+ * SELECT results, so there is no injection risk from the string join.
  */
 export async function markLabile(memoryIds: number[]): Promise<void> {
   if (memoryIds.length === 0) return;
 
-  const idList = `{${memoryIds.join(",")}}`;
+  const idsLiteral = `ARRAY[${memoryIds.join(",")}]::int[]`;
   await db.execute(sql`
     UPDATE memory_nodes
     SET last_recalled_at = NOW()
-    WHERE id = ANY(${idList}::int[])
+    WHERE id = ANY(${sql.raw(idsLiteral)})
   `);
 }
 

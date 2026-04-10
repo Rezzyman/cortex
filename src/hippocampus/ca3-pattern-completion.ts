@@ -137,20 +137,43 @@ async function findSparseOverlapMatches(
 ): Promise<Array<{ memoryId: number; overlapScore: number }>> {
   // Use GIN index on sparse_indices for fast pre-filtering,
   // then compute overlap score in SQL
-  const queryIndices = querySparse.indices;
-  const queryValues = querySparse.values;
+  //
+  // NOTE (2026-04-10): Two defects were fixed in this block:
+  //
+  //   1. The CTE was originally named `overlaps`, which collides with
+  //      PostgreSQL's OVERLAPS temporal predicate and triggered a parser
+  //      error ("syntax error at or near overlaps") on some Postgres
+  //      versions. Renamed to `overlap_scores`.
+  //
+  //   2. The `${queryIndices}::int[]` and `${queryValues}::real[]` template
+  //      interpolations used drizzle-orm's sql tag on raw JS arrays, which
+  //      get serialized as composite ROW(...) types and fail the ::int[]/
+  //      ::real[] cast ("cannot cast type record to integer[]"). Both are
+  //      now built as explicit PostgreSQL ARRAY literals and interpolated
+  //      via sql.raw(), matching the pattern used in markLabile() and
+  //      loadSynapseGraph(). Sparse indices/values are plain number arrays
+  //      from the caller's SparseCode, no injection surface.
+  //
+  // The combination of these two defects silently disabled the entire CA3
+  // pattern completion path (patternComplete() caught the thrown errors in
+  // its outer try/catch and returned an empty result set), which masked the
+  // fact that the "hippocampal pattern completion boost" had not been
+  // contributing to hybrid search scores. With both defects fixed, CA3
+  // recurrent activation spread is live again.
+  const queryIndicesLiteral = `ARRAY[${querySparse.indices.join(",")}]::int[]`;
+  const queryValuesLiteral = `ARRAY[${querySparse.values.join(",")}]::real[]`;
 
   const result = await db.execute(sql`
     WITH query_entries AS (
       SELECT
-        unnest(${queryIndices}::int[]) AS idx,
-        unnest(${queryValues}::real[]) AS val
+        unnest(${sql.raw(queryIndicesLiteral)}) AS idx,
+        unnest(${sql.raw(queryValuesLiteral)}) AS val
     ),
     candidates AS (
       SELECT hc.memory_id, hc.sparse_indices, hc.sparse_values
       FROM hippocampal_codes hc
       WHERE hc.agent_id = ${agentId}
-        AND hc.sparse_indices && ${queryIndices}::int[]
+        AND hc.sparse_indices && ${sql.raw(queryIndicesLiteral)}
     ),
     expanded AS (
       SELECT
@@ -159,7 +182,7 @@ async function findSparseOverlapMatches(
         unnest(c.sparse_values) AS val
       FROM candidates c
     ),
-    overlaps AS (
+    overlap_scores AS (
       SELECT
         e.memory_id,
         SUM(LEAST(q.val, e.val)) AS overlap_score
@@ -168,7 +191,7 @@ async function findSparseOverlapMatches(
       GROUP BY e.memory_id
     )
     SELECT memory_id, overlap_score
-    FROM overlaps
+    FROM overlap_scores
     ORDER BY overlap_score DESC
     LIMIT ${topN}
   `);
@@ -223,10 +246,18 @@ async function loadSynapseGraph(
 
   if (memoryIds.length === 0) return graph;
 
+  // NOTE (2026-04-10): sql.raw with an explicit ARRAY literal bypasses
+  // drizzle-orm's composite-ROW serialization of JS number arrays, which
+  // Postgres refuses to cast to int[]. Before this fix, loadSynapseGraph
+  // threw on every patternComplete() call, CA3's recurrent activation spread
+  // was disabled, and the "hippocampal pattern completion boost" advertised
+  // in the README was dead. memoryIds are typed as number[] from the caller,
+  // no injection risk.
+  const idsLiteral = `ARRAY[${memoryIds.join(",")}]::int[]`;
   const result = await db.execute(sql`
     SELECT memory_a, memory_b, connection_strength
     FROM memory_synapses
-    WHERE (memory_a = ANY(${memoryIds}::int[]) OR memory_b = ANY(${memoryIds}::int[]))
+    WHERE (memory_a = ANY(${sql.raw(idsLiteral)}) OR memory_b = ANY(${sql.raw(idsLiteral)}))
       AND connection_strength >= ${MIN_SYNAPSE_STRENGTH}
   `);
 

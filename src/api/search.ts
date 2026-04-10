@@ -107,17 +107,40 @@ async function hybridSearch(
     // CA3 is additive — if it fails (e.g., no hippocampal codes yet), hybrid still works
   }
 
-  // Update access counts and mark as labile (reconsolidation window)
+  // NOTE (2026-04-10): Access-count telemetry and markLabile are now split
+  // into two concerns with different failure semantics:
+  //
+  //   1. Access-count UPDATE — telemetry, best-effort, wrapped in try/catch
+  //      so a failure is logged as non-fatal and the search response still
+  //      succeeds (the user still gets their results).
+  //
+  //   2. markLabile() — CORE LEARNING MECHANISM. Opens the reconsolidation
+  //      window so retrieved memories can be updated with new information.
+  //      NOT wrapped in try/catch: if this ever starts failing, we want it
+  //      LOUD, not silent. Silent markLabile failure is what caused the
+  //      7+ day procedural memory stall in April 2026. Never again.
+  //
+  // Both paths use sql.raw with an explicit ARRAY literal because drizzle-orm
+  // serializes JS number arrays as PostgreSQL composite ROW(...) types which
+  // Postgres refuses to cast to int[]. allAccessIds are typed as number[]
+  // from upstream SELECT rows, so no injection risk.
   const resultIds = (results.rows as Array<{ id: number }>).map((r) => r.id);
   const allAccessIds = [...new Set([...resultIds, ...ca3Results.keys()])];
   if (allAccessIds.length > 0) {
-    await db.execute(sql`
-      UPDATE memory_nodes
-      SET access_count = access_count + 1,
-          last_accessed_at = NOW()
-      WHERE id = ANY(${allAccessIds}::int[])
-    `);
-    // Mark recalled memories as labile for reconsolidation
+    // Access-count telemetry (best-effort, non-fatal)
+    try {
+      const idsLiteral = `ARRAY[${allAccessIds.join(",")}]::int[]`;
+      await db.execute(sql`
+        UPDATE memory_nodes
+        SET access_count = access_count + 1,
+            last_accessed_at = NOW()
+        WHERE id = ANY(${sql.raw(idsLiteral)})
+      `);
+    } catch (err) {
+      console.error("[search] access count update failed (non-fatal):", err);
+    }
+
+    // Mark recalled memories as labile for reconsolidation (CRITICAL — not wrapped)
     await markLabile(allAccessIds);
   }
 
