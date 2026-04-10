@@ -20,11 +20,25 @@ I built this because I spent two years watching AI agents lose their minds every
 
 So I stopped looking for the tool and built the system. I went back to the neuroscience. Not as a metaphor, not as marketing language, but as an engineering blueprint. The hippocampus separates similar patterns so you don't confuse yesterday's meeting with last week's. The CA1 region detects novelty by comparing what arrived against what it predicted. Memories consolidate during sleep through a two-phase cycle that prunes the noise, strengthens the signal, and occasionally surfaces connections you never would have made while awake. Emotional experiences resist forgetting. Retrieved memories become temporarily malleable, so beliefs can be corrected instead of just appended.
 
-All of this is in CORTEX. Running. In production. Powering a fleet of agents that carry 26,000+ memories, 1.8 million synaptic connections, and a nightly dream cycle that prunes, consolidates, and synthesizes while the world sleeps.
+All of this is in CORTEX. Running. In production. Powering a fleet of 27 agents that carry 25,000+ active memories, 1.9 million+ synaptic connections, 6+ months of uninterrupted nightly dream cycles, and a 0.00 identity drift score that means the agents wake up the same people they were when they went to sleep.
 
 This is what I think AI memory should look like. Now it's yours.
 
 **Atanasio Juarez**, Founder, [ATERNA.AI](https://aterna.ai)
+
+---
+
+## At a glance
+
+| | |
+|---|---|
+| **Status** | Running in production, v2.4, 6+ months |
+| **Scale** | 27 agents · 25,000+ active memories · 1.9M+ synapses |
+| **Benchmarks** | [500/500 LongMemEval](BENCHMARKS.md) · [93.6% R@10 LoCoMo](BENCHMARKS.md) — zero LLM reranking |
+| **Science** | [Neuroscience references](REFERENCES.md) — hippocampal indexing, CA3 autoassociative recall, reconsolidation, Ebbinghaus stability |
+| **License** | Apache 2.0 |
+| **Language** | TypeScript (Node 22+) · [Python port](https://github.com/Rezzyman/cortex-python) · [Zero-config SQLite version](https://github.com/Rezzyman/cortex-lite) |
+| **Agents** | Any MCP client (Claude Code, Cursor, Windsurf) · REST API for everything else |
 
 ---
 
@@ -247,11 +261,17 @@ Five phases. Two stages. Inspired by real sleep neuroscience.
 
 This isn't decorative. Every subsystem maps to established computational neuroscience:
 
-- **Dentate Gyrus pattern separation**: Rolls (2013), "The mechanisms for pattern completion and pattern separation in the hippocampus"
-- **CA1 predictive coding**: Lee et al. (2009), "Prediction error and memory reconsolidation"
-- **Memory reconsolidation**: Nader et al. (2000), "Fear memories require protein synthesis in the amygdala for reconsolidation after retrieval"
-- **Ebbinghaus forgetting curve**: Ebbinghaus (1885), extended with stability from Huawei's Memory-Augmented Transformers (2025)
-- **Two-phase sleep consolidation**: Diekelmann & Born (2010), "The memory function of sleep"
+- **Dentate Gyrus pattern separation**: Rolls (2013), Marr (1971)
+- **CA1 predictive coding / novelty detection**: Lee et al. (2009)
+- **CA3 autoassociative pattern completion**: Ramsauer et al. (2020) *Hopfield Networks is All You Need*, Rolls (2013)
+- **Memory reconsolidation**: Nader et al. (2000), Lee, Nader & Schiller (2017)
+- **Two-phase sleep consolidation**: Diekelmann & Born (2010), Hobson & Friston (2012)
+- **Adaptive pruning / synaptic homeostasis**: Tononi & Cirelli (2014)
+- **Ebbinghaus forgetting curve**: Ebbinghaus (1885), Murre & Dros (2015) — modern replication
+- **Emotional valence and memory salience**: Cahill & McGaugh (1998), Russell (1980)
+- **Procedural skill formation**: Anderson (1982) ACT-R framework
+
+See [REFERENCES.md](REFERENCES.md) for DOIs, URLs, abstracts, and the mapping from each paper to the specific source file in this repo.
 
 ---
 
@@ -265,11 +285,29 @@ npm test
 
 ---
 
+## The CORTEX ecosystem
+
+CORTEX ships as a small family of compatible projects. Pick the one that matches how you want to integrate:
+
+| Project | Language | Storage | Audience | Install |
+|---|---|---|---|---|
+| **[cortex](https://github.com/Rezzyman/cortex)** (this repo) | TypeScript (Node 22+) | PostgreSQL + pgvector | Production agent teams · benchmark-certified retrieval · MCP and REST | `git clone` + Docker Compose |
+| **[cortex-lite](https://github.com/Rezzyman/cortex-lite)** | Python 3.10+ | SQLite (one file) | Individual developers · zero-config · local embeddings · 30-second quickstart | `pip install cortex-lite` |
+| **[cortex-python](https://github.com/Rezzyman/cortex-python)** | Python 3.10+ | PostgreSQL + pgvector (shares schema with this repo) | Python agent codebases that need to read and write the same memory store as a TypeScript CORTEX deployment | `pip install cortex-ai` |
+
+**Choose cortex** for the full benchmark-certified stack with dream cycles, CA3 pattern completion, reconsolidation, emotional valence, procedural learning, and autonomous cognition threads.
+
+**Choose cortex-lite** to get the hybrid-search pattern running in under a minute with zero infrastructure. Graduate to full cortex when you need dream cycles or scale past ~10K memories.
+
+**Choose cortex-python** when your agent code is already Python and you need first-class read/write access to a CORTEX memory store. cortex-python implements the core subsystems (hippocampus, dream cycle, procedural memory, hybrid search) and is schema-compatible with this flagship repo.
+
+---
+
 ## Contributing
 
 We welcome contributions. See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-Priority areas: benchmarks (LongMemEval, LOCOMO), entity resolution, temporal reasoning queries, additional embedding providers, expanded test coverage.
+Priority areas: additional benchmarks, entity resolution, temporal reasoning queries, additional embedding providers, expanded test coverage, and bringing cortex-python to full parity with the TypeScript flagship.
 
 ---
 
