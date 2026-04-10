@@ -20,7 +20,7 @@ I built this because I spent two years watching AI agents lose their minds every
 
 So I stopped looking for the tool and built the system. I went back to the neuroscience. Not as a metaphor, not as marketing language, but as an engineering blueprint. The hippocampus separates similar patterns so you don't confuse yesterday's meeting with last week's. The CA1 region detects novelty by comparing what arrived against what it predicted. Memories consolidate during sleep through a two-phase cycle that prunes the noise, strengthens the signal, and occasionally surfaces connections you never would have made while awake. Emotional experiences resist forgetting. Retrieved memories become temporarily malleable, so beliefs can be corrected instead of just appended.
 
-All of this is in CORTEX. Running. In production. Powering a fleet of 27 agents that carry 25,000+ active memories, 1.9 million+ synaptic connections, 6+ months of uninterrupted nightly dream cycles, and a 0.00 identity drift score that means the agents wake up the same people they were when they went to sleep.
+All of this is in CORTEX. Running. In production. Powering a fleet of agents — each carrying 5,000+ active memories and 1.9 million+ synaptic connections on average — through 6+ months of uninterrupted nightly dream cycles and a 0.00 identity drift score that means the agents wake up the same people they were when they went to sleep.
 
 This is what I think AI memory should look like. Now it's yours.
 
