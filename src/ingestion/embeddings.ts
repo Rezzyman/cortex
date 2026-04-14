@@ -26,6 +26,37 @@ async function sleep(ms: number) {
   return new Promise((r) => setTimeout(r, ms));
 }
 
+/**
+ * Retry a fetch-bound async call with exponential backoff. Voyage's
+ * TLS connections occasionally drop mid-session on long ingest runs
+ * (UND_ERR_SOCKET "other side closed"). A single retry with jitter is
+ * enough to survive it; three attempts gives us headroom for the
+ * rare API 5xx as well.
+ */
+async function withRetry<T>(
+  label: string,
+  fn: () => Promise<T>,
+  attempts = 3
+): Promise<T> {
+  let lastErr: unknown;
+  for (let i = 0; i < attempts; i++) {
+    try {
+      return await fn();
+    } catch (err) {
+      lastErr = err;
+      const isLast = i === attempts - 1;
+      if (isLast) break;
+      const backoffMs = 500 * Math.pow(2, i) + Math.floor(Math.random() * 250);
+      console.error(
+        `[embeddings] ${label} failed (attempt ${i + 1}/${attempts}) — retrying in ${backoffMs}ms:`,
+        err instanceof Error ? err.message : err
+      );
+      await sleep(backoffMs);
+    }
+  }
+  throw lastErr;
+}
+
 // ─── Ollama Provider ────────────────────────────────────
 
 async function ollamaEmbed(text: string): Promise<number[]> {
@@ -54,28 +85,30 @@ async function voyageEmbedBatch(texts: string[]): Promise<number[][]> {
     throw new Error("VOYAGE_API_KEY is required when EMBEDDING_PROVIDER=voyage");
   }
 
-  const response = await fetch("https://api.voyageai.com/v1/embeddings", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${VOYAGE_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: EMBEDDING_MODEL,
-      input: texts,
-      input_type: "document",
-    }),
+  return withRetry("voyage batch", async () => {
+    const response = await fetch("https://api.voyageai.com/v1/embeddings", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${VOYAGE_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: EMBEDDING_MODEL,
+        input: texts,
+        input_type: "document",
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.text();
+      throw new Error(`Voyage embedding error (${response.status}): ${error}`);
+    }
+
+    const data = (await response.json()) as {
+      data: Array<{ embedding: number[] }>;
+    };
+    return data.data.map((d) => d.embedding);
   });
-
-  if (!response.ok) {
-    const error = await response.text();
-    throw new Error(`Voyage embedding error (${response.status}): ${error}`);
-  }
-
-  const data = (await response.json()) as {
-    data: Array<{ embedding: number[] }>;
-  };
-  return data.data.map((d) => d.embedding);
 }
 
 async function voyageEmbedQuery(text: string): Promise<number[]> {
@@ -83,28 +116,30 @@ async function voyageEmbedQuery(text: string): Promise<number[]> {
     throw new Error("VOYAGE_API_KEY is required when EMBEDDING_PROVIDER=voyage");
   }
 
-  const response = await fetch("https://api.voyageai.com/v1/embeddings", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Authorization: `Bearer ${VOYAGE_API_KEY}`,
-    },
-    body: JSON.stringify({
-      model: EMBEDDING_MODEL,
-      input: [text],
-      input_type: "query",
-    }),
+  return withRetry("voyage query", async () => {
+    const response = await fetch("https://api.voyageai.com/v1/embeddings", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${VOYAGE_API_KEY}`,
+      },
+      body: JSON.stringify({
+        model: EMBEDDING_MODEL,
+        input: [text],
+        input_type: "query",
+      }),
+    });
+
+    if (!response.ok) {
+      const error = await response.text();
+      throw new Error(`Voyage query embedding error (${response.status}): ${error}`);
+    }
+
+    const data = (await response.json()) as {
+      data: Array<{ embedding: number[] }>;
+    };
+    return data.data[0].embedding;
   });
-
-  if (!response.ok) {
-    const error = await response.text();
-    throw new Error(`Voyage query embedding error (${response.status}): ${error}`);
-  }
-
-  const data = (await response.json()) as {
-    data: Array<{ embedding: number[] }>;
-  };
-  return data.data[0].embedding;
 }
 
 // ─── Unified Interface ──────────────────────────────────
