@@ -19,7 +19,7 @@ export function chunkText(
   chunkSize = CHUNK_SIZE,
   overlap = OVERLAP
 ): Chunk[] {
-  const tokens = encode(text);
+  const tokens = encode(text, "all");
   if (tokens.length <= chunkSize) {
     return [
       {
@@ -61,5 +61,5 @@ export function chunkText(
  * Count tokens in a string using GPT tokenizer.
  */
 export function countTokens(text: string): number {
-  return encode(text).length;
+  return encode(text, "all").length;
 }
