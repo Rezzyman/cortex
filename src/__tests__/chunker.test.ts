@@ -53,5 +53,11 @@ describe("Text Chunking", () => {
       // Chunker may return 1 empty chunk or 0 — either is acceptable
       expect(chunks.length).toBeLessThanOrEqual(1);
     });
+
+    it("should not throw on text containing GPT special tokens", () => {
+      const text = "session start <|endoftext|> session end <|endofprompt|>";
+      expect(() => chunkText(text)).not.toThrow();
+      expect(() => countTokens(text)).not.toThrow();
+    });
   });
 });
