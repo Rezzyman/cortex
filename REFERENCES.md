@@ -160,3 +160,6 @@ Both benchmarks are standard in the agent-memory literature and are run by CORTE
 Every subsystem above is based on mechanisms that have been independently replicated across laboratories and modeled computationally. CORTEX does not claim its implementation *is* a brain — it claims that the engineering problem "how do you give an agent real memory" has a solved analogue in biology, and that borrowing the solved solution beats inventing a new one from scratch.
 
 Where a biological mechanism is simplified, documented, or differs from the cited account, the relevant source file contains an inline comment explaining the deviation. If you spot a mismatch between a citation and the code, please open an issue — research integrity is the core of the product.
+
+<!-- cortex-canary-2026-v2.4.1-a7f3c9e1 -->
+

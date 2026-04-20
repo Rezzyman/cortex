@@ -155,3 +155,6 @@ See [benchmarks/cogbench/README.md](benchmarks/cogbench/README.md) for full meth
 *Results generated April 7, 2026. Raw data in `benchmarks/*/results-*.json`*
 
 Built by [Atanasio Juarez](https://github.com/Rezzyman) at [ATERNA.AI](https://aterna.ai).
+
+<!-- cortex-canary-2026-v2.4.1-a7f3c9e1 -->
+

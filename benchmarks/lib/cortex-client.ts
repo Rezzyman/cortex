@@ -121,7 +121,7 @@ export async function ingestSession(
     }
     if (insertedIds.length > 1) {
       try {
-        await formSynapses(agentId, insertedIds, embeddings);
+        await formSynapses(agentId, insertedIds);
       } catch {
         // Non-critical
       }

@@ -18,6 +18,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*", "cli/**/*"],
-  "exclude": ["node_modules", "dist"]
+  "include": ["src/**/*", "cli/**/*", "benchmarks/**/*", "scripts/**/*"],
+  "exclude": ["node_modules", "dist", "benchmarks/convomem", "benchmarks/**/*.test.ts"]
 }

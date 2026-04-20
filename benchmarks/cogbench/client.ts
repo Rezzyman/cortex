@@ -163,7 +163,7 @@ export async function ingestMemory(
     // Synapse formation
     if (nodeIds.length > 1) {
       try {
-        await formSynapses(agentId, nodeIds, embeddings);
+        await formSynapses(agentId, nodeIds);
       } catch {
         // Non-critical
       }
