@@ -261,7 +261,20 @@ async function evaluateScenario(
   agentId: number
 ): Promise<ScenarioResult> {
   const start = Date.now();
-  const queryResults = [];
+  const queryResults: Array<{
+    queryId: string;
+    passed: boolean;
+    score: number;
+    details: {
+      noveltyScore: number;
+      expectedLabel: string;
+      classified: string;
+      correct: boolean;
+      auc?: number;
+      tpr?: number;
+      fpr?: number;
+    };
+  }> = [];
 
   try {
     await clearAgent(agentId);
