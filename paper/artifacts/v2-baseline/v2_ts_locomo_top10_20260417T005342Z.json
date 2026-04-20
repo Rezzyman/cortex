@@ -1,0 +1,3817 @@
+{
+  "benchmark": "LoCoMo (Retrieval Only)",
+  "system": "CORTEX V2.4",
+  "topK": 10,
+  "methodology": "Pure retrieval, no LLM. top_k=10 (honest, not bypassing retrieval). Same methodology as LongMemEval 500/500 run.",
+  "timestamp": "2026-04-17T05:58:02.574Z",
+  "overall": {
+    "totalQuestions": 1536,
+    "recallAt1": 0.580078125,
+    "recallAt3": 0.7981770833333334,
+    "recallAt5": 0.8860677083333334,
+    "recallAt10": 0.9368489583333334,
+    "mrr": 0.7045645254629642,
+    "hitRate": 0.9368489583333334,
+    "avgRank": 1.9506601806810284,
+    "misses": [
+      {
+        "questionId": "conv-26_q4",
+        "question": "What did Caroline research?",
+        "expectedSessionIds": [
+          "2"
+        ],
+        "retrievedSessionIds": [
+          "4",
+          "15",
+          "6",
+          "7",
+          "1",
+          "11",
+          "13",
+          "5"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-26_q7",
+        "question": "When is Melanie planning on going camping?",
+        "expectedSessionIds": [
+          "2"
+        ],
+        "retrievedSessionIds": [
+          "10",
+          "18",
+          "4",
+          "12",
+          "14",
+          "5",
+          "8",
+          "16",
+          "6"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-26_q8",
+        "question": "What is Caroline's relationship status?",
+        "expectedSessionIds": [
+          "3",
+          "2"
+        ],
+        "retrievedSessionIds": [
+          "4",
+          "6",
+          "11",
+          "15",
+          "12",
+          "1"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-26_q36",
+        "question": "When did Melanie go camping in July?",
+        "expectedSessionIds": [
+          "9"
+        ],
+        "retrievedSessionIds": [
+          "10",
+          "18",
+          "12",
+          "4",
+          "14",
+          "16",
+          "8",
+          "11"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-26_q74",
+        "question": "When did Melanie get hurt?",
+        "expectedSessionIds": [
+          "17"
+        ],
+        "retrievedSessionIds": [
+          "18",
+          "14",
+          "3",
+          "12",
+          "4",
+          "16",
+          "2",
+          "1"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-26_q81",
+        "question": "When did Melanie buy the figurines?",
+        "expectedSessionIds": [
+          "19"
+        ],
+        "retrievedSessionIds": [
+          "14",
+          "12",
+          "8",
+          "4",
+          "1",
+          "13",
+          "3",
+          "11"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-26_q127",
+        "question": "What activity did Caroline used to do with her dad?",
+        "expectedSessionIds": [
+          "13"
+        ],
+        "retrievedSessionIds": [
+          "15",
+          "6",
+          "10",
+          "5",
+          "16",
+          "12",
+          "14",
+          "8"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-30_q191",
+        "question": "When did Gina go to a dance class with a group of friends?",
+        "expectedSessionIds": [
+          "19"
+        ],
+        "retrievedSessionIds": [
+          "1",
+          "14",
+          "11",
+          "9",
+          "8",
+          "5",
+          "17",
+          "2"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-30_q203",
+        "question": "What did Jon say about Gina's progress with her store?",
+        "expectedSessionIds": [
+          "3"
+        ],
+        "retrievedSessionIds": [
+          "16",
+          "4",
+          "14",
+          "6",
+          "18",
+          "10",
+          "8",
+          "5",
+          "17"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-30_q221",
+        "question": "What does Jon tell Gina he won't do?",
+        "expectedSessionIds": [
+          "14"
+        ],
+        "retrievedSessionIds": [
+          "15",
+          "8",
+          "13",
+          "19",
+          "10",
+          "4",
+          "18",
+          "9",
+          "12",
+          "11"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-41_q237",
+        "question": "What type of volunteering have John and Maria both done?",
+        "expectedSessionIds": [
+          "3",
+          "2"
+        ],
+        "retrievedSessionIds": [
+          "5",
+          "16",
+          "9",
+          "26",
+          "27",
+          "28",
+          "32",
+          "21",
+          "29"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-41_q240",
+        "question": "Where has Maria made friends?",
+        "expectedSessionIds": [
+          "4",
+          "2",
+          "19",
+          "14"
+        ],
+        "retrievedSessionIds": [
+          "11",
+          "21",
+          "17",
+          "16",
+          "24",
+          "20",
+          "6"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-41_q242",
+        "question": "What might John's financial status be?",
+        "expectedSessionIds": [
+          "5"
+        ],
+        "retrievedSessionIds": [
+          "28",
+          "6",
+          "16",
+          "11",
+          "22",
+          "30",
+          "4"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-41_q279",
+        "question": "Would John be open to moving to another country?",
+        "expectedSessionIds": [
+          "24",
+          "7"
+        ],
+        "retrievedSessionIds": [
+          "8",
+          "1",
+          "30",
+          "4",
+          "6",
+          "25",
+          "9",
+          "21",
+          "22"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-41_q303",
+        "question": "What did Maria donate to a homeless shelter in December 2023?",
+        "expectedSessionIds": [
+          "2"
+        ],
+        "retrievedSessionIds": [
+          "5",
+          "21",
+          "11",
+          "6",
+          "16",
+          "27",
+          "32",
+          "29",
+          "8"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-41_q316",
+        "question": "What did John receive a certificate for?",
+        "expectedSessionIds": [
+          "9"
+        ],
+        "retrievedSessionIds": [
+          "19",
+          "28",
+          "16",
+          "29",
+          "30",
+          "3",
+          "22",
+          "20",
+          "8"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-41_q318",
+        "question": "What did Maria participate in last weekend before April 10, 2023?",
+        "expectedSessionIds": [
+          "10"
+        ],
+        "retrievedSessionIds": [
+          "5",
+          "29",
+          "11",
+          "6",
+          "18",
+          "27",
+          "20",
+          "16"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-41_q341",
+        "question": "What new activity did Maria start recently, as mentioned on 3 June, 2023?",
+        "expectedSessionIds": [
+          "17"
+        ],
+        "retrievedSessionIds": [
+          "27",
+          "19",
+          "11",
+          "24",
+          "13",
+          "5",
+          "14",
+          "4",
+          "18"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-41_q357",
+        "question": "What did Maria plan to do later on the evening of 7 July, 2023?",
+        "expectedSessionIds": [
+          "23"
+        ],
+        "retrievedSessionIds": [
+          "27",
+          "4",
+          "16",
+          "13",
+          "14",
+          "18",
+          "5",
+          "11",
+          "6"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-41_q367",
+        "question": "What did John do the week before August 3, 2023 involving his kids?",
+        "expectedSessionIds": [
+          "27"
+        ],
+        "retrievedSessionIds": [
+          "8",
+          "18",
+          "13",
+          "10",
+          "31",
+          "19",
+          "4",
+          "29"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-41_q372",
+        "question": "What activity did Maria take up with her friends from church in August 2023?",
+        "expectedSessionIds": [
+          "28"
+        ],
+        "retrievedSessionIds": [
+          "24",
+          "25",
+          "11",
+          "8",
+          "14",
+          "18",
+          "26",
+          "19"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-41_q383",
+        "question": "What is John currently doing as a volunteer in August 2023?",
+        "expectedSessionIds": [
+          "31"
+        ],
+        "retrievedSessionIds": [
+          "16",
+          "17",
+          "28",
+          "3",
+          "1",
+          "4",
+          "26",
+          "29"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q386",
+        "question": "Is it likely that Nate has friends besides Joanna?",
+        "expectedSessionIds": [
+          "1"
+        ],
+        "retrievedSessionIds": [
+          "12",
+          "2",
+          "16",
+          "5",
+          "8",
+          "25",
+          "13",
+          "20",
+          "22",
+          "23"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q395",
+        "question": "What major achievement did Joanna accomplish in January 2022?",
+        "expectedSessionIds": [
+          "2"
+        ],
+        "retrievedSessionIds": [
+          "22",
+          "18",
+          "26",
+          "12",
+          "10",
+          "25",
+          "5",
+          "7",
+          "15"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q400",
+        "question": "What nickname does Nate use for Joanna?",
+        "expectedSessionIds": [
+          "7"
+        ],
+        "retrievedSessionIds": [
+          "22",
+          "1",
+          "24",
+          "10",
+          "5",
+          "21",
+          "11",
+          "23",
+          "27"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q403",
+        "question": "What movie did Joanna watch on 1 May, 2022?",
+        "expectedSessionIds": [
+          "10"
+        ],
+        "retrievedSessionIds": [
+          "3",
+          "1",
+          "25",
+          "22",
+          "23",
+          "17",
+          "27"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q408",
+        "question": "When did Joanna start writing her third screenplay?",
+        "expectedSessionIds": [
+          "12"
+        ],
+        "retrievedSessionIds": [
+          "4",
+          "25",
+          "27",
+          "2",
+          "28",
+          "17",
+          "5",
+          "26",
+          "3"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q422",
+        "question": "When did Joanna share her book with her writers group?",
+        "expectedSessionIds": [
+          "19"
+        ],
+        "retrievedSessionIds": [
+          "9",
+          "12",
+          "26",
+          "17",
+          "25",
+          "18",
+          "6",
+          "4"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q427",
+        "question": "When did Joanna make a chocolate tart with raspberries?",
+        "expectedSessionIds": [
+          "22"
+        ],
+        "retrievedSessionIds": [
+          "21",
+          "10",
+          "20",
+          "3",
+          "26",
+          "16",
+          "4",
+          "18",
+          "29"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q431",
+        "question": "When did Joanna finish up the writing for her book?",
+        "expectedSessionIds": [
+          "22"
+        ],
+        "retrievedSessionIds": [
+          "6",
+          "12",
+          "2",
+          "17",
+          "25",
+          "18",
+          "27",
+          "4"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q473",
+        "question": "What state did Nate visit?",
+        "expectedSessionIds": [
+          "29"
+        ],
+        "retrievedSessionIds": [
+          "11",
+          "8",
+          "1",
+          "17",
+          "21",
+          "26",
+          "16",
+          "7"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q480",
+        "question": "What is Joanna's third screenplay about?",
+        "expectedSessionIds": [
+          "12"
+        ],
+        "retrievedSessionIds": [
+          "4",
+          "25",
+          "27",
+          "2",
+          "5",
+          "28",
+          "17",
+          "3"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q501",
+        "question": "What kind of films does Joanna enjoy?",
+        "expectedSessionIds": [
+          "9"
+        ],
+        "retrievedSessionIds": [
+          "1",
+          "3",
+          "23",
+          "25",
+          "22",
+          "27"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q502",
+        "question": "Which activity helps Nate escape and stimulates his imagination?",
+        "expectedSessionIds": [
+          "9"
+        ],
+        "retrievedSessionIds": [
+          "25",
+          "11",
+          "23",
+          "8",
+          "26",
+          "18",
+          "15",
+          "2"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q508",
+        "question": "What did Nate do for Joanna on 25 May, 2022?",
+        "expectedSessionIds": [
+          "13"
+        ],
+        "retrievedSessionIds": [
+          "22",
+          "10",
+          "23",
+          "21",
+          "26",
+          "1",
+          "7"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q535",
+        "question": "What did Joanna share with her writers group in August 2022?",
+        "expectedSessionIds": [
+          "19"
+        ],
+        "retrievedSessionIds": [
+          "9",
+          "12",
+          "18",
+          "26",
+          "28",
+          "4",
+          "6"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q555",
+        "question": "What does Joanna do while she writes?",
+        "expectedSessionIds": [
+          "24"
+        ],
+        "retrievedSessionIds": [
+          "18",
+          "12",
+          "2",
+          "6",
+          "19",
+          "27",
+          "25",
+          "22"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-42_q584",
+        "question": "What did Nate share a photo of as a part of his experimentation in November 2022?",
+        "expectedSessionIds": [
+          "29"
+        ],
+        "retrievedSessionIds": [
+          "28",
+          "21",
+          "7",
+          "10",
+          "22",
+          "20",
+          "16",
+          "1"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-43_q588",
+        "question": "Would Tim enjoy reading books by C. S. Lewis or John Greene?",
+        "expectedSessionIds": [
+          "1"
+        ],
+        "retrievedSessionIds": [
+          "22",
+          "19",
+          "12",
+          "20",
+          "27",
+          "9",
+          "5",
+          "14",
+          "4"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-43_q609",
+        "question": "Where was John between August 11 and August 15 2023?",
+        "expectedSessionIds": [
+          "6",
+          "7"
+        ],
+        "retrievedSessionIds": [
+          "24",
+          "28",
+          "2",
+          "25",
+          "26",
+          "3",
+          "17",
+          "9",
+          "27"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-43_q630",
+        "question": "Which country was Tim visiting in the second week of November?",
+        "expectedSessionIds": [
+          "18"
+        ],
+        "retrievedSessionIds": [
+          "1",
+          "28",
+          "27",
+          "17",
+          "26",
+          "29",
+          "10",
+          "15",
+          "12"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-43_q631",
+        "question": "Where was Tim in the week before 16 November 2023?",
+        "expectedSessionIds": [
+          "18"
+        ],
+        "retrievedSessionIds": [
+          "10",
+          "16",
+          "26",
+          "1",
+          "17",
+          "12",
+          "9"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-43_q685",
+        "question": "How long did John and his high school basketball teammates play together?",
+        "expectedSessionIds": [
+          "9"
+        ],
+        "retrievedSessionIds": [
+          "6",
+          "23",
+          "5",
+          "3",
+          "7",
+          "12",
+          "24",
+          "14"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-43_q695",
+        "question": "What book recommendation did Tim give to John for the trip?",
+        "expectedSessionIds": [
+          "11"
+        ],
+        "retrievedSessionIds": [
+          "5",
+          "9",
+          "20",
+          "19",
+          "17",
+          "27",
+          "26",
+          "12",
+          "14"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-43_q738",
+        "question": "What was John's way of dealing with doubts and stress when he was younger?",
+        "expectedSessionIds": [
+          "23"
+        ],
+        "retrievedSessionIds": [
+          "20",
+          "16",
+          "17",
+          "19",
+          "18",
+          "15",
+          "8"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-44_q771",
+        "question": "Did Andrew have a pet dog during March 2023?",
+        "expectedSessionIds": [
+          "2"
+        ],
+        "retrievedSessionIds": [
+          "13",
+          "10",
+          "9",
+          "5",
+          "18",
+          "1",
+          "20"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-44_q794",
+        "question": "What has Andrew done with his dogs?",
+        "expectedSessionIds": [
+          "14",
+          "24"
+        ],
+        "retrievedSessionIds": [
+          "17",
+          "10",
+          "1",
+          "9",
+          "11",
+          "15",
+          "18"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-44_q798",
+        "question": "What are the names of Andrew's dogs?",
+        "expectedSessionIds": [
+          "12",
+          "24",
+          "28"
+        ],
+        "retrievedSessionIds": [
+          "1",
+          "11",
+          "17",
+          "10",
+          "9",
+          "4",
+          "15"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-44_q800",
+        "question": "When did Audrey get into an accident in the park?",
+        "expectedSessionIds": [
+          "25"
+        ],
+        "retrievedSessionIds": [
+          "19",
+          "7",
+          "4",
+          "23",
+          "22",
+          "26",
+          "8",
+          "24"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-44_q804",
+        "question": "What are the breeds of Audrey's dogs?",
+        "expectedSessionIds": [
+          "19",
+          "26"
+        ],
+        "retrievedSessionIds": [
+          "4",
+          "1",
+          "10",
+          "27",
+          "13",
+          "23",
+          "17",
+          "11"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-44_q816",
+        "question": "What is a career that Andrew could potentially pursue with his love for animals and nature?",
+        "expectedSessionIds": [
+          "2",
+          "3",
+          "5",
+          "8"
+        ],
+        "retrievedSessionIds": [
+          "1",
+          "20",
+          "23",
+          "14",
+          "21",
+          "6",
+          "13",
+          "4",
+          "22"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-44_q822",
+        "question": "How long has it been since Andrew adopted his first pet, as of November 2023?",
+        "expectedSessionIds": [
+          "12"
+        ],
+        "retrievedSessionIds": [
+          "24",
+          "17",
+          "18",
+          "5",
+          "13",
+          "9",
+          "15"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-44_q823",
+        "question": "How many dogs does Andrew have?",
+        "expectedSessionIds": [
+          "12",
+          "24",
+          "28"
+        ],
+        "retrievedSessionIds": [
+          "10",
+          "27",
+          "15",
+          "1",
+          "17",
+          "11",
+          "23",
+          "18"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-44_q834",
+        "question": "How did Audrey describe she dog he met at the pet store?",
+        "expectedSessionIds": [
+          "6"
+        ],
+        "retrievedSessionIds": [
+          "13",
+          "24",
+          "17",
+          "19",
+          "9",
+          "28",
+          "1",
+          "2",
+          "4"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-44_q844",
+        "question": "What did Andrew and his GF do on the Monday before July 24, 2023?",
+        "expectedSessionIds": [
+          "13"
+        ],
+        "retrievedSessionIds": [
+          "20",
+          "26",
+          "9",
+          "3",
+          "24",
+          "14",
+          "16",
+          "12",
+          "17",
+          "23"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-44_q853",
+        "question": "What did Audrey organize with the neighbors' dogs?",
+        "expectedSessionIds": [
+          "18"
+        ],
+        "retrievedSessionIds": [
+          "11",
+          "4",
+          "27",
+          "23",
+          "10",
+          "28",
+          "9"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-44_q857",
+        "question": "How often does Audrey take her dogs for walks?",
+        "expectedSessionIds": [
+          "19"
+        ],
+        "retrievedSessionIds": [
+          "4",
+          "8",
+          "27",
+          "5",
+          "11",
+          "1",
+          "7",
+          "24",
+          "23"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-44_q862",
+        "question": "What did Audrey do with her pups over the weekend before 4th October, 2023?",
+        "expectedSessionIds": [
+          "21"
+        ],
+        "retrievedSessionIds": [
+          "7",
+          "27",
+          "15",
+          "23",
+          "10",
+          "14",
+          "26",
+          "3",
+          "4"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-47_q886",
+        "question": "What are John's suspected health problems?",
+        "expectedSessionIds": [
+          "1"
+        ],
+        "retrievedSessionIds": [
+          "7",
+          "25",
+          "28",
+          "18",
+          "2",
+          "14",
+          "21",
+          "6",
+          "17",
+          "8"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-47_q892",
+        "question": "Does James live in Connecticut?",
+        "expectedSessionIds": [
+          "5"
+        ],
+        "retrievedSessionIds": [
+          "29",
+          "23",
+          "19",
+          "24",
+          "13",
+          "16",
+          "8",
+          "31",
+          "3"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-47_q894",
+        "question": "How many pets does James have?",
+        "expectedSessionIds": [
+          "1",
+          "5"
+        ],
+        "retrievedSessionIds": [
+          "14",
+          "2",
+          "31",
+          "9",
+          "17",
+          "18",
+          "8"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-47_q895",
+        "question": "What are the names of James's dogs?",
+        "expectedSessionIds": [
+          "1",
+          "5"
+        ],
+        "retrievedSessionIds": [
+          "31",
+          "17",
+          "14",
+          "2",
+          "9",
+          "8",
+          "18"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-47_q897",
+        "question": "How was John feeling on April 10, 2022?",
+        "expectedSessionIds": [
+          "6"
+        ],
+        "retrievedSessionIds": [
+          "25",
+          "14",
+          "28",
+          "7",
+          "29",
+          "27",
+          "22",
+          "23"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-47_q898",
+        "question": "Did James have a girlfriend during April 2022?",
+        "expectedSessionIds": [
+          "6"
+        ],
+        "retrievedSessionIds": [
+          "23",
+          "29",
+          "19",
+          "25",
+          "2",
+          "4",
+          "13",
+          "18"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-47_q905",
+        "question": "Was James feeling lonely before meeting Samantha?",
+        "expectedSessionIds": [
+          "9"
+        ],
+        "retrievedSessionIds": [
+          "23",
+          "29",
+          "19",
+          "31",
+          "17",
+          "8",
+          "5",
+          "15"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-47_q941",
+        "question": "When did John and his programming friends host an online programming competition?",
+        "expectedSessionIds": [
+          "27"
+        ],
+        "retrievedSessionIds": [
+          "20",
+          "22",
+          "6",
+          "4",
+          "28",
+          "10",
+          "11"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-47_q949",
+        "question": "When did James, his family and his dogs start on a road trip together?",
+        "expectedSessionIds": [
+          "30"
+        ],
+        "retrievedSessionIds": [
+          "31",
+          "17",
+          "7",
+          "21",
+          "2",
+          "29",
+          "8"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-47_q980",
+        "question": "What project is James working on in his game design course?",
+        "expectedSessionIds": [
+          "13"
+        ],
+        "retrievedSessionIds": [
+          "22",
+          "1",
+          "9",
+          "31",
+          "25",
+          "21",
+          "20",
+          "6"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-47_q988",
+        "question": "What did James enjoy doing on cold winter days?",
+        "expectedSessionIds": [
+          "16"
+        ],
+        "retrievedSessionIds": [
+          "8",
+          "2",
+          "29",
+          "23",
+          "1",
+          "14",
+          "7",
+          "3",
+          "17"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-48_q1036",
+        "question": "What kind of project was Jolene working on in the beginning of January 2023?",
+        "expectedSessionIds": [
+          "1"
+        ],
+        "retrievedSessionIds": [
+          "17",
+          "22",
+          "14",
+          "18",
+          "13",
+          "5",
+          "16",
+          "9"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-48_q1063",
+        "question": "When was Jolene in Bogota?",
+        "expectedSessionIds": [
+          "4"
+        ],
+        "retrievedSessionIds": [
+          "26",
+          "23",
+          "21",
+          "6",
+          "27",
+          "18",
+          "30",
+          "1"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-48_q1064",
+        "question": "In what country was Jolene during summer 2022?",
+        "expectedSessionIds": [
+          "4"
+        ],
+        "retrievedSessionIds": [
+          "6",
+          "23",
+          "29",
+          "18",
+          "27",
+          "25",
+          "14",
+          "24"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-48_q1096",
+        "question": "When did Deborah go to a yoga retreat near her mom's place?",
+        "expectedSessionIds": [
+          "21"
+        ],
+        "retrievedSessionIds": [
+          "23",
+          "2",
+          "14",
+          "30",
+          "24",
+          "28",
+          "1",
+          "6",
+          "4"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-48_q1114",
+        "question": "Where did Jolene and her partner spend most of September 2023?",
+        "expectedSessionIds": [
+          "2"
+        ],
+        "retrievedSessionIds": [
+          "23",
+          "7",
+          "18",
+          "6",
+          "14",
+          "27",
+          "29"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-48_q1136",
+        "question": "What project did Jolene finish last week before 23 January, 2023?",
+        "expectedSessionIds": [
+          "1"
+        ],
+        "retrievedSessionIds": [
+          "17",
+          "5",
+          "22",
+          "13",
+          "14",
+          "9",
+          "18",
+          "4"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-48_q1138",
+        "question": "What project was Jolene working on as of 1 February, 2023?",
+        "expectedSessionIds": [
+          "3"
+        ],
+        "retrievedSessionIds": [
+          "17",
+          "22",
+          "9",
+          "18",
+          "14",
+          "5",
+          "13"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-48_q1153",
+        "question": "What did Deb share a photo of, which brought a smile to Jolene's face?",
+        "expectedSessionIds": [
+          "8"
+        ],
+        "retrievedSessionIds": [
+          "30",
+          "6",
+          "25",
+          "23",
+          "15",
+          "29",
+          "28",
+          "14",
+          "7"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-48_q1155",
+        "question": "What picture did Jolene share related to feeling overwhelmed?",
+        "expectedSessionIds": [
+          "8"
+        ],
+        "retrievedSessionIds": [
+          "18",
+          "10",
+          "30",
+          "14",
+          "9",
+          "23",
+          "6",
+          "20"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-48_q1169",
+        "question": "What is Jolene currently doing in June 2023?",
+        "expectedSessionIds": [
+          "13"
+        ],
+        "retrievedSessionIds": [
+          "18",
+          "14",
+          "17",
+          "7",
+          "2",
+          "21",
+          "24"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-48_q1215",
+        "question": "What did Jolene recently play that she described to Deb?",
+        "expectedSessionIds": [
+          "27"
+        ],
+        "retrievedSessionIds": [
+          "2",
+          "15",
+          "19",
+          "12",
+          "3",
+          "6",
+          "21",
+          "17"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-48_q1217",
+        "question": "Where did Deborah get married?",
+        "expectedSessionIds": [
+          "28"
+        ],
+        "retrievedSessionIds": [
+          "19",
+          "2",
+          "23",
+          "4",
+          "26",
+          "24",
+          "29",
+          "18"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-49_q1251",
+        "question": "What significant event happened in Sam's life towards the end of summer 2023?",
+        "expectedSessionIds": [
+          "5"
+        ],
+        "retrievedSessionIds": [
+          "12",
+          "1",
+          "17",
+          "4",
+          "16",
+          "20",
+          "19"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-49_q1257",
+        "question": "When Evan get back from a vacation with his SO?",
+        "expectedSessionIds": [
+          "6"
+        ],
+        "retrievedSessionIds": [
+          "1",
+          "17",
+          "16",
+          "21",
+          "5",
+          "25",
+          "22"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-49_q1295",
+        "question": "What was Sam doing on December 4, 2023?",
+        "expectedSessionIds": [
+          "18"
+        ],
+        "retrievedSessionIds": [
+          "12",
+          "1",
+          "4",
+          "17",
+          "3",
+          "22",
+          "20",
+          "6",
+          "8",
+          "19"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-49_q1346",
+        "question": "What activity did Evan start one year ago?",
+        "expectedSessionIds": [
+          "12"
+        ],
+        "retrievedSessionIds": [
+          "11",
+          "1",
+          "8",
+          "4",
+          "17",
+          "9",
+          "19"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-49_q1350",
+        "question": "What adventurous theme is emerging in Evan's life as mentioned by Sam?",
+        "expectedSessionIds": [
+          "14"
+        ],
+        "retrievedSessionIds": [
+          "21",
+          "11",
+          "20",
+          "1",
+          "17",
+          "4",
+          "12"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-49_q1370",
+        "question": "What did Evan want to share with his work friends?",
+        "expectedSessionIds": [
+          "22"
+        ],
+        "retrievedSessionIds": [
+          "16",
+          "17",
+          "19",
+          "1",
+          "12",
+          "2"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-49_q1375",
+        "question": "What sports activity did Evan and his partner try in a recent weekend?",
+        "expectedSessionIds": [
+          "24"
+        ],
+        "retrievedSessionIds": [
+          "8",
+          "11",
+          "13",
+          "25",
+          "14",
+          "1",
+          "9"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-50_q1389",
+        "question": "Which types of cars does Dave like the most?",
+        "expectedSessionIds": [
+          "4",
+          "1",
+          "3"
+        ],
+        "retrievedSessionIds": [
+          "22",
+          "25",
+          "26",
+          "12",
+          "13",
+          "20",
+          "10",
+          "2"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-50_q1410",
+        "question": "Which city was Calvin visiting in August 2023?",
+        "expectedSessionIds": [
+          "16"
+        ],
+        "retrievedSessionIds": [
+          "24",
+          "14",
+          "20",
+          "30",
+          "25",
+          "18",
+          "27",
+          "12",
+          "1"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-50_q1417",
+        "question": "When did Dave return from San Francisco?",
+        "expectedSessionIds": [
+          "17"
+        ],
+        "retrievedSessionIds": [
+          "6",
+          "7",
+          "24",
+          "18",
+          "14",
+          "27",
+          "2",
+          "15",
+          "3"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-50_q1426",
+        "question": "Which city was Calvin at on October 3, 2023?",
+        "expectedSessionIds": [
+          "21"
+        ],
+        "retrievedSessionIds": [
+          "30",
+          "24",
+          "14",
+          "27",
+          "25",
+          "12",
+          "18",
+          "6"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-50_q1428",
+        "question": "What shared activities do Dave and Calvin have?",
+        "expectedSessionIds": [
+          "21"
+        ],
+        "retrievedSessionIds": [
+          "7",
+          "25",
+          "26",
+          "30",
+          "12",
+          "22",
+          "10",
+          "20"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-50_q1443",
+        "question": "What gifts has Calvin received from his artist friends?",
+        "expectedSessionIds": [
+          "4",
+          "16"
+        ],
+        "retrievedSessionIds": [
+          "30",
+          "25",
+          "23",
+          "28",
+          "29",
+          "14",
+          "12",
+          "18"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-50_q1450",
+        "question": "Where was Calvin located in the last week of October 2023?",
+        "expectedSessionIds": [
+          "28"
+        ],
+        "retrievedSessionIds": [
+          "14",
+          "27",
+          "25",
+          "30",
+          "12",
+          "2",
+          "15",
+          "24",
+          "18",
+          "11"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-50_q1495",
+        "question": "How does Dave feel about the reactions of people when they see the finished restoration project?",
+        "expectedSessionIds": [
+          "19"
+        ],
+        "retrievedSessionIds": [
+          "14",
+          "25",
+          "21",
+          "4",
+          "23",
+          "22",
+          "12",
+          "28"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "conv-50_q1499",
+        "question": "What car did Dave work on in the junkyard?",
+        "expectedSessionIds": [
+          "21"
+        ],
+        "retrievedSessionIds": [
+          "22",
+          "25",
+          "20",
+          "17",
+          "13",
+          "5",
+          "12",
+          "4"
+        ],
+        "rank": null,
+        "hit": false
+      }
+    ]
+  },
+  "byCategory": {
+    "1": {
+      "totalQuestions": 282,
+      "recallAt1": 0.5531914893617021,
+      "recallAt3": 0.8226950354609929,
+      "recallAt5": 0.9148936170212766,
+      "recallAt10": 0.9539007092198581,
+      "mrr": 0.6992935945063605,
+      "hitRate": 0.9539007092198581,
+      "avgRank": 1.9442379182156133,
+      "misses": [
+        {
+          "questionId": "conv-26_q4",
+          "question": "What did Caroline research?",
+          "expectedSessionIds": [
+            "2"
+          ],
+          "retrievedSessionIds": [
+            "4",
+            "15",
+            "6",
+            "7",
+            "1",
+            "11",
+            "13",
+            "5"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-26_q8",
+          "question": "What is Caroline's relationship status?",
+          "expectedSessionIds": [
+            "3",
+            "2"
+          ],
+          "retrievedSessionIds": [
+            "4",
+            "6",
+            "11",
+            "15",
+            "12",
+            "1"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-41_q237",
+          "question": "What type of volunteering have John and Maria both done?",
+          "expectedSessionIds": [
+            "3",
+            "2"
+          ],
+          "retrievedSessionIds": [
+            "5",
+            "16",
+            "9",
+            "26",
+            "27",
+            "28",
+            "32",
+            "21",
+            "29"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-41_q240",
+          "question": "Where has Maria made friends?",
+          "expectedSessionIds": [
+            "4",
+            "2",
+            "19",
+            "14"
+          ],
+          "retrievedSessionIds": [
+            "11",
+            "21",
+            "17",
+            "16",
+            "24",
+            "20",
+            "6"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-44_q794",
+          "question": "What has Andrew done with his dogs?",
+          "expectedSessionIds": [
+            "14",
+            "24"
+          ],
+          "retrievedSessionIds": [
+            "17",
+            "10",
+            "1",
+            "9",
+            "11",
+            "15",
+            "18"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-44_q798",
+          "question": "What are the names of Andrew's dogs?",
+          "expectedSessionIds": [
+            "12",
+            "24",
+            "28"
+          ],
+          "retrievedSessionIds": [
+            "1",
+            "11",
+            "17",
+            "10",
+            "9",
+            "4",
+            "15"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-44_q804",
+          "question": "What are the breeds of Audrey's dogs?",
+          "expectedSessionIds": [
+            "19",
+            "26"
+          ],
+          "retrievedSessionIds": [
+            "4",
+            "1",
+            "10",
+            "27",
+            "13",
+            "23",
+            "17",
+            "11"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-44_q823",
+          "question": "How many dogs does Andrew have?",
+          "expectedSessionIds": [
+            "12",
+            "24",
+            "28"
+          ],
+          "retrievedSessionIds": [
+            "10",
+            "27",
+            "15",
+            "1",
+            "17",
+            "11",
+            "23",
+            "18"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-47_q894",
+          "question": "How many pets does James have?",
+          "expectedSessionIds": [
+            "1",
+            "5"
+          ],
+          "retrievedSessionIds": [
+            "14",
+            "2",
+            "31",
+            "9",
+            "17",
+            "18",
+            "8"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-47_q895",
+          "question": "What are the names of James's dogs?",
+          "expectedSessionIds": [
+            "1",
+            "5"
+          ],
+          "retrievedSessionIds": [
+            "31",
+            "17",
+            "14",
+            "2",
+            "9",
+            "8",
+            "18"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-50_q1389",
+          "question": "Which types of cars does Dave like the most?",
+          "expectedSessionIds": [
+            "4",
+            "1",
+            "3"
+          ],
+          "retrievedSessionIds": [
+            "22",
+            "25",
+            "26",
+            "12",
+            "13",
+            "20",
+            "10",
+            "2"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-50_q1428",
+          "question": "What shared activities do Dave and Calvin have?",
+          "expectedSessionIds": [
+            "21"
+          ],
+          "retrievedSessionIds": [
+            "7",
+            "25",
+            "26",
+            "30",
+            "12",
+            "22",
+            "10",
+            "20"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-50_q1443",
+          "question": "What gifts has Calvin received from his artist friends?",
+          "expectedSessionIds": [
+            "4",
+            "16"
+          ],
+          "retrievedSessionIds": [
+            "30",
+            "25",
+            "23",
+            "28",
+            "29",
+            "14",
+            "12",
+            "18"
+          ],
+          "rank": null,
+          "hit": false
+        }
+      ]
+    },
+    "2": {
+      "totalQuestions": 321,
+      "recallAt1": 0.557632398753894,
+      "recallAt3": 0.7383177570093458,
+      "recallAt5": 0.8348909657320872,
+      "recallAt10": 0.9034267912772586,
+      "mrr": 0.6689672649953025,
+      "hitRate": 0.9034267912772586,
+      "avgRank": 2.089655172413793,
+      "misses": [
+        {
+          "questionId": "conv-26_q7",
+          "question": "When is Melanie planning on going camping?",
+          "expectedSessionIds": [
+            "2"
+          ],
+          "retrievedSessionIds": [
+            "10",
+            "18",
+            "4",
+            "12",
+            "14",
+            "5",
+            "8",
+            "16",
+            "6"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-26_q36",
+          "question": "When did Melanie go camping in July?",
+          "expectedSessionIds": [
+            "9"
+          ],
+          "retrievedSessionIds": [
+            "10",
+            "18",
+            "12",
+            "4",
+            "14",
+            "16",
+            "8",
+            "11"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-26_q74",
+          "question": "When did Melanie get hurt?",
+          "expectedSessionIds": [
+            "17"
+          ],
+          "retrievedSessionIds": [
+            "18",
+            "14",
+            "3",
+            "12",
+            "4",
+            "16",
+            "2",
+            "1"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-26_q81",
+          "question": "When did Melanie buy the figurines?",
+          "expectedSessionIds": [
+            "19"
+          ],
+          "retrievedSessionIds": [
+            "14",
+            "12",
+            "8",
+            "4",
+            "1",
+            "13",
+            "3",
+            "11"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-30_q191",
+          "question": "When did Gina go to a dance class with a group of friends?",
+          "expectedSessionIds": [
+            "19"
+          ],
+          "retrievedSessionIds": [
+            "1",
+            "14",
+            "11",
+            "9",
+            "8",
+            "5",
+            "17",
+            "2"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q395",
+          "question": "What major achievement did Joanna accomplish in January 2022?",
+          "expectedSessionIds": [
+            "2"
+          ],
+          "retrievedSessionIds": [
+            "22",
+            "18",
+            "26",
+            "12",
+            "10",
+            "25",
+            "5",
+            "7",
+            "15"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q403",
+          "question": "What movie did Joanna watch on 1 May, 2022?",
+          "expectedSessionIds": [
+            "10"
+          ],
+          "retrievedSessionIds": [
+            "3",
+            "1",
+            "25",
+            "22",
+            "23",
+            "17",
+            "27"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q408",
+          "question": "When did Joanna start writing her third screenplay?",
+          "expectedSessionIds": [
+            "12"
+          ],
+          "retrievedSessionIds": [
+            "4",
+            "25",
+            "27",
+            "2",
+            "28",
+            "17",
+            "5",
+            "26",
+            "3"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q422",
+          "question": "When did Joanna share her book with her writers group?",
+          "expectedSessionIds": [
+            "19"
+          ],
+          "retrievedSessionIds": [
+            "9",
+            "12",
+            "26",
+            "17",
+            "25",
+            "18",
+            "6",
+            "4"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q427",
+          "question": "When did Joanna make a chocolate tart with raspberries?",
+          "expectedSessionIds": [
+            "22"
+          ],
+          "retrievedSessionIds": [
+            "21",
+            "10",
+            "20",
+            "3",
+            "26",
+            "16",
+            "4",
+            "18",
+            "29"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q431",
+          "question": "When did Joanna finish up the writing for her book?",
+          "expectedSessionIds": [
+            "22"
+          ],
+          "retrievedSessionIds": [
+            "6",
+            "12",
+            "2",
+            "17",
+            "25",
+            "18",
+            "27",
+            "4"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-43_q609",
+          "question": "Where was John between August 11 and August 15 2023?",
+          "expectedSessionIds": [
+            "6",
+            "7"
+          ],
+          "retrievedSessionIds": [
+            "24",
+            "28",
+            "2",
+            "25",
+            "26",
+            "3",
+            "17",
+            "9",
+            "27"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-43_q630",
+          "question": "Which country was Tim visiting in the second week of November?",
+          "expectedSessionIds": [
+            "18"
+          ],
+          "retrievedSessionIds": [
+            "1",
+            "28",
+            "27",
+            "17",
+            "26",
+            "29",
+            "10",
+            "15",
+            "12"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-43_q631",
+          "question": "Where was Tim in the week before 16 November 2023?",
+          "expectedSessionIds": [
+            "18"
+          ],
+          "retrievedSessionIds": [
+            "10",
+            "16",
+            "26",
+            "1",
+            "17",
+            "12",
+            "9"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-44_q771",
+          "question": "Did Andrew have a pet dog during March 2023?",
+          "expectedSessionIds": [
+            "2"
+          ],
+          "retrievedSessionIds": [
+            "13",
+            "10",
+            "9",
+            "5",
+            "18",
+            "1",
+            "20"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-44_q800",
+          "question": "When did Audrey get into an accident in the park?",
+          "expectedSessionIds": [
+            "25"
+          ],
+          "retrievedSessionIds": [
+            "19",
+            "7",
+            "4",
+            "23",
+            "22",
+            "26",
+            "8",
+            "24"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-44_q822",
+          "question": "How long has it been since Andrew adopted his first pet, as of November 2023?",
+          "expectedSessionIds": [
+            "12"
+          ],
+          "retrievedSessionIds": [
+            "24",
+            "17",
+            "18",
+            "5",
+            "13",
+            "9",
+            "15"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-47_q897",
+          "question": "How was John feeling on April 10, 2022?",
+          "expectedSessionIds": [
+            "6"
+          ],
+          "retrievedSessionIds": [
+            "25",
+            "14",
+            "28",
+            "7",
+            "29",
+            "27",
+            "22",
+            "23"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-47_q941",
+          "question": "When did John and his programming friends host an online programming competition?",
+          "expectedSessionIds": [
+            "27"
+          ],
+          "retrievedSessionIds": [
+            "20",
+            "22",
+            "6",
+            "4",
+            "28",
+            "10",
+            "11"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-47_q949",
+          "question": "When did James, his family and his dogs start on a road trip together?",
+          "expectedSessionIds": [
+            "30"
+          ],
+          "retrievedSessionIds": [
+            "31",
+            "17",
+            "7",
+            "21",
+            "2",
+            "29",
+            "8"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-48_q1036",
+          "question": "What kind of project was Jolene working on in the beginning of January 2023?",
+          "expectedSessionIds": [
+            "1"
+          ],
+          "retrievedSessionIds": [
+            "17",
+            "22",
+            "14",
+            "18",
+            "13",
+            "5",
+            "16",
+            "9"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-48_q1063",
+          "question": "When was Jolene in Bogota?",
+          "expectedSessionIds": [
+            "4"
+          ],
+          "retrievedSessionIds": [
+            "26",
+            "23",
+            "21",
+            "6",
+            "27",
+            "18",
+            "30",
+            "1"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-48_q1096",
+          "question": "When did Deborah go to a yoga retreat near her mom's place?",
+          "expectedSessionIds": [
+            "21"
+          ],
+          "retrievedSessionIds": [
+            "23",
+            "2",
+            "14",
+            "30",
+            "24",
+            "28",
+            "1",
+            "6",
+            "4"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-48_q1114",
+          "question": "Where did Jolene and her partner spend most of September 2023?",
+          "expectedSessionIds": [
+            "2"
+          ],
+          "retrievedSessionIds": [
+            "23",
+            "7",
+            "18",
+            "6",
+            "14",
+            "27",
+            "29"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-49_q1251",
+          "question": "What significant event happened in Sam's life towards the end of summer 2023?",
+          "expectedSessionIds": [
+            "5"
+          ],
+          "retrievedSessionIds": [
+            "12",
+            "1",
+            "17",
+            "4",
+            "16",
+            "20",
+            "19"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-49_q1257",
+          "question": "When Evan get back from a vacation with his SO?",
+          "expectedSessionIds": [
+            "6"
+          ],
+          "retrievedSessionIds": [
+            "1",
+            "17",
+            "16",
+            "21",
+            "5",
+            "25",
+            "22"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-49_q1295",
+          "question": "What was Sam doing on December 4, 2023?",
+          "expectedSessionIds": [
+            "18"
+          ],
+          "retrievedSessionIds": [
+            "12",
+            "1",
+            "4",
+            "17",
+            "3",
+            "22",
+            "20",
+            "6",
+            "8",
+            "19"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-50_q1410",
+          "question": "Which city was Calvin visiting in August 2023?",
+          "expectedSessionIds": [
+            "16"
+          ],
+          "retrievedSessionIds": [
+            "24",
+            "14",
+            "20",
+            "30",
+            "25",
+            "18",
+            "27",
+            "12",
+            "1"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-50_q1417",
+          "question": "When did Dave return from San Francisco?",
+          "expectedSessionIds": [
+            "17"
+          ],
+          "retrievedSessionIds": [
+            "6",
+            "7",
+            "24",
+            "18",
+            "14",
+            "27",
+            "2",
+            "15",
+            "3"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-50_q1426",
+          "question": "Which city was Calvin at on October 3, 2023?",
+          "expectedSessionIds": [
+            "21"
+          ],
+          "retrievedSessionIds": [
+            "30",
+            "24",
+            "14",
+            "27",
+            "25",
+            "12",
+            "18",
+            "6"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-50_q1450",
+          "question": "Where was Calvin located in the last week of October 2023?",
+          "expectedSessionIds": [
+            "28"
+          ],
+          "retrievedSessionIds": [
+            "14",
+            "27",
+            "25",
+            "30",
+            "12",
+            "2",
+            "15",
+            "24",
+            "18",
+            "11"
+          ],
+          "rank": null,
+          "hit": false
+        }
+      ]
+    },
+    "3": {
+      "totalQuestions": 92,
+      "recallAt1": 0.3695652173913043,
+      "recallAt3": 0.6413043478260869,
+      "recallAt5": 0.782608695652174,
+      "recallAt10": 0.8695652173913043,
+      "mrr": 0.5311853002070396,
+      "hitRate": 0.8695652173913043,
+      "avgRank": 2.675,
+      "misses": [
+        {
+          "questionId": "conv-41_q242",
+          "question": "What might John's financial status be?",
+          "expectedSessionIds": [
+            "5"
+          ],
+          "retrievedSessionIds": [
+            "28",
+            "6",
+            "16",
+            "11",
+            "22",
+            "30",
+            "4"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-41_q279",
+          "question": "Would John be open to moving to another country?",
+          "expectedSessionIds": [
+            "24",
+            "7"
+          ],
+          "retrievedSessionIds": [
+            "8",
+            "1",
+            "30",
+            "4",
+            "6",
+            "25",
+            "9",
+            "21",
+            "22"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q386",
+          "question": "Is it likely that Nate has friends besides Joanna?",
+          "expectedSessionIds": [
+            "1"
+          ],
+          "retrievedSessionIds": [
+            "12",
+            "2",
+            "16",
+            "5",
+            "8",
+            "25",
+            "13",
+            "20",
+            "22",
+            "23"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q400",
+          "question": "What nickname does Nate use for Joanna?",
+          "expectedSessionIds": [
+            "7"
+          ],
+          "retrievedSessionIds": [
+            "22",
+            "1",
+            "24",
+            "10",
+            "5",
+            "21",
+            "11",
+            "23",
+            "27"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q473",
+          "question": "What state did Nate visit?",
+          "expectedSessionIds": [
+            "29"
+          ],
+          "retrievedSessionIds": [
+            "11",
+            "8",
+            "1",
+            "17",
+            "21",
+            "26",
+            "16",
+            "7"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-43_q588",
+          "question": "Would Tim enjoy reading books by C. S. Lewis or John Greene?",
+          "expectedSessionIds": [
+            "1"
+          ],
+          "retrievedSessionIds": [
+            "22",
+            "19",
+            "12",
+            "20",
+            "27",
+            "9",
+            "5",
+            "14",
+            "4"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-44_q816",
+          "question": "What is a career that Andrew could potentially pursue with his love for animals and nature?",
+          "expectedSessionIds": [
+            "2",
+            "3",
+            "5",
+            "8"
+          ],
+          "retrievedSessionIds": [
+            "1",
+            "20",
+            "23",
+            "14",
+            "21",
+            "6",
+            "13",
+            "4",
+            "22"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-47_q886",
+          "question": "What are John's suspected health problems?",
+          "expectedSessionIds": [
+            "1"
+          ],
+          "retrievedSessionIds": [
+            "7",
+            "25",
+            "28",
+            "18",
+            "2",
+            "14",
+            "21",
+            "6",
+            "17",
+            "8"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-47_q892",
+          "question": "Does James live in Connecticut?",
+          "expectedSessionIds": [
+            "5"
+          ],
+          "retrievedSessionIds": [
+            "29",
+            "23",
+            "19",
+            "24",
+            "13",
+            "16",
+            "8",
+            "31",
+            "3"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-47_q898",
+          "question": "Did James have a girlfriend during April 2022?",
+          "expectedSessionIds": [
+            "6"
+          ],
+          "retrievedSessionIds": [
+            "23",
+            "29",
+            "19",
+            "25",
+            "2",
+            "4",
+            "13",
+            "18"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-47_q905",
+          "question": "Was James feeling lonely before meeting Samantha?",
+          "expectedSessionIds": [
+            "9"
+          ],
+          "retrievedSessionIds": [
+            "23",
+            "29",
+            "19",
+            "31",
+            "17",
+            "8",
+            "5",
+            "15"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-48_q1064",
+          "question": "In what country was Jolene during summer 2022?",
+          "expectedSessionIds": [
+            "4"
+          ],
+          "retrievedSessionIds": [
+            "6",
+            "23",
+            "29",
+            "18",
+            "27",
+            "25",
+            "14",
+            "24"
+          ],
+          "rank": null,
+          "hit": false
+        }
+      ]
+    },
+    "4": {
+      "totalQuestions": 841,
+      "recallAt1": 0.6206896551724138,
+      "recallAt3": 0.8299643281807372,
+      "recallAt5": 0.9072532699167658,
+      "recallAt10": 0.9512485136741974,
+      "mrr": 0.738885585942661,
+      "hitRate": 0.9512485136741974,
+      "avgRank": 1.83,
+      "misses": [
+        {
+          "questionId": "conv-26_q127",
+          "question": "What activity did Caroline used to do with her dad?",
+          "expectedSessionIds": [
+            "13"
+          ],
+          "retrievedSessionIds": [
+            "15",
+            "6",
+            "10",
+            "5",
+            "16",
+            "12",
+            "14",
+            "8"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-30_q203",
+          "question": "What did Jon say about Gina's progress with her store?",
+          "expectedSessionIds": [
+            "3"
+          ],
+          "retrievedSessionIds": [
+            "16",
+            "4",
+            "14",
+            "6",
+            "18",
+            "10",
+            "8",
+            "5",
+            "17"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-30_q221",
+          "question": "What does Jon tell Gina he won't do?",
+          "expectedSessionIds": [
+            "14"
+          ],
+          "retrievedSessionIds": [
+            "15",
+            "8",
+            "13",
+            "19",
+            "10",
+            "4",
+            "18",
+            "9",
+            "12",
+            "11"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-41_q303",
+          "question": "What did Maria donate to a homeless shelter in December 2023?",
+          "expectedSessionIds": [
+            "2"
+          ],
+          "retrievedSessionIds": [
+            "5",
+            "21",
+            "11",
+            "6",
+            "16",
+            "27",
+            "32",
+            "29",
+            "8"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-41_q316",
+          "question": "What did John receive a certificate for?",
+          "expectedSessionIds": [
+            "9"
+          ],
+          "retrievedSessionIds": [
+            "19",
+            "28",
+            "16",
+            "29",
+            "30",
+            "3",
+            "22",
+            "20",
+            "8"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-41_q318",
+          "question": "What did Maria participate in last weekend before April 10, 2023?",
+          "expectedSessionIds": [
+            "10"
+          ],
+          "retrievedSessionIds": [
+            "5",
+            "29",
+            "11",
+            "6",
+            "18",
+            "27",
+            "20",
+            "16"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-41_q341",
+          "question": "What new activity did Maria start recently, as mentioned on 3 June, 2023?",
+          "expectedSessionIds": [
+            "17"
+          ],
+          "retrievedSessionIds": [
+            "27",
+            "19",
+            "11",
+            "24",
+            "13",
+            "5",
+            "14",
+            "4",
+            "18"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-41_q357",
+          "question": "What did Maria plan to do later on the evening of 7 July, 2023?",
+          "expectedSessionIds": [
+            "23"
+          ],
+          "retrievedSessionIds": [
+            "27",
+            "4",
+            "16",
+            "13",
+            "14",
+            "18",
+            "5",
+            "11",
+            "6"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-41_q367",
+          "question": "What did John do the week before August 3, 2023 involving his kids?",
+          "expectedSessionIds": [
+            "27"
+          ],
+          "retrievedSessionIds": [
+            "8",
+            "18",
+            "13",
+            "10",
+            "31",
+            "19",
+            "4",
+            "29"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-41_q372",
+          "question": "What activity did Maria take up with her friends from church in August 2023?",
+          "expectedSessionIds": [
+            "28"
+          ],
+          "retrievedSessionIds": [
+            "24",
+            "25",
+            "11",
+            "8",
+            "14",
+            "18",
+            "26",
+            "19"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-41_q383",
+          "question": "What is John currently doing as a volunteer in August 2023?",
+          "expectedSessionIds": [
+            "31"
+          ],
+          "retrievedSessionIds": [
+            "16",
+            "17",
+            "28",
+            "3",
+            "1",
+            "4",
+            "26",
+            "29"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q480",
+          "question": "What is Joanna's third screenplay about?",
+          "expectedSessionIds": [
+            "12"
+          ],
+          "retrievedSessionIds": [
+            "4",
+            "25",
+            "27",
+            "2",
+            "5",
+            "28",
+            "17",
+            "3"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q501",
+          "question": "What kind of films does Joanna enjoy?",
+          "expectedSessionIds": [
+            "9"
+          ],
+          "retrievedSessionIds": [
+            "1",
+            "3",
+            "23",
+            "25",
+            "22",
+            "27"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q502",
+          "question": "Which activity helps Nate escape and stimulates his imagination?",
+          "expectedSessionIds": [
+            "9"
+          ],
+          "retrievedSessionIds": [
+            "25",
+            "11",
+            "23",
+            "8",
+            "26",
+            "18",
+            "15",
+            "2"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q508",
+          "question": "What did Nate do for Joanna on 25 May, 2022?",
+          "expectedSessionIds": [
+            "13"
+          ],
+          "retrievedSessionIds": [
+            "22",
+            "10",
+            "23",
+            "21",
+            "26",
+            "1",
+            "7"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q535",
+          "question": "What did Joanna share with her writers group in August 2022?",
+          "expectedSessionIds": [
+            "19"
+          ],
+          "retrievedSessionIds": [
+            "9",
+            "12",
+            "18",
+            "26",
+            "28",
+            "4",
+            "6"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q555",
+          "question": "What does Joanna do while she writes?",
+          "expectedSessionIds": [
+            "24"
+          ],
+          "retrievedSessionIds": [
+            "18",
+            "12",
+            "2",
+            "6",
+            "19",
+            "27",
+            "25",
+            "22"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-42_q584",
+          "question": "What did Nate share a photo of as a part of his experimentation in November 2022?",
+          "expectedSessionIds": [
+            "29"
+          ],
+          "retrievedSessionIds": [
+            "28",
+            "21",
+            "7",
+            "10",
+            "22",
+            "20",
+            "16",
+            "1"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-43_q685",
+          "question": "How long did John and his high school basketball teammates play together?",
+          "expectedSessionIds": [
+            "9"
+          ],
+          "retrievedSessionIds": [
+            "6",
+            "23",
+            "5",
+            "3",
+            "7",
+            "12",
+            "24",
+            "14"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-43_q695",
+          "question": "What book recommendation did Tim give to John for the trip?",
+          "expectedSessionIds": [
+            "11"
+          ],
+          "retrievedSessionIds": [
+            "5",
+            "9",
+            "20",
+            "19",
+            "17",
+            "27",
+            "26",
+            "12",
+            "14"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-43_q738",
+          "question": "What was John's way of dealing with doubts and stress when he was younger?",
+          "expectedSessionIds": [
+            "23"
+          ],
+          "retrievedSessionIds": [
+            "20",
+            "16",
+            "17",
+            "19",
+            "18",
+            "15",
+            "8"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-44_q834",
+          "question": "How did Audrey describe she dog he met at the pet store?",
+          "expectedSessionIds": [
+            "6"
+          ],
+          "retrievedSessionIds": [
+            "13",
+            "24",
+            "17",
+            "19",
+            "9",
+            "28",
+            "1",
+            "2",
+            "4"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-44_q844",
+          "question": "What did Andrew and his GF do on the Monday before July 24, 2023?",
+          "expectedSessionIds": [
+            "13"
+          ],
+          "retrievedSessionIds": [
+            "20",
+            "26",
+            "9",
+            "3",
+            "24",
+            "14",
+            "16",
+            "12",
+            "17",
+            "23"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-44_q853",
+          "question": "What did Audrey organize with the neighbors' dogs?",
+          "expectedSessionIds": [
+            "18"
+          ],
+          "retrievedSessionIds": [
+            "11",
+            "4",
+            "27",
+            "23",
+            "10",
+            "28",
+            "9"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-44_q857",
+          "question": "How often does Audrey take her dogs for walks?",
+          "expectedSessionIds": [
+            "19"
+          ],
+          "retrievedSessionIds": [
+            "4",
+            "8",
+            "27",
+            "5",
+            "11",
+            "1",
+            "7",
+            "24",
+            "23"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-44_q862",
+          "question": "What did Audrey do with her pups over the weekend before 4th October, 2023?",
+          "expectedSessionIds": [
+            "21"
+          ],
+          "retrievedSessionIds": [
+            "7",
+            "27",
+            "15",
+            "23",
+            "10",
+            "14",
+            "26",
+            "3",
+            "4"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-47_q980",
+          "question": "What project is James working on in his game design course?",
+          "expectedSessionIds": [
+            "13"
+          ],
+          "retrievedSessionIds": [
+            "22",
+            "1",
+            "9",
+            "31",
+            "25",
+            "21",
+            "20",
+            "6"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-47_q988",
+          "question": "What did James enjoy doing on cold winter days?",
+          "expectedSessionIds": [
+            "16"
+          ],
+          "retrievedSessionIds": [
+            "8",
+            "2",
+            "29",
+            "23",
+            "1",
+            "14",
+            "7",
+            "3",
+            "17"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-48_q1136",
+          "question": "What project did Jolene finish last week before 23 January, 2023?",
+          "expectedSessionIds": [
+            "1"
+          ],
+          "retrievedSessionIds": [
+            "17",
+            "5",
+            "22",
+            "13",
+            "14",
+            "9",
+            "18",
+            "4"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-48_q1138",
+          "question": "What project was Jolene working on as of 1 February, 2023?",
+          "expectedSessionIds": [
+            "3"
+          ],
+          "retrievedSessionIds": [
+            "17",
+            "22",
+            "9",
+            "18",
+            "14",
+            "5",
+            "13"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-48_q1153",
+          "question": "What did Deb share a photo of, which brought a smile to Jolene's face?",
+          "expectedSessionIds": [
+            "8"
+          ],
+          "retrievedSessionIds": [
+            "30",
+            "6",
+            "25",
+            "23",
+            "15",
+            "29",
+            "28",
+            "14",
+            "7"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-48_q1155",
+          "question": "What picture did Jolene share related to feeling overwhelmed?",
+          "expectedSessionIds": [
+            "8"
+          ],
+          "retrievedSessionIds": [
+            "18",
+            "10",
+            "30",
+            "14",
+            "9",
+            "23",
+            "6",
+            "20"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-48_q1169",
+          "question": "What is Jolene currently doing in June 2023?",
+          "expectedSessionIds": [
+            "13"
+          ],
+          "retrievedSessionIds": [
+            "18",
+            "14",
+            "17",
+            "7",
+            "2",
+            "21",
+            "24"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-48_q1215",
+          "question": "What did Jolene recently play that she described to Deb?",
+          "expectedSessionIds": [
+            "27"
+          ],
+          "retrievedSessionIds": [
+            "2",
+            "15",
+            "19",
+            "12",
+            "3",
+            "6",
+            "21",
+            "17"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-48_q1217",
+          "question": "Where did Deborah get married?",
+          "expectedSessionIds": [
+            "28"
+          ],
+          "retrievedSessionIds": [
+            "19",
+            "2",
+            "23",
+            "4",
+            "26",
+            "24",
+            "29",
+            "18"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-49_q1346",
+          "question": "What activity did Evan start one year ago?",
+          "expectedSessionIds": [
+            "12"
+          ],
+          "retrievedSessionIds": [
+            "11",
+            "1",
+            "8",
+            "4",
+            "17",
+            "9",
+            "19"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-49_q1350",
+          "question": "What adventurous theme is emerging in Evan's life as mentioned by Sam?",
+          "expectedSessionIds": [
+            "14"
+          ],
+          "retrievedSessionIds": [
+            "21",
+            "11",
+            "20",
+            "1",
+            "17",
+            "4",
+            "12"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-49_q1370",
+          "question": "What did Evan want to share with his work friends?",
+          "expectedSessionIds": [
+            "22"
+          ],
+          "retrievedSessionIds": [
+            "16",
+            "17",
+            "19",
+            "1",
+            "12",
+            "2"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-49_q1375",
+          "question": "What sports activity did Evan and his partner try in a recent weekend?",
+          "expectedSessionIds": [
+            "24"
+          ],
+          "retrievedSessionIds": [
+            "8",
+            "11",
+            "13",
+            "25",
+            "14",
+            "1",
+            "9"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-50_q1495",
+          "question": "How does Dave feel about the reactions of people when they see the finished restoration project?",
+          "expectedSessionIds": [
+            "19"
+          ],
+          "retrievedSessionIds": [
+            "14",
+            "25",
+            "21",
+            "4",
+            "23",
+            "22",
+            "12",
+            "28"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "conv-50_q1499",
+          "question": "What car did Dave work on in the junkyard?",
+          "expectedSessionIds": [
+            "21"
+          ],
+          "retrievedSessionIds": [
+            "22",
+            "25",
+            "20",
+            "17",
+            "13",
+            "5",
+            "12",
+            "4"
+          ],
+          "rank": null,
+          "hit": false
+        }
+      ]
+    }
+  },
+  "comparison": {
+    "mempalace_raw": "60.3% R@10",
+    "mempalace_hybrid": "88.9% R@10"
+  }
+}

@@ -1,0 +1,458 @@
+{
+  "benchmark": "LongMemEval",
+  "dataset": "s",
+  "topK": 10,
+  "timestamp": "2026-04-17T05:24:37.851Z",
+  "system": "CORTEX V2.4",
+  "methodology": "Raw retrieval, no hand-coded patches, no teaching to the test",
+  "overall": {
+    "totalQuestions": 500,
+    "recallAt1": 0.894,
+    "recallAt3": 0.966,
+    "recallAt5": 0.978,
+    "recallAt10": 0.978,
+    "mrr": 0.9301333333333333,
+    "hitRate": 0.978,
+    "avgRank": 1.130879345603272,
+    "misses": [
+      {
+        "questionId": "5d3d2817",
+        "question": "What was my previous occupation?",
+        "expectedSessionIds": [
+          "answer_235eb6fb"
+        ],
+        "retrievedSessionIds": [
+          "e00298a6_1",
+          "212ce1f4_5",
+          "sharegpt_BKl952A_23",
+          "7e6bcfa7_1",
+          "ultrachat_106114",
+          "ultrachat_234942",
+          "ultrachat_371333"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "726462e0",
+        "question": "What was the discount I got on my first purchase from the new clothing brand?",
+        "expectedSessionIds": [
+          "answer_f38f679b"
+        ],
+        "retrievedSessionIds": [
+          "741c6781_1",
+          "cdd9704d_1",
+          "ultrachat_450587"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "0862e8bf_abs",
+        "question": "What is the name of my hamster?",
+        "expectedSessionIds": [
+          "answer_c6fd8ebd_abs"
+        ],
+        "retrievedSessionIds": [
+          "15c03056_2",
+          "sharegpt_8T6d65A_83",
+          "sharegpt_PSjpANO_35",
+          "ultrachat_135959",
+          "89a9f6f5",
+          "f238edb0_1"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "60bf93ed_abs",
+        "question": "How many days did it take for my iPad case to arrive after I bought it?",
+        "expectedSessionIds": [
+          "answer_e0956e0a_abs_2",
+          "answer_e0956e0a_abs_1"
+        ],
+        "retrievedSessionIds": [
+          "36d5bbde_1",
+          "cdf068b1_3",
+          "1e91cdf0",
+          "1a892e14"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "57f827a0",
+        "question": "I was thinking about rearranging the furniture in my bedroom this weekend. Any tips?",
+        "expectedSessionIds": [
+          "answer_1bde8d3b"
+        ],
+        "retrievedSessionIds": [
+          "e85e0eaf_1",
+          "d0f42e3f",
+          "1bff1675",
+          "5150a4e9_2"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "d6233ab6",
+        "question": "I've been feeling nostalgic lately. Do you think it would be a good idea to attend my high school reunion?",
+        "expectedSessionIds": [
+          "answer_b0fac439"
+        ],
+        "retrievedSessionIds": [
+          "f916c63a_2",
+          "ultrachat_329160",
+          "cb05ed10",
+          "0e726047",
+          "32f28c7b_1"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "92a0aa75",
+        "question": "How long have I been working in my current role?",
+        "expectedSessionIds": [
+          "answer_6cb8f792_1",
+          "answer_6cb8f792_2"
+        ],
+        "retrievedSessionIds": [
+          "ultrachat_178564",
+          "sharegpt_9l7gjYP_17",
+          "ultrachat_61473",
+          "1c0921ee_3",
+          "dbefb778_1",
+          "edd89480_1"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "gpt4_59149c78",
+        "question": "I mentioned that I participated in an art-related event two weeks ago. Where was that event held at?",
+        "expectedSessionIds": [
+          "answer_d00ba6d1_1",
+          "answer_d00ba6d1_2"
+        ],
+        "retrievedSessionIds": [
+          "23754665",
+          "765ce8a7_2",
+          "a8ac3d1d_1"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "gpt4_468eb064",
+        "question": "Who did I meet with during the lunch last Tuesday?",
+        "expectedSessionIds": [
+          "answer_9b09d95b_1"
+        ],
+        "retrievedSessionIds": [
+          "21ab8a2c_1",
+          "sharegpt_wrwD6bG_0",
+          "ad12a3a2_3",
+          "1e5bd28d_2",
+          "c3023a45_1",
+          "db1aefb6_3"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "gpt4_8279ba03",
+        "question": "What kitchen appliance did I buy 10 days ago?",
+        "expectedSessionIds": [
+          "answer_56521e66_1"
+        ],
+        "retrievedSessionIds": [
+          "bb107057_2",
+          "652c0717_3",
+          "02242db8_1",
+          "89749c78_2",
+          "50d66391_4",
+          "b357fb8b_2",
+          "ultrachat_129760"
+        ],
+        "rank": null,
+        "hit": false
+      },
+      {
+        "questionId": "gpt4_68e94288",
+        "question": "What was the social media activity I participated 5 days ago?",
+        "expectedSessionIds": [
+          "answer_9793daa4_2",
+          "answer_9793daa4_1"
+        ],
+        "retrievedSessionIds": [
+          "c99dcd81",
+          "ba80721c",
+          "4c49e37f",
+          "ultrachat_396489"
+        ],
+        "rank": null,
+        "hit": false
+      }
+    ]
+  },
+  "byType": {
+    "single-session-user": {
+      "totalQuestions": 70,
+      "recallAt1": 0.8285714285714286,
+      "recallAt3": 0.9428571428571428,
+      "recallAt5": 0.9571428571428572,
+      "recallAt10": 0.9571428571428572,
+      "mrr": 0.886904761904762,
+      "hitRate": 0.9571428571428572,
+      "avgRank": 1.1791044776119404,
+      "misses": [
+        {
+          "questionId": "5d3d2817",
+          "question": "What was my previous occupation?",
+          "expectedSessionIds": [
+            "answer_235eb6fb"
+          ],
+          "retrievedSessionIds": [
+            "e00298a6_1",
+            "212ce1f4_5",
+            "sharegpt_BKl952A_23",
+            "7e6bcfa7_1",
+            "ultrachat_106114",
+            "ultrachat_234942",
+            "ultrachat_371333"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "726462e0",
+          "question": "What was the discount I got on my first purchase from the new clothing brand?",
+          "expectedSessionIds": [
+            "answer_f38f679b"
+          ],
+          "retrievedSessionIds": [
+            "741c6781_1",
+            "cdd9704d_1",
+            "ultrachat_450587"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "0862e8bf_abs",
+          "question": "What is the name of my hamster?",
+          "expectedSessionIds": [
+            "answer_c6fd8ebd_abs"
+          ],
+          "retrievedSessionIds": [
+            "15c03056_2",
+            "sharegpt_8T6d65A_83",
+            "sharegpt_PSjpANO_35",
+            "ultrachat_135959",
+            "89a9f6f5",
+            "f238edb0_1"
+          ],
+          "rank": null,
+          "hit": false
+        }
+      ]
+    },
+    "multi-session": {
+      "totalQuestions": 133,
+      "recallAt1": 0.9097744360902256,
+      "recallAt3": 0.9699248120300752,
+      "recallAt5": 0.9849624060150376,
+      "recallAt10": 0.9849624060150376,
+      "mrr": 0.943233082706767,
+      "hitRate": 0.9849624060150376,
+      "avgRank": 1.1145038167938932,
+      "misses": [
+        {
+          "questionId": "60bf93ed_abs",
+          "question": "How many days did it take for my iPad case to arrive after I bought it?",
+          "expectedSessionIds": [
+            "answer_e0956e0a_abs_2",
+            "answer_e0956e0a_abs_1"
+          ],
+          "retrievedSessionIds": [
+            "36d5bbde_1",
+            "cdf068b1_3",
+            "1e91cdf0",
+            "1a892e14"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "92a0aa75",
+          "question": "How long have I been working in my current role?",
+          "expectedSessionIds": [
+            "answer_6cb8f792_1",
+            "answer_6cb8f792_2"
+          ],
+          "retrievedSessionIds": [
+            "ultrachat_178564",
+            "sharegpt_9l7gjYP_17",
+            "ultrachat_61473",
+            "1c0921ee_3",
+            "dbefb778_1",
+            "edd89480_1"
+          ],
+          "rank": null,
+          "hit": false
+        }
+      ]
+    },
+    "single-session-preference": {
+      "totalQuestions": 30,
+      "recallAt1": 0.7333333333333333,
+      "recallAt3": 0.9,
+      "recallAt5": 0.9333333333333333,
+      "recallAt10": 0.9333333333333333,
+      "mrr": 0.8194444444444445,
+      "hitRate": 0.9333333333333333,
+      "avgRank": 1.3214285714285714,
+      "misses": [
+        {
+          "questionId": "57f827a0",
+          "question": "I was thinking about rearranging the furniture in my bedroom this weekend. Any tips?",
+          "expectedSessionIds": [
+            "answer_1bde8d3b"
+          ],
+          "retrievedSessionIds": [
+            "e85e0eaf_1",
+            "d0f42e3f",
+            "1bff1675",
+            "5150a4e9_2"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "d6233ab6",
+          "question": "I've been feeling nostalgic lately. Do you think it would be a good idea to attend my high school reunion?",
+          "expectedSessionIds": [
+            "answer_b0fac439"
+          ],
+          "retrievedSessionIds": [
+            "f916c63a_2",
+            "ultrachat_329160",
+            "cb05ed10",
+            "0e726047",
+            "32f28c7b_1"
+          ],
+          "rank": null,
+          "hit": false
+        }
+      ]
+    },
+    "temporal-reasoning": {
+      "totalQuestions": 133,
+      "recallAt1": 0.849624060150376,
+      "recallAt3": 0.9548872180451128,
+      "recallAt5": 0.9699248120300752,
+      "recallAt10": 0.9699248120300752,
+      "mrr": 0.8981203007518799,
+      "hitRate": 0.9699248120300752,
+      "avgRank": 1.2093023255813953,
+      "misses": [
+        {
+          "questionId": "gpt4_59149c78",
+          "question": "I mentioned that I participated in an art-related event two weeks ago. Where was that event held at?",
+          "expectedSessionIds": [
+            "answer_d00ba6d1_1",
+            "answer_d00ba6d1_2"
+          ],
+          "retrievedSessionIds": [
+            "23754665",
+            "765ce8a7_2",
+            "a8ac3d1d_1"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "gpt4_468eb064",
+          "question": "Who did I meet with during the lunch last Tuesday?",
+          "expectedSessionIds": [
+            "answer_9b09d95b_1"
+          ],
+          "retrievedSessionIds": [
+            "21ab8a2c_1",
+            "sharegpt_wrwD6bG_0",
+            "ad12a3a2_3",
+            "1e5bd28d_2",
+            "c3023a45_1",
+            "db1aefb6_3"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "gpt4_8279ba03",
+          "question": "What kitchen appliance did I buy 10 days ago?",
+          "expectedSessionIds": [
+            "answer_56521e66_1"
+          ],
+          "retrievedSessionIds": [
+            "bb107057_2",
+            "652c0717_3",
+            "02242db8_1",
+            "89749c78_2",
+            "50d66391_4",
+            "b357fb8b_2",
+            "ultrachat_129760"
+          ],
+          "rank": null,
+          "hit": false
+        },
+        {
+          "questionId": "gpt4_68e94288",
+          "question": "What was the social media activity I participated 5 days ago?",
+          "expectedSessionIds": [
+            "answer_9793daa4_2",
+            "answer_9793daa4_1"
+          ],
+          "retrievedSessionIds": [
+            "c99dcd81",
+            "ba80721c",
+            "4c49e37f",
+            "ultrachat_396489"
+          ],
+          "rank": null,
+          "hit": false
+        }
+      ]
+    },
+    "knowledge-update": {
+      "totalQuestions": 78,
+      "recallAt1": 0.9871794871794872,
+      "recallAt3": 1,
+      "recallAt5": 1,
+      "recallAt10": 1,
+      "mrr": 0.9935897435897436,
+      "hitRate": 1,
+      "avgRank": 1.0128205128205128,
+      "misses": []
+    },
+    "single-session-assistant": {
+      "totalQuestions": 56,
+      "recallAt1": 1,
+      "recallAt3": 1,
+      "recallAt5": 1,
+      "recallAt10": 1,
+      "mrr": 1,
+      "hitRate": 1,
+      "avgRank": 1,
+      "misses": []
+    }
+  },
+  "timing": {
+    "totalIngestMs": 15978586,
+    "totalSearchMs": 193634,
+    "avgIngestMs": 31957.172,
+    "avgSearchMs": 387.268
+  }
+}
